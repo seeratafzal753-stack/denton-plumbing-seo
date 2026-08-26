@@ -1,15 +1,15 @@
 ---
 ---
 
-<div class="relative w-full max-w-lg mx-auto lg:max-w-none flex items-center justify-center">
+<div class="relative w-full max-w-lg mx-auto lg:max-w-none flex items-center justify-center py-4">
   
-  <!-- Integrated Background Elements (Removes plain empty white feeling) -->
-  <!-- Ambient Soft Glow & Radial Circles -->
+  <!-- Integrated Multi-Layer Glow / Ring Backdrop (Eliminates raw empty white feeling) -->
   <div class="absolute inset-0 bg-gradient-to-tr from-brand-600/15 via-blue-500/10 to-red-500/10 rounded-full blur-3xl transform scale-110 pointer-events-none"></div>
-  <div class="absolute -bottom-4 w-3/4 h-12 bg-slate-900/15 rounded-full blur-xl pointer-events-none"></div>
+  <div class="absolute w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-gradient-to-br from-blue-50 to-slate-100 border border-slate-200/80 shadow-inner pointer-events-none"></div>
+  <div class="absolute -bottom-2 w-3/4 h-12 bg-slate-900/15 rounded-full blur-xl pointer-events-none"></div>
   
-  <!-- Decorative Floating Plumbing Badges around Mascot -->
-  <div class="absolute top-4 left-2 sm:left-6 bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl rounded-2xl p-3 flex items-center gap-2.5 z-20 animate-bounce duration-1000 hidden sm:flex">
+  <!-- Floating Trust Badge Left -->
+  <div class="absolute top-8 -left-2 sm:left-0 bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl rounded-2xl p-3 flex items-center gap-2.5 z-20 animate-bounce duration-1000 hidden sm:flex">
     <span class="text-xl">⚡</span>
     <div>
       <span class="block text-[11px] font-black text-slate-900 leading-none">28-Min Fast Arrival</span>
@@ -17,7 +17,8 @@
     </div>
   </div>
 
-  <div class="absolute bottom-10 right-2 sm:right-6 bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl rounded-2xl p-3 flex items-center gap-2.5 z-20 hidden sm:flex">
+  <!-- Floating Trust Badge Right -->
+  <div class="absolute bottom-12 -right-2 sm:right-0 bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl rounded-2xl p-3 flex items-center gap-2.5 z-20 hidden sm:flex">
     <span class="text-xl text-red-600 font-black">⭐</span>
     <div>
       <span class="block text-[11px] font-black text-slate-900 leading-none">100% Upfront Pricing</span>
@@ -25,148 +26,14 @@
     </div>
   </div>
 
-  <!-- SVG Plumber Mascot (Red Overalls, Red Cap, Wrench, Toolbox, Plumbing Pipe) -->
-  <svg
-    class="w-full max-w-[420px] sm:max-w-[480px] h-auto relative z-10 drop-shadow-2xl"
-    viewBox="0 0 500 550"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <!-- Background Circle Accent Frame -->
-    <circle cx="250" cy="270" r="210" fill="#f8fafc" stroke="#e2e8f0" stroke-width="4"/>
-    <circle cx="250" cy="270" r="195" fill="url(#hero-bg-grad)" stroke="#38bdf8" stroke-width="2" stroke-opacity="0.3"/>
-    
-    <defs>
-      <linearGradient id="hero-bg-grad" x1="100" y1="100" x2="400" y2="450" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#eff6ff" stop-opacity="0.9"/>
-        <stop offset="1" stop-color="#dbeafe" stop-opacity="0.6"/>
-      </linearGradient>
-    </defs>
-
-    <!-- Plumbing Pipe Behind Plumber -->
-    <path d="M70 380 L140 380 C155 380 165 390 165 405 L165 490" stroke="#94a3b8" stroke-width="18" stroke-linecap="round" fill="none"/>
-    <path d="M70 380 L140 380 C155 380 165 390 165 405 L165 490" stroke="#cbd5e1" stroke-width="12" stroke-linecap="round" fill="none"/>
-    <!-- Copper Elbow Fitting -->
-    <rect x="135" y="370" width="30" height="30" rx="6" fill="#ea580c" stroke="#c2410c" stroke-width="2"/>
-    <circle cx="150" cy="385" r="5" fill="#f97316"/>
-
-    <!-- MASCOT BODY & OUTFIT -->
-    <!-- Legs in Red Overalls -->
-    <rect x="195" y="390" width="48" height="95" rx="10" fill="#dc2626" stroke="#991b1b" stroke-width="3"/>
-    <rect x="257" y="390" width="48" height="95" rx="10" fill="#dc2626" stroke="#991b1b" stroke-width="3"/>
-    
-    <!-- Work Boots (Dark Leather) -->
-    <path d="M185 475 C185 465 200 460 220 460 L245 460 C250 475 250 495 240 495 L175 495 C170 495 170 485 185 475 Z" fill="#1e293b" stroke="#0f172a" stroke-width="3"/>
-    <path d="M255 460 C275 460 290 465 290 475 C305 485 305 495 300 495 L235 495 C225 495 225 475 230 460 Z" fill="#1e293b" stroke="#0f172a" stroke-width="3"/>
-    <!-- Boot Soles -->
-    <rect x="170" y="490" width="80" height="10" rx="3" fill="#475569"/>
-    <rect x="230" y="490" width="80" height="10" rx="3" fill="#475569"/>
-
-    <!-- Red Overalls Torso -->
-    <path d="M180 230 C180 215 200 210 250 210 C300 210 320 215 320 230 L330 400 C330 415 310 420 250 420 C190 420 170 415 170 400 Z" fill="#dc2626" stroke="#991b1b" stroke-width="4"/>
-
-    <!-- White/Navy Undershirt -->
-    <path d="M165 230 C165 200 200 185 250 185 C300 185 335 200 335 230 L320 280 L180 280 Z" fill="#1e3a8a" stroke="#0f172a" stroke-width="3"/>
-
-    <!-- Overalls Straps & Brass Buckles -->
-    <!-- Left Strap -->
-    <rect x="195" y="190" width="22" height="85" rx="4" fill="#b91c1c" stroke="#7f1d1d" stroke-width="2"/>
-    <rect x="193" y="250" width="26" height="14" rx="3" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
-    <circle cx="206" cy="257" r="3" fill="#78350f"/>
-    <!-- Right Strap -->
-    <rect x="283" y="190" width="22" height="85" rx="4" fill="#b91c1c" stroke="#7f1d1d" stroke-width="2"/>
-    <rect x="281" y="250" width="26" height="14" rx="3" fill="#fbbf24" stroke="#d97706" stroke-width="2"/>
-    <circle cx="294" cy="257" r="3" fill="#78350f"/>
-
-    <!-- Front Bib Pocket -->
-    <path d="M215 270 L285 270 L280 320 C280 325 275 330 250 330 C225 330 220 325 220 320 Z" fill="#b91c1c" stroke="#7f1d1d" stroke-width="2"/>
-    <!-- Ruler/Pencil in Pocket -->
-    <rect x="260" y="255" width="8" height="25" rx="2" fill="#facc15" stroke="#ca8a04" stroke-width="1.5"/>
-
-    <!-- LEFT ARM & RED TOOLBOX -->
-    <!-- Arm -->
-    <path d="M175 225 C140 240 125 270 120 320 C120 335 130 350 145 350 C155 350 165 335 165 315 L180 260" fill="#fbcfe8" stroke="#9d174d" stroke-width="2"/>
-    <!-- Navy Sleeve -->
-    <path d="M170 215 C150 225 145 245 145 260 L180 260 Z" fill="#1e3a8a" stroke="#0f172a" stroke-width="2"/>
-    
-    <!-- Red Metal Plumber's Toolbox in Hand -->
-    <g transform="translate(60, 320)">
-      <!-- Box Body -->
-      <rect x="20" y="30" width="90" height="60" rx="6" fill="#dc2626" stroke="#991b1b" stroke-width="3"/>
-      <!-- Lid / Top Rim -->
-      <path d="M15 30 L115 30 L110 20 L20 20 Z" fill="#b91c1c" stroke="#7f1d1d" stroke-width="2"/>
-      <!-- Metal Handle -->
-      <path d="M50 20 L50 8 C50 5 80 5 80 8 L80 20" stroke="#64748b" stroke-width="4" stroke-linecap="round" fill="none"/>
-      <!-- Latches -->
-      <rect x="40" y="28" width="10" height="15" rx="2" fill="#e2e8f0" stroke="#475569" stroke-width="1.5"/>
-      <rect x="80" y="28" width="10" height="15" rx="2" fill="#e2e8f0" stroke="#475569" stroke-width="1.5"/>
-      <!-- Logo on toolbox -->
-      <circle cx="65" cy="60" r="12" fill="#ffffff"/>
-      <text x="65" y="64" font-size="10" font-weight="900" text-anchor="middle" fill="#dc2626">DP</text>
-    </g>
-
-    <!-- RIGHT ARM & HEAVY DUTY PIPE WRENCH -->
-    <!-- Arm reaching up holding wrench proudly -->
-    <path d="M325 225 C360 235 385 220 405 180 C415 160 400 150 385 155 C370 160 360 180 345 210" fill="#fbcfe8" stroke="#9d174d" stroke-width="2"/>
-    <!-- Navy Sleeve -->
-    <path d="M325 215 C345 225 355 240 355 255 L320 255 Z" fill="#1e3a8a" stroke="#0f172a" stroke-width="2"/>
-    <!-- Hand Grip -->
-    <circle cx="395" cy="165" r="14" fill="#fbcfe8" stroke="#9d174d" stroke-width="2"/>
-
-    <!-- Heavy-Duty Red/Chrome Pipe Wrench -->
-    <g transform="translate(370, 70) rotate(25)">
-      <!-- Wrench Handle -->
-      <rect x="25" y="50" width="14" height="110" rx="5" fill="#dc2626" stroke="#991b1b" stroke-width="2.5"/>
-      <circle cx="32" cy="150" r="3" fill="#ffffff"/>
-      <!-- Wrench Adjustment Knurl -->
-      <rect x="22" y="42" width="20" height="10" rx="2" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-      <!-- Wrench Hook Jaw (Chrome Steel) -->
-      <path d="M22 42 L22 10 C22 5 45 5 45 10 L45 22 L36 22 L36 42 Z" fill="#cbd5e1" stroke="#475569" stroke-width="2.5"/>
-      <!-- Wrench Heel Jaw & Teeth -->
-      <path d="M12 42 L12 25 L22 25 L22 42 Z" fill="#94a3b8" stroke="#475569" stroke-width="2"/>
-      <line x1="12" y1="28" x2="22" y2="28" stroke="#334155" stroke-width="1.5"/>
-      <line x1="12" y1="32" x2="22" y2="32" stroke="#334155" stroke-width="1.5"/>
-      <line x1="12" y1="36" x2="22" y2="36" stroke="#334155" stroke-width="1.5"/>
-    </g>
-
-    <!-- HEAD & FRIENDLY PLUMBER FACE -->
-    <!-- Neck -->
-    <rect x="235" y="170" width="30" height="30" fill="#fbcfe8"/>
-
-    <!-- Head Shape -->
-    <ellipse cx="250" cy="140" rx="42" ry="46" fill="#fbcfe8" stroke="#9d174d" stroke-width="2"/>
-    <!-- Ears -->
-    <circle cx="208" cy="140" r="10" fill="#fbcfe8" stroke="#9d174d" stroke-width="2"/>
-    <circle cx="292" cy="140" r="10" fill="#fbcfe8" stroke="#9d174d" stroke-width="2"/>
-
-    <!-- Cheerful Eyes -->
-    <ellipse cx="236" cy="130" rx="6" ry="8" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
-    <circle cx="237" cy="130" r="4" fill="#1e293b"/>
-    <circle cx="239" cy="128" r="1.5" fill="#ffffff"/>
-
-    <ellipse cx="264" cy="130" rx="6" ry="8" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
-    <circle cx="263" cy="130" r="4" fill="#1e293b"/>
-    <circle cx="265" cy="128" r="1.5" fill="#ffffff"/>
-
-    <!-- Friendly Eyebrows -->
-    <path d="M228 118 C234 114 244 116 244 118" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M256 118 C256 116 266 114 272 118" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round"/>
-
-    <!-- Button Nose -->
-    <path d="M246 142 C248 146 252 146 254 142" stroke="#9d174d" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-
-    <!-- Warm Confident Smile -->
-    <path d="M232 155 C242 170 258 170 268 155" stroke="#0f172a" stroke-width="3" stroke-linecap="round" fill="#ffffff"/>
-
-    <!-- RED PLUMBER CAP / BASEBALL HAT -->
-    <!-- Cap Dome -->
-    <path d="M208 120 C208 75 292 75 292 120 Z" fill="#dc2626" stroke="#991b1b" stroke-width="3"/>
-    <!-- Cap Brim / Visor (Turned slightly forward) -->
-    <path d="M200 115 C200 105 300 105 300 115 C300 126 200 126 200 115 Z" fill="#b91c1c" stroke="#7f1d1d" stroke-width="2"/>
-    <!-- White Logo Badge on Cap -->
-    <circle cx="250" cy="95" r="12" fill="#ffffff" stroke="#991b1b" stroke-width="1.5"/>
-    <text x="250" y="99" font-size="11" font-weight="900" text-anchor="middle" fill="#dc2626">DP</text>
-
-  </svg>
+  <!-- User Uploaded Cartoon Plumber Mascot Picture -->
+  <img
+    src="/images/plumber-mascot.png"
+    alt="Denton Master Plumber Mascot"
+    class="w-auto h-[380px] sm:h-[460px] lg:h-[500px] max-w-full object-contain relative z-10 drop-shadow-2xl hover:scale-[1.02] transition-transform duration-300"
+    width="500"
+    height="750"
+    loading="eager"
+  />
 
 </div>
