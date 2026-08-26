@@ -7,7 +7,12 @@ import LocalWaterSoilWidget from '../components/LocalWaterSoilWidget.astro';
 import NeighborhoodExplorer from '../components/NeighborhoodExplorer.astro';
 import FaqAccordion from '../components/FaqAccordion.astro';
 import LeadForm from '../components/LeadForm.astro';
+import { getCollection } from 'astro:content';
 import { siteConfig } from '../siteConfig';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+).slice(0, 3);
 
 const faqs = [
   {
@@ -286,7 +291,69 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 12. CLEAN FAQS ACCORDION -->
+  <!-- 12. LATEST PLUMBING & HOMEOWNER GUIDES (BLOGS SECTION) -->
+  <section class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-700 block mb-1">
+            Local Knowledge Base &amp; Tips
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-serif tracking-tight">
+            Latest Denton Plumbing Guides
+          </h2>
+          <p class="text-slate-600 text-sm mt-1">
+            Expert insights and preventive maintenance advice from our licensed master plumbers.
+          </p>
+        </div>
+        <div class="shrink-0">
+          <a
+            href="/blog/"
+            class="inline-flex items-center gap-2 text-sm font-bold text-brand-700 hover:text-brand-800 hover:underline"
+          >
+            <span>View All Guides</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <article class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-brand-500 transition flex flex-col justify-between group">
+            <div class="p-6">
+              <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+                <span class="bg-white border border-slate-200 text-brand-800 font-bold px-2.5 py-0.5 rounded-full uppercase text-[10px]">
+                  {post.data.category}
+                </span>
+                <span>
+                  {new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(post.data.pubDate)}
+                </span>
+              </div>
+              <h3 class="font-bold text-slate-900 text-base group-hover:text-brand-700 transition font-serif leading-snug mb-2">
+                <a href={`/blog/${post.slug}/`}>
+                  {post.data.title}
+                </a>
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                {post.data.description}
+              </p>
+            </div>
+            <div class="px-6 py-3.5 bg-white border-t border-slate-200 flex items-center justify-between text-xs">
+              <span class="text-slate-500">By {post.data.author}</span>
+              <a href={`/blog/${post.slug}/`} class="font-bold text-brand-700 group-hover:translate-x-1 transition transform flex items-center gap-1">
+                <span>Read Article</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 13. CLEAN FAQS ACCORDION -->
   <FaqAccordion faqs={faqs} />
 
 </BaseLayout>
