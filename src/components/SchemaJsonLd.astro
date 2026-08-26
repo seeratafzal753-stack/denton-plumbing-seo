@@ -1,0 +1,122 @@
+---
+import { siteConfig } from '../siteConfig';
+
+interface Props {
+  type?: 'LocalBusiness' | 'Service' | 'Article' | 'FAQPage';
+  title?: string;
+  description?: string;
+  url?: string;
+  faqs?: Array<{ question: string; answer: string }>;
+  breadcrumbs?: Array<{ name: string; item: string }>;
+  datePublished?: string;
+  dateModified?: string;
+}
+
+const {
+  type = 'LocalBusiness',
+  title = siteConfig.name,
+  description = siteConfig.tagline,
+  url = siteConfig.domain,
+  faqs = [],
+  breadcrumbs = [],
+  datePublished,
+  dateModified,
+} = Astro.props;
+
+// LocalBusiness / PlumbingService Schema
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "PlumbingService",
+  "@id": `${siteConfig.domain}/#organization`,
+  "name": siteConfig.name,
+  "url": siteConfig.domain,
+  "telephone": siteConfig.phoneRaw,
+  "email": siteConfig.email,
+  "priceRange": siteConfig.priceRange,
+  "image": `${siteConfig.domain}/images/denton-plumber-truck.jpg`,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": siteConfig.addressLocality,
+    "addressRegion": siteConfig.addressRegion,
+    "postalCode": siteConfig.postalCode,
+    "addressCountry": siteConfig.addressCountry
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": siteConfig.geo.latitude,
+    "longitude": siteConfig.geo.longitude
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Denton", "sameAs": "https://en.wikipedia.org/wiki/Denton,_Texas" },
+    ...siteConfig.serviceAreas.map(area => ({ "@type": "City", "name": area.name })),
+    ...siteConfig.zipCodes.map(zip => ({ "@type": "PostalCode", "postalCode": zip }))
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "187",
+    "bestRating": "5"
+  }
+};
+
+// FAQ Schema
+const faqSchema = faqs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+} : null;
+
+// Breadcrumbs Schema
+const breadcrumbSchema = breadcrumbs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((crumb, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": crumb.name,
+    "item": crumb.item.startsWith('http') ? crumb.item : `${siteConfig.domain}${crumb.item}`
+  }))
+} : null;
+
+// Article Schema (for blog posts)
+const articleSchema = type === 'Article' ? {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "description": description,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": url
+  },
+  "author": {
+    "@type": "Organization",
+    "name": siteConfig.name,
+    "url": siteConfig.domain
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": siteConfig.name,
+    "url": siteConfig.domain
+  },
+  "datePublished": datePublished,
+  "dateModified": dateModified || datePublished
+} : null;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+{faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+{breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+{articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}

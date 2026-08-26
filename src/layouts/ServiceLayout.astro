@@ -1,0 +1,190 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import LeadForm from '../components/LeadForm.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import FaqAccordion from '../components/FaqAccordion.astro';
+import CallToAction from '../components/CallToAction.astro';
+import { siteConfig } from '../siteConfig';
+
+interface Props {
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  shortDescription: string;
+  problemsSolved: string[];
+  features: string[];
+  faqs: Array<{ question: string; answer: string }>;
+  urgencyLevel?: 'Emergency' | 'Same-Day' | 'Standard';
+  cityName?: string;
+}
+
+const {
+  title,
+  metaTitle,
+  metaDescription,
+  shortDescription,
+  problemsSolved = [],
+  features = [],
+  faqs = [],
+  urgencyLevel = 'Same-Day',
+  cityName = 'Denton, TX',
+} = Astro.props;
+
+const crumbs = [
+  { name: 'Services', item: '/services/' },
+  { name: title, item: Astro.url.pathname },
+];
+---
+
+<BaseLayout
+  title={metaTitle}
+  description={metaDescription}
+  type="Service"
+  faqs={faqs}
+  breadcrumbs={crumbs}
+>
+  <Breadcrumbs crumbs={crumbs} />
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-b from-slate-900 via-brand-950 to-slate-900 text-white py-12 lg:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <div class="lg:col-span-7">
+        <div class="inline-flex items-center gap-2 bg-emergency-600/90 text-white text-xs uppercase font-bold tracking-widest px-3.5 py-1.5 rounded-full mb-4">
+          <span class="w-2 h-2 rounded-full bg-white animate-pulse-live"></span>
+          <span>{urgencyLevel} Plumbing Dispatch in {cityName}</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 text-white">
+          {title} <span class="text-brand-400">in {cityName}</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed">
+          {shortDescription}
+        </p>
+
+        <!-- Direct Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8">
+          <a
+            href={`tel:${siteConfig.phoneRaw}`}
+            class="flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-emergency-600 hover:bg-emergency-500 text-white font-black text-lg shadow-xl transition transform hover:-translate-y-0.5"
+          >
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            <span>Call {siteConfig.phone}</span>
+          </a>
+
+          <a
+            href="#estimate-form"
+            class="flex items-center justify-center px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-base backdrop-blur-sm border border-white/20 transition"
+          >
+            <span>Get Quick Estimate ↓</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-300">
+          <div class="flex items-center gap-1.5">
+            <span class="text-emerald-400">✓</span> 30–45 Min Arrival
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-emerald-400">✓</span> No Diagnostic Fee w/ Repair
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-emerald-400">✓</span> Texas Licensed Plumbers
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Lead Form -->
+      <div id="estimate-form" class="lg:col-span-5">
+        <LeadForm formTitle={`Book ${title}`} servicePreselect={title} />
+      </div>
+
+    </div>
+  </section>
+
+  <TrustBadges />
+
+  <!-- Problems Solved & Features Section -->
+  <section class="py-14 bg-slate-50 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+      
+      <!-- Problems Solved -->
+      <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+        <div class="inline-block p-2.5 bg-rose-50 text-rose-600 rounded-xl mb-4 font-bold text-sm">
+          ⚠️ Common Issues We Fix in Denton
+        </div>
+        <h2 class="text-2xl font-black text-slate-900 mb-4">
+          Signs You Need {title}
+        </h2>
+        <ul class="space-y-3">
+          {problemsSolved.map((prob) => (
+            <li class="flex items-start gap-3 text-slate-700">
+              <span class="text-rose-500 font-bold shrink-0 mt-0.5">✕</span>
+              <span>{prob}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Professional Solutions & Features -->
+      <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+        <div class="inline-block p-2.5 bg-emerald-50 text-emerald-600 rounded-xl mb-4 font-bold text-sm">
+          🛠️ Our Professional Service Solutions
+        </div>
+        <h2 class="text-2xl font-black text-slate-900 mb-4">
+          What’s Included in Our Service
+        </h2>
+        <ul class="space-y-3">
+          {features.map((feat) => (
+            <li class="flex items-start gap-3 text-slate-700">
+              <span class="text-emerald-600 font-bold shrink-0 mt-0.5">✓</span>
+              <span>{feat}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Dynamic Content Slot from Markdown -->
+  <section class="py-12 bg-white px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto prose prose-slate prose-lg max-w-none">
+      <slot />
+    </div>
+  </section>
+
+  <!-- Local Denton Coverage Silo Box -->
+  <section class="py-10 bg-slate-100 px-4 sm:px-6 border-y border-slate-200">
+    <div class="max-w-5xl mx-auto text-center">
+      <h3 class="text-xl font-bold text-slate-900 mb-2">
+        Providing {title} Throughout Denton County
+      </h3>
+      <p class="text-sm text-slate-600 mb-4">
+        Our mobile plumbing response trucks are stationed near I-35E, I-35W, and Loop 288 for rapid dispatch to:
+      </p>
+      <div class="flex flex-wrap justify-center gap-2 text-xs">
+        {siteConfig.neighborhoods.map((n) => (
+          <span class="bg-white border border-slate-300 text-slate-700 px-3 py-1 rounded-full font-medium shadow-sm">
+            📍 {n}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <FaqAccordion
+    faqs={faqs}
+    title={`Frequently Asked Questions: ${title} in Denton`}
+  />
+
+  <!-- Final Emergency Call CTA -->
+  <CallToAction
+    heading={`Need Immediate ${title} in Denton, TX?`}
+    subheading={`Call our 24/7 Denton dispatch desk right now. A licensed master plumber can be at your door in under 45 minutes.`}
+  />
+</BaseLayout>

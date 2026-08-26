@@ -1,0 +1,33 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+interface Props {
+  service: CollectionEntry<'services'>;
+}
+
+const { service } = Astro.props;
+const { Content } = await service.render();
+---
+
+<ServiceLayout
+  title={service.data.title}
+  metaTitle={service.data.metaTitle}
+  metaDescription={service.data.metaDescription}
+  shortDescription={service.data.shortDescription}
+  problemsSolved={service.data.problemsSolved}
+  features={service.data.features}
+  faqs={service.data.faqs}
+  urgencyLevel={service.data.urgencyLevel}
+  cityName="Denton, TX"
+>
+  <Content />
+</ServiceLayout>

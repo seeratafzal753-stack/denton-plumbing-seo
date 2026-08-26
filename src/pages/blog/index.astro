@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const crumbs = [
+  { name: 'Plumbing Guides & Articles', item: '/blog/' },
+];
+---
+
+<BaseLayout
+  title="Denton Plumbing Advice & Local Guides | Denton Plumbing Pros"
+  description="Helpful guides, maintenance tips, and local insights on water heaters, slab leaks, hard water, and home plumbing in Denton County, TX."
+  breadcrumbs={crumbs}
+>
+  <Breadcrumbs crumbs={crumbs} />
+
+  <section class="py-12 lg:py-16 bg-slate-900 text-white px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="text-xs uppercase font-bold tracking-widest text-brand-400">Local Knowledge Base</span>
+      <h1 class="text-3xl sm:text-5xl font-black mt-2 mb-4">
+        Denton Plumbing Guides & Articles
+      </h1>
+      <p class="text-slate-300 text-base sm:text-lg">
+        Expert plumbing tips, preventive maintenance guides, and local North Texas advice written and reviewed by licensed plumbers.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <article class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-brand-500 hover:shadow-md transition group">
+            <div class="p-7">
+              <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+                <span class="bg-brand-50 text-brand-700 font-bold px-2.5 py-1 rounded-full uppercase">
+                  {post.data.category}
+                </span>
+                <span>
+                  {new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(post.data.pubDate)}
+                </span>
+              </div>
+              <h2 class="text-xl font-bold text-slate-900 group-hover:text-brand-600 transition mb-3 leading-snug">
+                <a href={`/blog/${post.slug}/`}>
+                  {post.data.title}
+                </a>
+              </h2>
+              <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                {post.data.description}
+              </p>
+            </div>
+
+            <div class="px-7 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span class="text-slate-500">By {post.data.author}</span>
+              <a href={`/blog/${post.slug}/`} class="font-bold text-brand-600 group-hover:translate-x-1 transition transform flex items-center gap-1">
+                <span>Read Guide</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CallToAction />
+</BaseLayout>

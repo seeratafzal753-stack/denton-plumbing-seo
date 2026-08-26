@@ -1,0 +1,110 @@
+---
+import { siteConfig } from '../siteConfig';
+
+interface Props {
+  formTitle?: string;
+  servicePreselect?: string;
+}
+
+const {
+  formTitle = "Request Same-Day Plumbing Service",
+  servicePreselect = "Water Heater Repair"
+} = Astro.props;
+---
+
+<div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-8">
+  <div class="mb-6 text-center sm:text-left">
+    <div class="inline-flex items-center gap-1.5 bg-amber-100 text-amber-900 text-xs font-bold px-2.5 py-1 rounded-full mb-2">
+      <span>🔥 Fast Callback in < 5 Mins</span>
+    </div>
+    <h3 class="text-xl sm:text-2xl font-black text-slate-900">{formTitle}</h3>
+    <p class="text-xs sm:text-sm text-slate-500 mt-1">
+      Fill out below or call immediately for emergency dispatch: 
+      <a href={`tel:${siteConfig.phoneRaw}`} class="font-bold text-brand-600 underline">
+        {siteConfig.phone}
+      </a>
+    </p>
+  </div>
+
+  <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Our Denton dispatch team will call you within 5 minutes.');">
+    <div>
+      <label for="name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Your Full Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        placeholder="e.g. John Miller"
+        class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm outline-none transition"
+      />
+    </div>
+
+    <div>
+      <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Phone Number (Required for Dispatch)</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        required
+        placeholder="(940) 555-0199"
+        class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm outline-none transition"
+      />
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div>
+        <label for="service" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Service Needed</label>
+        <select
+          id="service"
+          name="service"
+          class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm outline-none transition bg-white"
+        >
+          <option value="Water Heater Repair" selected={servicePreselect === "Water Heater Repair"}>Water Heater Repair</option>
+          <option value="Tankless Water Heater" selected={servicePreselect === "Tankless Water Heater"}>Tankless Water Heater</option>
+          <option value="Emergency Plumbing" selected={servicePreselect === "Emergency Plumbing"}>Emergency Plumbing</option>
+          <option value="Drain Cleaning / Clog" selected={servicePreselect === "Drain Cleaning"}>Drain Cleaning / Clog</option>
+          <option value="Slab Leak Detection" selected={servicePreselect === "Slab Leak Detection"}>Slab Leak Detection</option>
+          <option value="Sewer Line Repair" selected={servicePreselect === "Sewer Line Repair"}>Sewer Line Repair</option>
+          <option value="Other Service">Other Plumbing Repair</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="zip" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Denton Area ZIP Code</label>
+        <input
+          type="text"
+          id="zip"
+          name="zip"
+          placeholder="e.g. 76201"
+          class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm outline-none transition"
+        />
+      </div>
+    </div>
+
+    <div>
+      <label for="details" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Brief Description of Problem</label>
+      <textarea
+        id="details"
+        name="details"
+        rows="2"
+        placeholder="e.g. Water leaking from base of 50-gal heater, no hot water in bathrooms..."
+        class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm outline-none transition"
+      ></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="w-full py-4 px-6 rounded-xl bg-emergency-600 hover:bg-emergency-700 text-white font-black text-base shadow-lg transition transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 cursor-pointer"
+    >
+      <span>⚡ REQUEST INSTANT CALLBACK & ESTIMATE</span>
+    </button>
+
+    <div class="flex items-center justify-center gap-3 text-xs text-slate-500 pt-2">
+      <span>🔒 100% Privacy</span>
+      <span>•</span>
+      <span>⚡ No Spam</span>
+      <span>•</span>
+      <span>🛠️ Free Estimate with Repair</span>
+    </div>
+  </form>
+</div>

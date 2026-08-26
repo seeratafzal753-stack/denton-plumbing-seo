@@ -1,0 +1,34 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import LocationLayout from '../../layouts/LocationLayout.astro';
+
+export async function getStaticPaths() {
+  const locations = await getCollection('locations');
+  return locations.map((loc) => ({
+    params: { slug: loc.slug },
+    props: { locationEntry: loc },
+  }));
+}
+
+interface Props {
+  locationEntry: CollectionEntry<'locations'>;
+}
+
+const { locationEntry } = Astro.props;
+const { Content } = await locationEntry.render();
+---
+
+<LocationLayout
+  cityName={locationEntry.data.cityName}
+  state={locationEntry.data.state}
+  county={locationEntry.data.county}
+  postalCodes={locationEntry.data.postalCodes}
+  neighborhoods={locationEntry.data.neighborhoods}
+  metaTitle={locationEntry.data.metaTitle}
+  metaDescription={locationEntry.data.metaDescription}
+  localLandmarks={locationEntry.data.localLandmarks}
+  localPlumbingChallenges={locationEntry.data.localPlumbingChallenges}
+  faqs={locationEntry.data.faqs}
+>
+  <Content />
+</LocationLayout>

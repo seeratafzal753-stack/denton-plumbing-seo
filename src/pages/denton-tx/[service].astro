@@ -1,0 +1,38 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((s) => ({
+    params: { service: s.slug },
+    props: { serviceEntry: s },
+  }));
+}
+
+interface Props {
+  serviceEntry: CollectionEntry<'services'>;
+}
+
+const { serviceEntry } = Astro.props;
+const { Content } = await serviceEntry.render();
+
+// Custom hyper-local Denton metadata
+const dentonTitle = `${serviceEntry.data.title} in Denton, TX`;
+const dentonMetaTitle = `${serviceEntry.data.title} Denton TX | 24/7 Fast Local Plumber`;
+const dentonMetaDesc = `Fast same-day ${serviceEntry.data.title.toLowerCase()} in Denton, TX. Licensed plumbers, upfront pricing, and 30-45 min dispatch across all Denton ZIPs. Call (940) 310-4499.`;
+---
+
+<ServiceLayout
+  title={serviceEntry.data.title}
+  metaTitle={dentonMetaTitle}
+  metaDescription={dentonMetaDesc}
+  shortDescription={serviceEntry.data.shortDescription}
+  problemsSolved={serviceEntry.data.problemsSolved}
+  features={serviceEntry.data.features}
+  faqs={serviceEntry.data.faqs}
+  urgencyLevel={serviceEntry.data.urgencyLevel}
+  cityName="Denton, TX"
+>
+  <Content />
+</ServiceLayout>

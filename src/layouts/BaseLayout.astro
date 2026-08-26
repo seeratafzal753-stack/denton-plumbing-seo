@@ -1,0 +1,93 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import StickyMobileCall from '../components/StickyMobileCall.astro';
+import SchemaJsonLd from '../components/SchemaJsonLd.astro';
+import { siteConfig } from '../siteConfig';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  type?: 'LocalBusiness' | 'Service' | 'Article' | 'FAQPage';
+  faqs?: Array<{ question: string; answer: string }>;
+  breadcrumbs?: Array<{ name: string; item: string }>;
+  publishDate?: string;
+}
+
+const {
+  title = `${siteConfig.name} | 24/7 Plumbers in Denton, TX`,
+  description = siteConfig.tagline,
+  canonicalUrl = Astro.url.href,
+  ogImage = `${siteConfig.domain}/images/og-plumber-denton.jpg`,
+  type = 'LocalBusiness',
+  faqs = [],
+  breadcrumbs = [],
+  publishDate,
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+
+    <!-- Local SEO Geo Meta Tags -->
+    <meta name="geo.region" content="US-TX" />
+    <meta name="geo.placename" content="Denton" />
+    <meta name="geo.position" content={`${siteConfig.geo.latitude};${siteConfig.geo.longitude}`} />
+    <meta name="ICBM" content={`${siteConfig.geo.latitude}, ${siteConfig.geo.longitude}`} />
+
+    <!-- Favicon & Manifest -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Schema.org JSON-LD Structured Data -->
+    <SchemaJsonLd
+      type={type}
+      title={title}
+      description={description}
+      url={canonicalUrl}
+      faqs={faqs}
+      breadcrumbs={breadcrumbs}
+      datePublished={publishDate}
+    />
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <Header currentPath={currentPath} />
+    
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <Footer />
+    <StickyMobileCall />
+  </body>
+</html>
