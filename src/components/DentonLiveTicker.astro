@@ -1,0 +1,36 @@
+---
+import { siteConfig } from '../siteConfig';
+---
+
+<div class="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white border-y border-slate-800 py-3 px-4 overflow-hidden shadow-inner">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs sm:text-sm">
+    
+    <!-- Left Live Indicator -->
+    <div class="flex items-center gap-2.5 shrink-0">
+      <span class="relative flex h-3 w-3">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+      </span>
+      <span class="font-black tracking-wide uppercase text-emerald-400">Live Denton Dispatch:</span>
+      <span class="text-slate-300">3 Local Service Trucks on Duty in Denton County</span>
+    </div>
+
+    <!-- Middle Fast Arrival Signal -->
+    <div class="hidden lg:flex items-center gap-4 text-slate-400 text-xs">
+      <span>📍 Staging: <strong>I-35E & Loop 288 Hub</strong></span>
+      <span>•</span>
+      <span>⏱️ Current Avg. Response: <strong class="text-white font-bold">28–35 Mins</strong></span>
+      <span>•</span>
+      <span>⭐ <strong class="text-amber-400">4.9/5</strong> (187 Local Homeowners)</span>
+    </div>
+
+    <!-- Right Quick Call -->
+    <div class="flex items-center gap-2">
+      <span class="text-slate-400 text-xs hidden sm:inline">Emergency Water Shutoff Assistance:</span>
+      <a href={`tel:${siteConfig.phoneRaw}`} class="font-black text-amber-400 hover:text-amber-300 underline decoration-amber-400/50 flex items-center gap-1">
+        📞 {siteConfig.phone}
+      </a>
+    </div>
+
+  </div>
+</div>

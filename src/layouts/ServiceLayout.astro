@@ -1,6 +1,9 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import DentonLiveTicker from '../components/DentonLiveTicker.astro';
+import RecentDispatches from '../components/RecentDispatches.astro';
+import LocalWaterSoilWidget from '../components/LocalWaterSoilWidget.astro';
 import LeadForm from '../components/LeadForm.astro';
 import TrustBadges from '../components/TrustBadges.astro';
 import FaqAccordion from '../components/FaqAccordion.astro';
@@ -44,6 +47,7 @@ const crumbs = [
   faqs={faqs}
   breadcrumbs={crumbs}
 >
+  <DentonLiveTicker />
   <Breadcrumbs crumbs={crumbs} />
 
   <!-- Hero Section -->
@@ -51,7 +55,7 @@ const crumbs = [
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
       
       <div class="lg:col-span-7">
-        <div class="inline-flex items-center gap-2 bg-emergency-600/90 text-white text-xs uppercase font-bold tracking-widest px-3.5 py-1.5 rounded-full mb-4">
+        <div class="inline-flex items-center gap-2 bg-emergency-600/90 text-white text-xs uppercase font-black tracking-widest px-3.5 py-1.5 rounded-full mb-4">
           <span class="w-2 h-2 rounded-full bg-white animate-pulse-live"></span>
           <span>{urgencyLevel} Plumbing Dispatch in {cityName}</span>
         </div>
@@ -86,13 +90,13 @@ const crumbs = [
 
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-300">
           <div class="flex items-center gap-1.5">
-            <span class="text-emerald-400">✓</span> 30–45 Min Arrival
+            <span class="text-emerald-400 font-bold">✓</span> 28–35 Min Arrival
           </div>
           <div class="flex items-center gap-1.5">
-            <span class="text-emerald-400">✓</span> No Diagnostic Fee w/ Repair
+            <span class="text-emerald-400 font-bold">✓</span> No Diagnostic Fee w/ Repair
           </div>
           <div class="flex items-center gap-1.5">
-            <span class="text-emerald-400">✓</span> Texas Licensed Plumbers
+            <span class="text-emerald-400 font-bold">✓</span> TX Licensed RMP #M-42918
           </div>
         </div>
       </div>
@@ -150,12 +154,18 @@ const crumbs = [
     </div>
   </section>
 
-  <!-- Dynamic Content Slot from Markdown -->
+  <!-- Markdown Slot for In-Depth Guides -->
   <section class="py-12 bg-white px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto prose prose-slate prose-lg max-w-none">
       <slot />
     </div>
   </section>
+
+  <!-- Local Soil & Hard Water Diagnostics -->
+  <LocalWaterSoilWidget />
+
+  <!-- Recent Dispatches Feed -->
+  <RecentDispatches />
 
   <!-- Local Denton Coverage Silo Box -->
   <section class="py-10 bg-slate-100 px-4 sm:px-6 border-y border-slate-200">
@@ -164,7 +174,7 @@ const crumbs = [
         Providing {title} Throughout Denton County
       </h3>
       <p class="text-sm text-slate-600 mb-4">
-        Our mobile plumbing response trucks are stationed near I-35E, I-35W, and Loop 288 for rapid dispatch to:
+        Our mobile response trucks are stationed near I-35E, I-35W, and Loop 288 for rapid dispatch to:
       </p>
       <div class="flex flex-wrap justify-center gap-2 text-xs">
         {siteConfig.neighborhoods.map((n) => (
@@ -185,6 +195,6 @@ const crumbs = [
   <!-- Final Emergency Call CTA -->
   <CallToAction
     heading={`Need Immediate ${title} in Denton, TX?`}
-    subheading={`Call our 24/7 Denton dispatch desk right now. A licensed master plumber can be at your door in under 45 minutes.`}
+    subheading={`Call our 24/7 Denton dispatch desk right now. A licensed master plumber can be at your door in under 35 minutes.`}
   />
 </BaseLayout>

@@ -1,0 +1,117 @@
+---
+import { siteConfig } from '../siteConfig';
+
+const zones = [
+  {
+    name: "Downtown Square & Historic Denton",
+    zip: "76201",
+    eta: "15–25 Mins",
+    landmarks: "Denton County Courthouse-on-the-Square, Industrial St, E Hickory",
+    commonIssue: "Aging cast iron sewer lines & galvanized pipe retrofits",
+  },
+  {
+    name: "Idiots Hill & Mack Park",
+    zip: "76209",
+    eta: "20–30 Mins",
+    landmarks: "Locust St Corridor, Mack Park, Sherman Dr",
+    commonIssue: "Tree root invasions in clay sewer pipes & water heater age",
+  },
+  {
+    name: "Southridge & Teasley Area",
+    zip: "76205",
+    eta: "20–35 Mins",
+    landmarks: "Teasley Ln, Ryan High School area, Lillian Miller Pkwy",
+    commonIssue: "Expansive clay soil sub-slab pinhole leaks & hard water scale",
+  },
+  {
+    name: "Rayzor Ranch & West University",
+    zip: "76207",
+    eta: "15–25 Mins",
+    landmarks: "Rayzor Ranch Marketplace, Bonnie Brae St, US-380 corridor",
+    commonIssue: "High water main pressure & tankless water heater maintenance",
+  },
+  {
+    name: "Robson Ranch & Cross Timbers",
+    zip: "76207",
+    eta: "25–40 Mins",
+    landmarks: "Robson Ranch Clubhouse, Ed Robson Blvd, Denton West boundary",
+    commonIssue: "Whole-home water softener descaling & recirculating pump service",
+  },
+  {
+    name: "Forrestridge, Cooper Creek & Loop 288",
+    zip: "76208",
+    eta: "20–30 Mins",
+    landmarks: "Loop 288 Commercial Corridor, Cooper Creek Rd, Mingo Rd",
+    commonIssue: "Slab foundation plumbing shifts & hydro jetting commercial/residential drains",
+  },
+  {
+    name: "Corinth & Lake Dallas Border Zone",
+    zip: "76210",
+    eta: "20–30 Mins",
+    landmarks: "Oakmont Country Club, Swisher Rd, FM 2181",
+    commonIssue: "Lake-area water table pressure & thermal expansion tank replacements",
+  },
+  {
+    name: "Argyle Corridor & Northlake",
+    zip: "76226",
+    eta: "25–35 Mins",
+    landmarks: "US-377, Country Lakes, Crawford Rd",
+    commonIssue: "High-capacity tankless loops & filtration for large custom residences",
+  },
+];
+---
+
+<section class="py-16 bg-slate-100 px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+  <div class="max-w-7xl mx-auto">
+    
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-xs font-bold uppercase tracking-widest text-brand-600">Hyper-Local Coverage Grid</span>
+      <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-1">
+        Find Your Denton Neighborhood & Instant ETA
+      </h2>
+      <p class="text-sm sm:text-base text-slate-600 mt-2">
+        Our mobile emergency units are positioned across key Denton County transit splits (I-35E, I-35W, and Loop 288) for rapid local arrival.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {zones.map((zone) => (
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:border-brand-500 hover:shadow-md transition flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold px-2.5 py-1 rounded bg-slate-900 text-white">
+                ZIP {zone.zip}
+              </span>
+              <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full flex items-center gap-1">
+                ⚡ ETA: {zone.eta}
+              </span>
+            </div>
+
+            <h3 class="font-black text-slate-900 text-base group-hover:text-brand-600 transition mb-2">
+              {zone.name}
+            </h3>
+
+            <p class="text-xs text-slate-500 mb-3 leading-relaxed">
+              <strong class="text-slate-700">Landmarks:</strong> {zone.landmarks}
+            </p>
+
+            <div class="p-2.5 rounded-lg bg-amber-50/70 border border-amber-100 text-xs text-amber-900 mb-4">
+              <strong>Frequent Repair:</strong> {zone.commonIssue}
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+            <a
+              href={`tel:${siteConfig.phoneRaw}`}
+              class="text-xs font-black text-emergency-600 hover:underline flex items-center gap-1"
+            >
+              <span>📞 Dispatch to {zone.zip}</span>
+            </a>
+            <span class="text-slate-400 text-xs">24/7 Live</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

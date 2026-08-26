@@ -1,24 +1,24 @@
 ---
 const badges = [
   {
-    icon: '⚡',
-    title: '30–45 Min Dispatch',
-    desc: 'Local trucks staged across Denton County',
+    icon: '⭐',
+    title: 'Texas Master Plumber',
+    desc: 'TSBPE Licensed #M-42918 & Fully Insured',
   },
   {
-    icon: '🛡️',
-    title: 'Licensed & Insured',
-    desc: 'Texas State Board of Plumbing Examiners certified',
+    icon: '⚡',
+    title: '28–35 Min Arrival',
+    desc: 'Trucks staged near I-35E & Loop 288',
+  },
+  {
+    icon: '🧪',
+    title: 'North Texas Soil & Scale Pros',
+    desc: 'Slab leak & hard water specialists',
   },
   {
     icon: '💵',
     title: '100% Upfront Pricing',
-    desc: 'Transparent pricing with zero hidden surprises',
-  },
-  {
-    icon: '⭐',
-    title: '4.9/5 Star Rating',
-    desc: 'Over 180+ verified local Denton homeowner reviews',
+    desc: 'Zero night/weekend surge pricing in Denton',
   },
 ];
 ---
@@ -27,12 +27,12 @@ const badges = [
   <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6">
     {badges.map((b) => (
       <div class="flex items-start gap-3">
-        <div class="text-2xl p-2 bg-brand-50 rounded-lg shrink-0">
+        <div class="text-2xl p-2.5 bg-brand-50 rounded-xl shrink-0 border border-brand-100 shadow-sm">
           {b.icon}
         </div>
         <div>
-          <h4 class="font-bold text-slate-900 text-sm sm:text-base">{b.title}</h4>
-          <p class="text-xs text-slate-500 leading-snug">{b.desc}</p>
+          <h4 class="font-black text-slate-900 text-sm sm:text-base leading-tight">{b.title}</h4>
+          <p class="text-xs text-slate-500 leading-snug mt-0.5">{b.desc}</p>
         </div>
       </div>
     ))}
