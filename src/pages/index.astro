@@ -1,144 +1,281 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import TruckHeroGraphic from '../components/TruckHeroGraphic.astro';
-import MascotStorySection from '../components/MascotStorySection.astro';
-import ServiceIconsGrid from '../components/ServiceIconsGrid.astro';
-import TechnicianVideoSection from '../components/TechnicianVideoSection.astro';
-import InteractiveHouseBlueprint from '../components/InteractiveHouseBlueprint.astro';
-import FleetSpeedSection from '../components/FleetSpeedSection.astro';
-import ReviewBannerRed from '../components/ReviewBannerRed.astro';
+import PillButton from '../components/PillButton.astro';
+import ReviewCardsClean from '../components/ReviewCardsClean.astro';
+import ThreeStepProcess from '../components/ThreeStepProcess.astro';
 import LocalWaterSoilWidget from '../components/LocalWaterSoilWidget.astro';
 import NeighborhoodExplorer from '../components/NeighborhoodExplorer.astro';
-import LeadForm from '../components/LeadForm.astro';
 import FaqAccordion from '../components/FaqAccordion.astro';
+import LeadForm from '../components/LeadForm.astro';
 import { siteConfig } from '../siteConfig';
 
 const faqs = [
   {
-    question: "How fast can an emergency plumber arrive at my Denton home?",
-    answer: "Our technicians are stationed locally throughout Denton County near I-35E, I-35W, and Loop 288. In emergency situations, our average response time is between 28 to 35 minutes."
+    question: "What plumbing services do you provide in Denton, TX?",
+    answer: "We provide comprehensive residential and commercial plumbing services across Denton County, including water heater repair and replacement (tank and tankless), non-invasive electronic slab leak detection, emergency drain cleaning with 4000 PSI hydro-jetting, whole-house PEX repiping, sewer line video inspections, and 24/7 emergency water shutoff."
   },
   {
-    question: "Why do water heaters fail frequently in Denton, TX?",
-    answer: "Denton's municipal water supply (sourced from Lake Lewisville & Lake Ray Roberts) contains high levels of calcium and magnesium (8.8 GPG hardness rating). Without regular annual flushing, these minerals settle at the bottom of your water heater, causing bottom tank corrosion, element burnout, and ruptures."
+    question: "How quickly can a licensed technician arrive at my home?",
+    answer: "Our mobile response trucks are staged locally near I-35E, I-35W, and Loop 288. For emergency calls in Denton ZIP codes (76201–76226), our average arrival time is 28 to 35 minutes."
   },
   {
-    question: "What causes slab leaks in North Texas homes?",
-    answer: "Denton is built on expansive black clay soil with a high plasticity index. During hot Texas summers and sudden heavy rains, the soil expands and contracts dramatically, putting immense pressure on concrete foundations and cracking sub-slab copper and PVC water lines."
+    question: "Why is water heater failure so common in Denton?",
+    answer: "Denton municipal water (sourced from Lake Lewisville and Lake Ray Roberts) contains high mineral hardness (8.8 GPG). Without regular annual flushing, calcium and magnesium sediment crusts at the bottom of water heaters, leading to lower efficiency, loud popping noises, and premature tank corrosion."
   },
   {
-    question: "Do you offer upfront pricing before work begins?",
-    answer: "Yes, 100%. Our Texas licensed master plumbers provide a comprehensive inspection and a transparent, upfront written quote before touching a single tool. You will never encounter hidden fees or unexpected overtime charges."
+    question: "Do you provide upfront quotes before starting work?",
+    answer: "Yes, 100%. Our Texas Master Plumber performs a complete diagnostic and provides a transparent, flat-rate written quote before touching any tools. You will never see hidden trip charges or unexpected overtime fees."
   },
   {
-    question: "Which areas and ZIP codes do you serve in Denton County?",
-    answer: "We serve all Denton ZIP codes including 76201, 76205, 76207, 76208, 76209, 76210, and 76226, plus surrounding towns like Corinth, Argyle, Lake Dallas, Sanger, and Little Elm."
+    question: "How do shifting clay soils cause slab leaks in North Texas?",
+    answer: "Denton is situated over expansive black clay soil with a high plasticity index (PI 42+). During hot Texas summers and heavy spring rains, the soil expands and contracts dramatically, shifting the concrete slab and cracking rigid underground copper pipes."
   }
 ];
 ---
 
 <BaseLayout
-  title="Plumber Denton TX | 24/7 Emergency Plumbing & Water Heater Repair"
-  description="Your trusted local expert plumber in Denton, TX & surrounding areas. 24/7 rapid dispatch for water heaters, clogged drains, slab leaks & emergency plumbing. Call (940) 310-4499."
+  title="Plumber Denton TX | Fast Water Heater Repair & Emergency Plumbing"
+  description="Your trusted local plumbing expert in Denton, TX. 24/7 rapid dispatch for water heater replacement, drain clogs, slab leaks & whole-house plumbing. Call (940) 310-4499."
   faqs={faqs}
 >
-  
-  <!-- 1. HERO SECTION (Dark Cinematic Background with Truck Graphic & High-Impact Pitch) -->
-  <section class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white py-12 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-slate-800">
-    
-    <!-- Background Texture -->
-    <div class="absolute inset-0 bg-[radial-gradient(#1e3a8a_1px,transparent_1px)] [background-size:24px_24px] opacity-20 pointer-events-none"></div>
 
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+  <!-- Main Container -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    
+    <!-- Top Breadcrumb / Category Link -->
+    <div class="text-xs text-slate-500 mb-6 font-medium">
+      <a href="/" class="text-brand-700 hover:underline">Home</a> &gt; 
+      <a href="/services/" class="text-brand-700 hover:underline">Services</a> &gt; 
+      <span>Denton Plumbing &amp; Water Heaters</span>
+    </div>
+
+    <!-- 1. HERO BLUE PILL BANNER MATCHING REFERENCE -->
+    <div class="mb-12">
+      <div class="bg-brand-800 text-white py-5 px-6 sm:px-10 rounded-2xl shadow-md flex items-center justify-between">
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight font-serif">
+          Expert Plumbing &amp; Water Heater Services Near Denton, TX
+        </h1>
+      </div>
+    </div>
+
+    <!-- 2. EDITORIAL SECTION 1: TWO COLUMN OVERVIEW -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
       
-      <!-- Left Hero Pitch -->
-      <div class="lg:col-span-6 text-center lg:text-left">
+      <!-- Left Content -->
+      <div class="lg:col-span-7 space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
+        <p class="font-bold text-slate-900 text-base sm:text-lg">
+          Looking for a dependable, master-licensed plumber in Denton County?
+        </p>
+        <p>
+          At <strong>Denton Plumbing Pros</strong>, we provide high-precision plumbing solutions tailored specifically to the mineral-dense municipal water and expansive black clay soils of North Texas. Whether you are dealing with a sudden late-night water heater rupture, a recurring sewer backup, or a hidden foundation slab leak, our team is equipped to restore your home's plumbing systems quickly and flawlessly.
+        </p>
         
-        <!-- Red/White Pill Badge -->
-        <div class="inline-flex items-center gap-2 bg-emergency-600 text-white text-xs uppercase font-black tracking-wider px-3.5 py-1.5 rounded-full mb-4 shadow-lg">
-          <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-          <span>YOUR LOCAL EXPERT PLUMBER</span>
+        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl my-4">
+          <span class="block font-bold text-slate-900 text-sm mb-2">Our Core Residential Services Include:</span>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-center gap-2">
+              <span class="text-brand-700 font-bold">✓</span> Tank &amp; Tankless Water Heaters
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-brand-700 font-bold">✓</span> Non-Invasive Slab Leak Tracing
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-brand-700 font-bold">✓</span> 4000 PSI Hydro-Jet Drain Cleaning
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="text-brand-700 font-bold">✓</span> 24/7 Emergency Pipe Repairs
+            </li>
+          </ul>
         </div>
 
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-4 text-white uppercase">
-          IN DENTON & <br />
-          <span class="text-emergency-500">SURROUNDING AREA</span>
-        </h1>
-
-        <p class="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
-          Fast, licensed, and transparent plumbing solutions engineered for North Texas homes. From emergency pipe bursts to tankless water heaters and slab leak repairs.
+        <p>
+          All work is performed by certified technicians regulated by the <strong>Texas State Board of Plumbing Examiners (Lic #M-42918)</strong>, backed by our 100% upfront pricing guarantee and lifetime workmanship warranties.
         </p>
 
-        <!-- Red CTA Button Matching Reference -->
-        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-          <a
-            href={`tel:${siteConfig.phoneRaw}`}
-            class="w-full sm:w-auto px-8 py-4 rounded-full bg-emergency-600 hover:bg-emergency-700 text-white font-black text-base uppercase tracking-wider shadow-2xl transition transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2"
-          >
-            <span>📞</span>
-            <span>SCHEDULE A FAST DISPATCH</span>
-          </a>
-
-          <a
-            href="#estimate-form"
-            class="w-full sm:w-auto px-6 py-4 rounded-full bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm uppercase tracking-wider transition text-center"
-          >
-            Get Free Quote ↓
-          </a>
+        <div class="pt-2">
+          <PillButton text="Contact Us Today" href={`tel:${siteConfig.phoneRaw}`} />
         </div>
-
-        <div class="mt-8 pt-6 border-t border-slate-800/80 flex items-center justify-center lg:justify-start gap-6 text-xs text-slate-400">
-          <span>✓ 28 Min Avg. Arrival</span>
-          <span>•</span>
-          <span>✓ 100% Upfront Pricing</span>
-          <span>•</span>
-          <span>✓ Master Plumber #M-42918</span>
-        </div>
-
       </div>
 
-      <!-- Right Service Van Graphic -->
-      <div class="lg:col-span-6">
-        <TruckHeroGraphic />
+      <!-- Right Graphic / Image Showcase Card -->
+      <div class="lg:col-span-5">
+        <div class="bg-slate-100 border border-slate-200 rounded-2xl p-6 shadow-sm overflow-hidden text-center">
+          <div class="aspect-[4/3] bg-gradient-to-br from-slate-200 via-slate-100 to-slate-300 rounded-xl flex flex-col items-center justify-center p-6 border border-slate-200 relative">
+            <div class="text-5xl mb-3">🛠️💧</div>
+            <span class="font-extrabold text-slate-900 text-lg font-serif">Denton Master Plumbers</span>
+            <span class="text-xs text-slate-500 mt-1">24/7 Dispatch • 28-Minute Average Arrival</span>
+            <div class="mt-4 px-3 py-1 bg-white rounded-full border border-slate-300 text-[11px] font-bold text-brand-800 shadow-sm">
+              TSBPE Licensed &amp; Insured
+            </div>
+          </div>
+          <span class="block text-xs text-slate-500 mt-3 italic">
+            Engineered for Denton County Water &amp; Soil Conditions
+          </span>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- 3. "WHAT YOUR NEIGHBORS ARE SAYING" (Clean 2-Column Social Proof) -->
+  <ReviewCardsClean />
+
+  <!-- 4. EDITORIAL SECTION 2: ALTERNATING FEATURE BLOCK (Love Your Water Again) -->
+  <section class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Graphic Card -->
+      <div class="lg:col-span-5 order-2 lg:order-1">
+        <div class="bg-slate-100 border border-slate-200 rounded-2xl p-6 text-center shadow-sm">
+          <div class="aspect-square bg-gradient-to-tr from-brand-900 via-brand-800 to-slate-900 rounded-xl flex flex-col items-center justify-center p-6 text-white relative">
+            <div class="text-6xl mb-3">🔥</div>
+            <span class="font-extrabold text-white text-xl font-serif">Clean, Hot Water On Demand</span>
+            <span class="text-xs text-slate-300 mt-2 max-w-xs">High-efficiency tank &amp; tankless systems installed with full code compliance.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Editorial -->
+      <div class="lg:col-span-7 order-1 lg:order-2 space-y-4">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-serif tracking-tight">
+          Love Your Plumbing &amp; Water Again
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          From hard water mineral buildup that damages appliances to sluggish bathroom drains and unexpected cold showers, plumbing breakdowns disrupt your household routine. Our specialized Denton plumbers restore optimal pressure, endless hot water, and clear drains with minimal intrusion to your home.
+        </p>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li class="flex items-center gap-2">
+            <span class="text-brand-700 font-bold">•</span> Annual water heater descaling &amp; anode protection
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-brand-700 font-bold">•</span> High-volume tankless conversions with 40% lower energy bills
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-brand-700 font-bold">•</span> Quiet, leak-free PEX water supply lines
+          </li>
+        </ul>
+        <div class="pt-4">
+          <PillButton text="Contact Us Today" href={`tel:${siteConfig.phoneRaw}`} />
+        </div>
       </div>
 
     </div>
   </section>
 
-  <!-- 2. BRAND STORY & MASCOT SECTION (Pride in Plumbing Solutions) -->
-  <MascotStorySection />
+  <!-- 5. 3-STEP PROCESS SECTION (With You, Every Step of the Way) -->
+  <ThreeStepProcess />
 
-  <!-- 3. 10-ICON SERVICE MATRIX GRID (Professional Plumbing Services in Denton) -->
-  <ServiceIconsGrid />
+  <!-- 6. EDITORIAL SECTION 3: UNMATCHED WARRANTIES -->
+  <section class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Editorial -->
+      <div class="lg:col-span-7 space-y-4">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-serif tracking-tight">
+          Unmatched Workmanship &amp; Warranties
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          We believe in doing the job right the first time. Every replacement water heater, repiping project, and sewer line relining is installed using premium commercial-grade components that exceed Texas plumbing codes.
+        </p>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Rest easy knowing your investment is protected by our ironclad satisfaction guarantees and long-term manufacturer warranties.
+        </p>
+        <div class="pt-4">
+          <PillButton text="Contact Us Today" href={`tel:${siteConfig.phoneRaw}`} />
+        </div>
+      </div>
 
-  <!-- 4. VIDEO / TECHNICIAN SHOWCASE SECTION (Meet Your Local Team) -->
-  <TechnicianVideoSection />
+      <!-- Right Graphic -->
+      <div class="lg:col-span-5">
+        <div class="bg-slate-100 border border-slate-200 rounded-2xl p-6 text-center shadow-sm">
+          <div class="aspect-[4/3] bg-white rounded-xl flex flex-col items-center justify-center p-6 border border-slate-200">
+            <div class="text-5xl mb-2">🛡️</div>
+            <span class="font-extrabold text-slate-900 text-lg font-serif">100% Satisfaction Warranty</span>
+            <span class="text-xs text-slate-500 mt-1">Written guarantee on all parts &amp; labor</span>
+          </div>
+        </div>
+      </div>
 
-  <!-- 5. INTERACTIVE 3D HOUSE BLUEPRINT / FLOORPLAN (Where Are Your Plumbing Problems?) -->
-  <InteractiveHouseBlueprint />
+    </div>
+  </section>
 
-  <!-- 6. FLEET SPEED / RESPONSE SECTION (Denton Rapid Dispatch 911 Fleet) -->
-  <FleetSpeedSection />
+  <!-- 7. EDITORIAL SECTION 4: EQUIPMENT SHOWCASE -->
+  <section class="py-16 bg-slate-50 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Equipment Graphic -->
+      <div class="lg:col-span-5 order-2 lg:order-1">
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm">
+          <div class="aspect-square bg-slate-50 rounded-xl flex flex-col items-center justify-center p-6 border border-slate-200">
+            <div class="text-6xl mb-2">⚡</div>
+            <span class="font-bold text-slate-900 text-base font-serif">Smart Digital Control</span>
+            <span class="text-xs text-slate-500 mt-1">Navien &amp; Rheem High-Efficiency Systems</span>
+          </div>
+        </div>
+      </div>
 
-  <!-- 7. RED TESTIMONIAL BANNER / REVIEWS (What Our Awesome Customers Say) -->
-  <ReviewBannerRed />
+      <!-- Right Editorial -->
+      <div class="lg:col-span-7 order-1 lg:order-2 space-y-4">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-serif tracking-tight">
+          Lifetime Exchange &amp; Protection
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          Upgrade to modern, smart plumbing technology. Our authorized technicians install digital pressure valves, smart leak detectors, and self-cleaning water heaters that automatically adjust to Denton's water chemistry.
+        </p>
+        <div class="pt-4">
+          <PillButton text="Contact Us Today" href={`tel:${siteConfig.phoneRaw}`} />
+        </div>
+      </div>
 
-  <!-- 8. HYPER-LOCAL GEOLOGICAL DIAGNOSTICS (Lake Hard Water + North Texas Black Clay) -->
+    </div>
+  </section>
+
+  <!-- 8. EDITORIAL SECTION 5: IN-HOME INSTALLATION & RAPID DISPATCH -->
+  <section class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <div class="lg:col-span-7 space-y-4">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-serif tracking-tight">
+          In-Home Installation &amp; Rapid Dispatch
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+          When you call our local Denton dispatch desk, you get prompt, courteous, and highly skilled master plumbers at your doorstep. We respect your flooring, wear protective boot covers, and leave work areas spotless after testing is complete.
+        </p>
+        <div class="pt-4">
+          <PillButton text="Contact Us Today" href={`tel:${siteConfig.phoneRaw}`} />
+        </div>
+      </div>
+
+      <div class="lg:col-span-5">
+        <div class="bg-slate-100 border border-slate-200 rounded-2xl p-6 text-center shadow-sm">
+          <div class="aspect-[4/3] bg-slate-900 text-white rounded-xl flex flex-col items-center justify-center p-6">
+            <div class="text-5xl mb-2">🚐</div>
+            <span class="font-extrabold text-white text-lg font-serif">Mobile Warehouses on Wheels</span>
+            <span class="text-xs text-slate-300 mt-1">Stocked with 1,200+ OEM replacement parts</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9. HARD WATER & CLAY SOIL GEOLOGICAL DIAGNOSTICS -->
   <LocalWaterSoilWidget />
 
-  <!-- 9. HYPER-LOCAL NEIGHBORHOOD EXPLORER GRID -->
+  <!-- 10. NEIGHBORHOOD EXPLORER GRID -->
   <div id="neighborhoods">
     <NeighborhoodExplorer />
   </div>
 
-  <!-- 10. FAST ESTIMATE FORM SECTION -->
+  <!-- 11. FAST ESTIMATE CALLBACK FORM -->
   <section id="estimate-form" class="py-16 bg-slate-900 text-white px-4 sm:px-6 lg:px-8 border-t border-slate-800">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-10">
         <span class="text-xs font-black uppercase tracking-widest text-brand-400 block mb-1">
           FAST CALLBACK ESTIMATE
         </span>
-        <h2 class="text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
+        <h2 class="text-2xl sm:text-4xl font-black text-white uppercase tracking-tight font-serif">
           REQUEST INSTANT DENTON PLUMBING SERVICE
         </h2>
         <p class="text-slate-400 text-sm mt-2">
@@ -149,7 +286,7 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 11. FAQS SECTION -->
+  <!-- 12. CLEAN FAQS ACCORDION -->
   <FaqAccordion faqs={faqs} />
 
 </BaseLayout>

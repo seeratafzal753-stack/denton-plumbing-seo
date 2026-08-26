@@ -1,0 +1,57 @@
+---
+const reviews = [
+  {
+    title: "Fast Sunday Night Water Heater Emergency",
+    text: "Water heater started leaking from the bottom at 8 PM on a Sunday. Called Denton Plumbing Pros and a technician was at our home in 25 minutes! Replaced the unit with a high-efficiency Rheem model, cleaned up the garage, and gave us an upfront price. Lifesavers!",
+    author: "Marcus & Kimberly T.",
+    location: "Teasley Ln, Southridge (ZIP 76205)",
+  },
+  {
+    title: "Non-Invasive Acoustic Slab Leak Tracing",
+    text: "Other plumbers wanted to jackhammer through our living room tile to locate a suspected hot water slab leak. Marcus arrived with acoustic sensors, pin-pointed the pipe under the slab, and rerouted it through the attic with PEX in one afternoon. Flawless work!",
+    author: "Robert & Sarah G.",
+    location: "Nottingham Dr, Idiots Hill (ZIP 76209)",
+  },
+];
+---
+
+<section class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
+  <div class="max-w-6xl mx-auto">
+    
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-serif">
+        What Your Neighbors Are Saying
+      </h2>
+      <div class="w-16 h-0.5 bg-brand-700 mx-auto mt-3"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {reviews.map((r) => (
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 flex flex-col justify-between shadow-sm hover:border-brand-500 hover:shadow-md transition">
+          <div>
+            <div class="flex text-amber-500 mb-3 text-sm">
+              ★★★★★ <span class="text-slate-600 text-xs ml-2 font-bold">(Verified Homeowner)</span>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base mb-2 font-serif">
+              "{r.title}"
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed italic mb-6">
+              "{r.text}"
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+            <div>
+              <span class="block font-bold text-slate-900 text-sm">{r.author}</span>
+              <span class="block text-xs text-slate-500">{r.location}</span>
+            </div>
+            <a href="/blog/" class="text-xs font-bold text-brand-700 hover:underline">
+              Read More Reviews →
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

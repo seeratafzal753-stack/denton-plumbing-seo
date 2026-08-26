@@ -1,6 +1,5 @@
 ---
 import { siteConfig } from '../siteConfig';
-import MascotBadge from './MascotBadge.astro';
 
 interface Props {
   currentPath?: string;
@@ -10,86 +9,76 @@ const { currentPath = '' } = Astro.props;
 
 const navLinks = [
   { name: 'Home', href: '/' },
-  { name: 'Emergency Plumbing', href: '/denton-tx/emergency-plumbing/' },
   { name: 'Water Heaters', href: '/denton-tx/water-heater-repair/' },
   { name: 'Drain Cleaning', href: '/denton-tx/drain-cleaning/' },
   { name: 'Slab Leaks', href: '/denton-tx/slab-leak-repair/' },
+  { name: 'Emergency Plumbing', href: '/denton-tx/emergency-plumbing/' },
   { name: 'All Services', href: '/services/' },
-  { name: 'Denton Hub', href: '/denton-tx/' },
-  { name: 'Guides & Blog', href: '/blog/' },
+  { name: 'Service Areas', href: '/service-areas/' },
+  { name: 'Blog', href: '/blog/' },
   { name: 'Contact', href: '/contact/' },
 ];
 ---
 
-<header class="w-full bg-white border-b border-slate-200 sticky top-0 z-40 shadow-md">
+<header class="w-full bg-white sticky top-0 z-50 shadow-sm">
   
-  <!-- Reference Layout Top Action Pill Bar (Dark Navy Header Bar) -->
-  <div class="bg-slate-950 text-white text-xs sm:text-sm py-2.5 px-4 border-b border-slate-800">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+  <!-- Clear, Clean & Ultra-Professional Top Line Bar -->
+  <div class="bg-slate-900 text-white text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
       
-      <!-- Left Live Indicator -->
-      <div class="flex items-center space-x-2">
-        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse-live"></span>
-        <span class="font-black text-emerald-400 uppercase tracking-wider text-xs">24/7 DENTON EMERGENCY DISPATCH</span>
-        <span class="hidden lg:inline text-slate-400">| TSBPE Master Plumber #M-42918</span>
+      <!-- Left: Direct Contact & Emergency Dispatch -->
+      <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 gap-y-1 text-slate-300">
+        <span class="flex items-center gap-1.5 text-white font-semibold">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          24/7 Emergency Dispatch
+        </span>
+        <span class="hidden sm:inline text-slate-500">•</span>
+        <span>Serving All Denton County ZIPs (76201–76226)</span>
+        <span class="hidden sm:inline text-slate-500">•</span>
+        <a href={`tel:${siteConfig.phoneRaw}`} class="text-amber-400 hover:text-amber-300 font-bold transition flex items-center gap-1">
+          <span>📞 {siteConfig.phone}</span>
+        </a>
       </div>
 
-      <!-- Right 3 Action Pill Buttons Matching Reference -->
-      <div class="flex items-center space-x-2">
-        <!-- Pill 1: Blue Phone -->
-        <a
-          href={`tel:${siteConfig.phoneRaw}`}
-          class="px-3.5 py-1 rounded-full bg-brand-700 hover:bg-brand-600 text-white font-black text-xs flex items-center gap-1 shadow-sm transition"
-        >
-          <span>📞</span>
-          <span>{siteConfig.phone}</span>
-        </a>
-
-        <!-- Pill 2: Red Schedule -->
-        <a
-          href="/contact/"
-          class="px-3.5 py-1 rounded-full bg-emergency-600 hover:bg-emergency-500 text-white font-black text-xs uppercase tracking-wider shadow-sm transition"
-        >
-          <span>SCHEDULE SERVICE</span>
-        </a>
-
-        <!-- Pill 3: Dark Account / Specials -->
-        <a
-          href="#neighborhoods"
-          class="hidden md:inline-flex px-3 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs shadow-sm transition"
-        >
-          <span>VIEW ETAS</span>
-        </a>
+      <!-- Right: Licensing, Upfront Pricing & Google Rating -->
+      <div class="flex items-center gap-3 text-slate-300 text-[11px] sm:text-xs">
+        <span class="text-amber-400 font-bold">★ 4.9/5 Rating (187 Reviews)</span>
+        <span class="text-slate-600">|</span>
+        <span>TSBPE Master Plumber #M-42918</span>
+        <span class="text-slate-600">|</span>
+        <span class="hidden lg:inline text-emerald-400 font-medium">100% Upfront Pricing</span>
       </div>
 
     </div>
   </div>
 
-  <!-- Main Navigation Bar with Mascot Logo -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+  <!-- Main Navbar -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex justify-between items-center">
     
-    <!-- Brand Logo with Mascot Emblem -->
+    <!-- Brand Logo -->
     <a href="/" class="flex items-center gap-3 group">
-      <MascotBadge size="sm" />
+      <div class="w-10 h-10 rounded-lg bg-brand-800 flex items-center justify-center text-white font-black text-lg shadow-sm">
+        DP
+      </div>
       <div>
-        <span class="block font-black text-xl sm:text-2xl text-slate-900 leading-tight">
-          DENTON<span class="text-emergency-600">PLUMBING</span>PROS
+        <span class="block font-black text-lg sm:text-xl text-slate-900 leading-tight tracking-tight">
+          Denton<span class="text-brand-700">Plumbing</span>Pros
         </span>
-        <span class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1">
-          <span class="text-emergency-600 font-black">★</span> YOUR LOCAL EXPERT PLUMBER
+        <span class="block text-[10px] uppercase font-bold text-slate-500 tracking-wider">
+          Residential & Commercial Plumbing
         </span>
       </div>
     </a>
 
     <!-- Desktop Navigation Links -->
-    <nav class="hidden xl:flex items-center space-x-5">
+    <nav class="hidden xl:flex items-center space-x-6">
       {navLinks.map((link) => (
         <a
           href={link.href}
-          class={`text-xs font-black uppercase tracking-wider transition ${
+          class={`text-sm font-semibold transition ${
             currentPath === link.href
-              ? 'text-emergency-600 border-b-2 border-emergency-600 pb-1'
-              : 'text-slate-700 hover:text-emergency-600'
+              ? 'text-brand-700 font-bold border-b-2 border-brand-700 pb-0.5'
+              : 'text-slate-700 hover:text-brand-700'
           }`}
         >
           {link.name}
@@ -97,16 +86,17 @@ const navLinks = [
       ))}
     </nav>
 
-    <!-- Header Right Quick Call Button -->
+    <!-- Header Action Button -->
     <div class="flex items-center gap-3">
       <a
         href={`tel:${siteConfig.phoneRaw}`}
-        class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-xl bg-emergency-600 hover:bg-emergency-700 text-white font-black text-xs sm:text-sm shadow-md transition transform hover:-translate-y-0.5 uppercase"
+        class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-900 hover:bg-black text-white font-bold text-xs sm:text-sm shadow-sm transition transform hover:-translate-y-0.5"
       >
-        <span>📞 (940) 310-4499</span>
+        <span>📞</span>
+        <span>(940) 310-4499</span>
       </a>
 
-      <!-- Mobile Menu Hamburger Button -->
+      <!-- Mobile Hamburger Button -->
       <button
         id="mobile-menu-btn"
         aria-label="Toggle navigation menu"
@@ -120,21 +110,24 @@ const navLinks = [
 
   </div>
 
+  <!-- Reference Amber Accent Border Line -->
+  <div class="h-0.5 w-full bg-gradient-to-r from-brand-600 via-amber-500 to-brand-600"></div>
+
   <!-- Mobile Menu Drawer -->
-  <div id="mobile-menu" class="hidden xl:hidden bg-white border-t border-slate-200 px-4 py-3 space-y-2">
+  <div id="mobile-menu" class="hidden xl:hidden bg-white border-t border-slate-200 px-4 py-4 space-y-2 shadow-lg">
     {navLinks.map((link) => (
       <a
         href={link.href}
-        class="block py-2 px-3 rounded-md text-sm font-bold text-slate-800 hover:bg-emergency-50 hover:text-emergency-600"
+        class="block py-2 px-3 rounded-md text-sm font-semibold text-slate-800 hover:bg-slate-50 hover:text-brand-700"
       >
         {link.name}
       </a>
     ))}
     <a
       href={`tel:${siteConfig.phoneRaw}`}
-      class="block w-full text-center py-3 rounded-xl bg-emergency-600 text-white font-black text-sm uppercase shadow mt-3"
+      class="block w-full text-center py-3 rounded-full bg-brand-700 text-white font-bold text-sm shadow mt-3"
     >
-      📞 Call Denton Dispatch: {siteConfig.phone}
+      📞 Call Emergency Dispatch: {siteConfig.phone}
     </a>
   </div>
 
