@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PlumberMascotHero from '../components/PlumberMascotHero.astro';
 import PillButton from '../components/PillButton.astro';
 import ReviewCardsClean from '../components/ReviewCardsClean.astro';
 import ThreeStepProcess from '../components/ThreeStepProcess.astro';
@@ -39,94 +40,92 @@ const faqs = [
 ---
 
 <BaseLayout
-  title="Plumber Denton TX | Fast Water Heater Repair & Emergency Plumbing"
-  description="Your trusted local plumbing expert in Denton, TX. 24/7 rapid dispatch for water heater replacement, drain clogs, slab leaks & whole-house plumbing. Call (940) 310-4499."
+  title="Plumber Denton TX | Reliable Plumbing Services When You Need Them Most"
+  description="Reliable plumbing services in Denton, TX. 24/7 emergency plumbing, water heaters, drain cleaning, and slab leak solutions. Call (940) 310-4499."
   faqs={faqs}
 >
 
-  <!-- Main Container -->
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+  <!-- ========================================================= -->
+  <!-- HERO SECTION (Left Text + Right Plumber Mascot Visual) -->
+  <!-- ========================================================= -->
+  <section class="bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200 py-10 lg:py-16 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
     
-    <!-- Top Breadcrumb / Category Link -->
-    <div class="text-xs text-slate-500 mb-6 font-medium">
-      <a href="/" class="text-brand-700 hover:underline">Home</a> &gt; 
-      <a href="/services/" class="text-brand-700 hover:underline">Services</a> &gt; 
-      <span>Denton Plumbing &amp; Water Heaters</span>
-    </div>
+    <!-- Background Plumbing Ambient Accents -->
+    <div class="absolute inset-0 bg-[radial-gradient(#e0f2fe_1px,transparent_1px)] [background-size:20px_20px] opacity-70 pointer-events-none"></div>
 
-    <!-- 1. HERO BLUE PILL BANNER MATCHING REFERENCE -->
-    <div class="mb-12">
-      <div class="bg-brand-800 text-white py-5 px-6 sm:px-10 rounded-2xl shadow-md flex items-center justify-between">
-        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight font-serif">
-          Expert Plumbing &amp; Water Heater Services Near Denton, TX
-        </h1>
-      </div>
-    </div>
-
-    <!-- 2. EDITORIAL SECTION 1: TWO COLUMN OVERVIEW -->
-    <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
       
-      <!-- Left Content -->
-      <div class="lg:col-span-7 space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
-        <p class="font-bold text-slate-900 text-base sm:text-lg">
-          Looking for a dependable, master-licensed plumber in Denton County?
-        </p>
-        <p>
-          At <strong>Denton Plumbing Pros</strong>, we provide high-precision plumbing solutions tailored specifically to the mineral-dense municipal water and expansive black clay soils of North Texas. Whether you are dealing with a sudden late-night water heater rupture, a recurring sewer backup, or a hidden foundation slab leak, our team is equipped to restore your home's plumbing systems quickly and flawlessly.
-        </p>
+      <!-- LEFT SIDE OF HERO: Headline, Supporting Text, and Primary CALL NOW & BOOK NOW CTAs -->
+      <div class="lg:col-span-7 text-center lg:text-left space-y-6">
         
-        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl my-4">
-          <span class="block font-bold text-slate-900 text-sm mb-2">Our Core Residential Services Include:</span>
-          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-slate-700">
-            <li class="flex items-center gap-2">
-              <span class="text-brand-700 font-bold">✓</span> Tank &amp; Tankless Water Heaters
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-brand-700 font-bold">✓</span> Non-Invasive Slab Leak Tracing
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-brand-700 font-bold">✓</span> 4000 PSI Hydro-Jet Drain Cleaning
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="text-brand-700 font-bold">✓</span> 24/7 Emergency Pipe Repairs
-            </li>
-          </ul>
+        <!-- Emergency Dispatch Badge -->
+        <div class="inline-flex items-center gap-2 bg-red-50 text-red-700 border border-red-200 px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
+          <span>Denton County’s Trusted Local Plumber</span>
         </div>
 
-        <p>
-          All work is performed by certified technicians regulated by the <strong>Texas State Board of Plumbing Examiners (Lic #M-42918)</strong>, backed by our 100% upfront pricing guarantee and lifetime workmanship warranties.
+        <h1 class="text-3xl sm:text-5xl lg:text-5xl 2xl:text-6xl font-black text-slate-900 tracking-tight leading-[1.15] font-serif">
+          Reliable Plumbing Services <br class="hidden sm:inline" />
+          <span class="text-red-600">When You Need Them Most</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
+          Professional plumbing services in Denton, TX & surrounding areas. Specializing in 24/7 emergency plumbing, high-efficiency water heaters, 4000 PSI drain cleaning, and non-invasive slab leak solutions.
         </p>
 
-        <div class="pt-2">
-          <PillButton text="Contact Us Today" href={`tel:${siteConfig.phoneRaw}`} />
-        </div>
-      </div>
+        <!-- Two CTA Buttons (CALL NOW as Primary) -->
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+          
+          <!-- Primary CTA: CALL NOW -->
+          <a
+            href={`tel:${siteConfig.phoneRaw}`}
+            class="w-full sm:w-auto px-8 py-4 rounded-xl bg-red-600 hover:bg-red-700 text-white font-black text-base uppercase tracking-wider shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2.5"
+          >
+            <span>📞</span>
+            <span>CALL NOW: (940) 310-4499</span>
+          </a>
 
-      <!-- Right Graphic / Image Showcase Card -->
-      <div class="lg:col-span-5">
-        <div class="bg-slate-100 border border-slate-200 rounded-2xl p-6 shadow-sm overflow-hidden text-center">
-          <div class="aspect-[4/3] bg-gradient-to-br from-slate-200 via-slate-100 to-slate-300 rounded-xl flex flex-col items-center justify-center p-6 border border-slate-200 relative">
-            <div class="text-5xl mb-3">🛠️💧</div>
-            <span class="font-extrabold text-slate-900 text-lg font-serif">Denton Master Plumbers</span>
-            <span class="text-xs text-slate-500 mt-1">24/7 Dispatch • 28-Minute Average Arrival</span>
-            <div class="mt-4 px-3 py-1 bg-white rounded-full border border-slate-300 text-[11px] font-bold text-brand-800 shadow-sm">
-              TSBPE Licensed &amp; Insured
-            </div>
+          <!-- Secondary CTA: BOOK NOW -->
+          <a
+            href="#estimate-form"
+            class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-900 hover:bg-black text-white font-black text-base uppercase tracking-wider shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-center"
+          >
+            BOOK NOW
+          </a>
+
+        </div>
+
+        <!-- Trust Highlights Row -->
+        <div class="pt-4 border-t border-slate-200/80 grid grid-cols-3 gap-3 text-center sm:text-left text-xs font-bold text-slate-700">
+          <div class="flex items-center justify-center sm:justify-start gap-1.5">
+            <span class="text-red-600 font-black">✓</span> 28-Min Avg Arrival
           </div>
-          <span class="block text-xs text-slate-500 mt-3 italic">
-            Engineered for Denton County Water &amp; Soil Conditions
-          </span>
+          <div class="flex items-center justify-center sm:justify-start gap-1.5">
+            <span class="text-red-600 font-black">✓</span> 100% Upfront Pricing
+          </div>
+          <div class="flex items-center justify-center sm:justify-start gap-1.5">
+            <span class="text-red-600 font-black">✓</span> TX Master Plumber #M-42918
+          </div>
         </div>
+
       </div>
 
-    </section>
+      <!-- RIGHT SIDE OF HERO: Plumber Mascot Visual Element -->
+      <div class="lg:col-span-5 flex justify-center">
+        <PlumberMascotHero />
+      </div>
 
-  </div>
+    </div>
+  </section>
 
-  <!-- 3. "WHAT YOUR NEIGHBORS ARE SAYING" (Clean 2-Column Social Proof) -->
+  <!-- ========================================================= -->
+  <!-- 2. "WHAT YOUR NEIGHBORS ARE SAYING" (Social Proof Cards) -->
+  <!-- ========================================================= -->
   <ReviewCardsClean />
 
-  <!-- 4. EDITORIAL SECTION 2: ALTERNATING FEATURE BLOCK (Love Your Water Again) -->
+  <!-- ========================================================= -->
+  <!-- 3. EDITORIAL SECTION: LOVE YOUR PLUMBING & WATER AGAIN -->
+  <!-- ========================================================= -->
   <section class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
@@ -168,10 +167,14 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 5. 3-STEP PROCESS SECTION (With You, Every Step of the Way) -->
+  <!-- ========================================================= -->
+  <!-- 4. 3-STEP PROCESS (With You, Every Step of the Way) -->
+  <!-- ========================================================= -->
   <ThreeStepProcess />
 
-  <!-- 6. EDITORIAL SECTION 3: UNMATCHED WARRANTIES -->
+  <!-- ========================================================= -->
+  <!-- 5. EDITORIAL SECTION: UNMATCHED WARRANTIES -->
+  <!-- ========================================================= -->
   <section class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
@@ -205,7 +208,9 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 7. EDITORIAL SECTION 4: EQUIPMENT SHOWCASE -->
+  <!-- ========================================================= -->
+  <!-- 6. EDITORIAL SECTION: LIFETIME PROTECTION & SMART CONTROLS -->
+  <!-- ========================================================= -->
   <section class="py-16 bg-slate-50 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       
@@ -236,44 +241,21 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 8. EDITORIAL SECTION 5: IN-HOME INSTALLATION & RAPID DISPATCH -->
-  <section class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      
-      <div class="lg:col-span-7 space-y-4">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-serif tracking-tight">
-          In-Home Installation &amp; Rapid Dispatch
-        </h2>
-        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-          When you call our local Denton dispatch desk, you get prompt, courteous, and highly skilled master plumbers at your doorstep. We respect your flooring, wear protective boot covers, and leave work areas spotless after testing is complete.
-        </p>
-        <div class="pt-4">
-          <PillButton text="Contact Us Today" href={`tel:${siteConfig.phoneRaw}`} />
-        </div>
-      </div>
-
-      <div class="lg:col-span-5">
-        <div class="bg-slate-100 border border-slate-200 rounded-2xl p-6 text-center shadow-sm">
-          <div class="aspect-[4/3] bg-slate-900 text-white rounded-xl flex flex-col items-center justify-center p-6">
-            <div class="text-5xl mb-2">🚐</div>
-            <span class="font-extrabold text-white text-lg font-serif">Mobile Warehouses on Wheels</span>
-            <span class="text-xs text-slate-300 mt-1">Stocked with 1,200+ OEM replacement parts</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 9. HARD WATER & CLAY SOIL GEOLOGICAL DIAGNOSTICS -->
+  <!-- ========================================================= -->
+  <!-- 7. HARD WATER & CLAY SOIL GEOLOGICAL DIAGNOSTICS -->
+  <!-- ========================================================= -->
   <LocalWaterSoilWidget />
 
-  <!-- 10. NEIGHBORHOOD EXPLORER GRID -->
+  <!-- ========================================================= -->
+  <!-- 8. NEIGHBORHOOD EXPLORER GRID -->
+  <!-- ========================================================= -->
   <div id="neighborhoods">
     <NeighborhoodExplorer />
   </div>
 
-  <!-- 11. FAST ESTIMATE CALLBACK FORM -->
+  <!-- ========================================================= -->
+  <!-- 9. FAST ESTIMATE CALLBACK FORM -->
+  <!-- ========================================================= -->
   <section id="estimate-form" class="py-16 bg-slate-900 text-white px-4 sm:px-6 lg:px-8 border-t border-slate-800">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-10">
@@ -291,7 +273,9 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 12. LATEST PLUMBING & HOMEOWNER GUIDES (BLOGS SECTION) -->
+  <!-- ========================================================= -->
+  <!-- 10. LATEST PLUMBING & HOMEOWNER GUIDES (BLOGS) -->
+  <!-- ========================================================= -->
   <section class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-t border-slate-200">
     <div class="max-w-6xl mx-auto">
       
@@ -353,7 +337,9 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 13. CLEAN FAQS ACCORDION -->
+  <!-- ========================================================= -->
+  <!-- 11. CLEAN FAQS ACCORDION -->
+  <!-- ========================================================= -->
   <FaqAccordion faqs={faqs} />
 
 </BaseLayout>

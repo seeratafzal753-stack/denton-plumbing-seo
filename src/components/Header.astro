@@ -20,59 +20,62 @@ const navLinks = [
 ];
 ---
 
-<header class="w-full bg-white sticky top-0 z-50 shadow-sm">
+<header class="w-full bg-white sticky top-0 z-50 shadow-md">
   
-  <!-- FIRST LINE: Clean, Clear & Prominent 24/7/365 Emergency Bar -->
-  <div class="bg-slate-950 text-white text-xs sm:text-sm py-2.5 px-4 border-b border-slate-800">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
+  <!-- 1. SLIM EMERGENCY ANNOUNCEMENT BAR AT THE VERY TOP -->
+  <div class="bg-red-600 text-white py-2 px-4 shadow-sm border-b border-red-700">
+    <div class="max-w-7xl mx-auto flex items-center justify-center sm:justify-between text-center sm:text-left">
       
-      <!-- Exact Requested Line -->
-      <div class="flex items-center gap-2 font-bold tracking-wide">
-        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
-        <span class="text-white sm:text-sm text-xs font-extrabold">
+      <!-- Strong Red / High-Visibility Urgency Text -->
+      <div class="flex items-center justify-center gap-2.5 mx-auto sm:mx-0">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-90"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+        </span>
+        <span class="text-xs sm:text-sm font-extrabold tracking-wide uppercase text-white drop-shadow-sm">
           Plumbing Emergency? We’re Available 24/7/365
         </span>
       </div>
 
-      <!-- Right Support Call -->
-      <div class="hidden sm:flex items-center gap-3 text-xs text-slate-300">
-        <span>Serving All Denton County ZIPs</span>
-        <span class="text-slate-600">|</span>
-        <a href={`tel:${siteConfig.phoneRaw}`} class="text-amber-400 hover:text-amber-300 font-black transition">
-          📞 {siteConfig.phone}
+      <!-- Right Support Notice (Desktop) -->
+      <div class="hidden md:flex items-center gap-4 text-xs font-bold text-red-100">
+        <span>⚡ 28–35 Min Avg Arrival Across Denton County</span>
+        <span>•</span>
+        <a href={`tel:${siteConfig.phoneRaw}`} class="text-white hover:text-amber-200 underline font-black transition">
+          Direct Line: {siteConfig.phone}
         </a>
       </div>
 
     </div>
   </div>
 
-  <!-- SECOND LINE: Website Name, Navigation, Clear Phone Number & Clear Book Now Button -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex justify-between items-center">
+  <!-- 2. MAIN HEADER (BELOW EMERGENCY BAR) -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex justify-between items-center bg-white">
     
-    <!-- Website Name / Brand Logo -->
-    <a href="/" class="flex items-center gap-3 group">
-      <div class="w-10 h-10 rounded-lg bg-brand-800 flex items-center justify-center text-white font-black text-lg shadow-sm group-hover:bg-brand-900 transition">
-        DP
+    <!-- LEFT: Professional Plumbing Company Logo & Name -->
+    <a href="/" class="flex items-center gap-3 group shrink-0">
+      <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-900 via-brand-800 to-slate-950 flex items-center justify-center text-white font-black text-xl shadow-md border border-brand-700 group-hover:scale-105 transition transform">
+        <span>DP</span>
       </div>
       <div>
-        <span class="block font-black text-xl sm:text-2xl text-slate-900 leading-tight tracking-tight">
-          Denton<span class="text-brand-700">Plumbing</span>Pros
+        <span class="block font-black text-xl sm:text-2xl text-slate-900 leading-none tracking-tight">
+          Denton<span class="text-brand-700">Plumbing</span><span class="text-red-600">Pros</span>
         </span>
-        <span class="block text-[10px] uppercase font-bold text-slate-500 tracking-wider">
-          TSBPE Master Plumber #M-42918
+        <span class="block text-[10px] uppercase font-bold text-slate-500 tracking-wider mt-1">
+          Licensed Master Plumbers • Lic #M-42918
         </span>
       </div>
     </a>
 
-    <!-- Desktop Navigation Links -->
-    <nav class="hidden xl:flex items-center space-x-6">
+    <!-- CENTER: Horizontally Aligned, Spacious Navigation Menu -->
+    <nav class="hidden xl:flex items-center space-x-5 2xl:space-x-7">
       {navLinks.map((link) => (
         <a
           href={link.href}
-          class={`text-sm font-semibold transition ${
+          class={`text-sm font-bold transition tracking-tight ${
             currentPath === link.href
-              ? 'text-brand-700 font-bold border-b-2 border-brand-700 pb-0.5'
-              : 'text-slate-700 hover:text-brand-700'
+              ? 'text-red-600 border-b-2 border-red-600 pb-1'
+              : 'text-slate-700 hover:text-red-600'
           }`}
         >
           {link.name}
@@ -80,24 +83,27 @@ const navLinks = [
       ))}
     </nav>
 
-    <!-- Clear Phone Number & Clear Book Now Button -->
-    <div class="flex items-center gap-3 sm:gap-4">
+    <!-- RIGHT: Prominent Phone Number & Professional BOOK NOW CTA -->
+    <div class="flex items-center gap-3 sm:gap-4 shrink-0">
       
-      <!-- Clear Phone Number -->
+      <!-- Prominent Phone Number -->
       <a
         href={`tel:${siteConfig.phoneRaw}`}
-        class="hidden sm:flex items-center gap-2 font-black text-slate-900 hover:text-brand-700 text-sm md:text-base transition px-2 py-1"
+        class="hidden sm:flex flex-col items-end text-right group"
       >
-        <span class="text-brand-700 text-base">📞</span>
-        <span>{siteConfig.phone}</span>
+        <span class="text-[10px] uppercase font-black tracking-widest text-slate-500">24/7 Live Dispatch</span>
+        <span class="text-base lg:text-lg font-black text-slate-900 group-hover:text-red-600 transition tracking-tight flex items-center gap-1.5">
+          <span class="text-red-600">📞</span>
+          {siteConfig.phone}
+        </span>
       </a>
 
-      <!-- Clear Book Now Button -->
+      <!-- Professional BOOK NOW High-Conversion CTA Button -->
       <a
         href="#estimate-form"
-        class="inline-flex items-center justify-center px-5 sm:px-6 py-2.5 rounded-full bg-brand-700 hover:bg-brand-800 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5"
+        class="inline-flex items-center justify-center px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0"
       >
-        BOOK NOW
+        <span>BOOK NOW</span>
       </a>
 
       <!-- Mobile Menu Hamburger Button -->
@@ -115,29 +121,29 @@ const navLinks = [
 
   </div>
 
-  <!-- Thin Accent Border Line -->
-  <div class="h-0.5 w-full bg-slate-200"></div>
+  <!-- Subtle Bottom Border Accent -->
+  <div class="h-0.5 w-full bg-slate-100"></div>
 
-  <!-- Mobile Menu Drawer -->
-  <div id="mobile-menu" class="hidden xl:hidden bg-white border-t border-slate-200 px-4 py-4 space-y-2 shadow-lg">
+  <!-- Mobile Navigation Menu Drawer -->
+  <div id="mobile-menu" class="hidden xl:hidden bg-white border-t border-slate-200 px-4 py-4 space-y-2 shadow-2xl">
     {navLinks.map((link) => (
       <a
         href={link.href}
-        class="block py-2 px-3 rounded-md text-sm font-semibold text-slate-800 hover:bg-slate-50 hover:text-brand-700"
+        class="block py-2.5 px-3 rounded-lg text-sm font-bold text-slate-800 hover:bg-red-50 hover:text-red-600 transition"
       >
         {link.name}
       </a>
     ))}
-    <div class="pt-3 border-t border-slate-100 space-y-2">
+    <div class="pt-4 border-t border-slate-100 space-y-2">
       <a
         href={`tel:${siteConfig.phoneRaw}`}
-        class="block w-full text-center py-3 rounded-full bg-slate-900 text-white font-bold text-sm shadow"
+        class="block w-full text-center py-3.5 rounded-xl bg-slate-900 text-white font-black text-sm shadow flex items-center justify-center gap-2"
       >
-        📞 Call (940) 310-4499
+        <span>📞 Call (940) 310-4499</span>
       </a>
       <a
         href="#estimate-form"
-        class="block w-full text-center py-3 rounded-full bg-brand-700 text-white font-black text-sm uppercase shadow"
+        class="block w-full text-center py-3.5 rounded-xl bg-red-600 text-white font-black text-sm uppercase tracking-wider shadow"
       >
         BOOK NOW
       </a>
