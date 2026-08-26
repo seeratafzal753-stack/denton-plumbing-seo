@@ -1,0 +1,84 @@
+---
+import { siteConfig } from '../siteConfig';
+
+const videoBulletPoints = [
+  "Non-Invasive Electronic Leak Detection",
+  "Main Water & Sewer Line Repairs",
+  "Gas & Electric Water Heater Installations",
+  "Natural Gas Leak Testing & Valve Replacements",
+  "High-Pressure Hydro-Jet Drain Clearing",
+];
+---
+
+<section class="py-16 bg-slate-900 text-white px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-slate-800">
+  <div class="max-w-5xl mx-auto text-center">
+    
+    <span class="text-xs font-black uppercase tracking-widest text-brand-400 block mb-1">
+      MEET YOUR DENTON PLUMBING TEAM
+    </span>
+    <h2 class="text-2xl sm:text-4xl font-black text-white uppercase tracking-tight mb-4">
+      LICENSED • EXPERIENCED • LOCALLY DISPATCHED
+    </h2>
+    <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto mb-10">
+      Watch how our certified Texas master plumbers diagnose complex slab leaks, restore water heaters, and protect Denton County homes.
+    </p>
+
+    <!-- Interactive Video Showcase Mockup -->
+    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-700 bg-slate-950 group">
+      
+      <!-- Video Background Image / Gradient Canvas -->
+      <div class="aspect-video w-full bg-gradient-to-tr from-slate-950 via-slate-900 to-brand-950 relative flex items-center justify-center p-6 sm:p-12">
+        
+        <!-- Subtle Technician Silhouettes and Pipe Background -->
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px]"></div>
+
+        <!-- Floating Service Overlay Box on the Right -->
+        <div class="absolute right-4 bottom-4 sm:right-8 sm:bottom-8 bg-slate-950/90 backdrop-blur-md border border-slate-700 p-4 sm:p-6 rounded-2xl text-left shadow-2xl max-w-xs hidden sm:block">
+          <span class="text-[10px] font-black uppercase tracking-wider text-emergency-500 block mb-2">
+            ON-SITE SERVICES DEMONSTRATED:
+          </span>
+          <ul class="space-y-1.5 text-xs text-slate-200">
+            {videoBulletPoints.map((point) => (
+              <li class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emergency-600 shrink-0"></span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Center Glowing Play Button -->
+        <a
+          href={`tel:${siteConfig.phoneRaw}`}
+          class="relative z-10 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-emergency-600 hover:bg-emergency-500 text-white flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition duration-300 animate-pulse-live cursor-pointer"
+          title="Call Direct Dispatch"
+        >
+          <svg class="w-8 h-8 sm:w-10 sm:h-10 fill-current ml-1" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </a>
+
+        <!-- Top Left Channel Badge -->
+        <div class="absolute top-4 left-4 sm:top-6 sm:left-6 flex items-center gap-3 bg-black/70 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/10">
+          <div class="w-8 h-8 rounded-full bg-emergency-600 flex items-center justify-center font-black text-xs">
+            DP
+          </div>
+          <div class="text-left">
+            <span class="block text-xs font-bold text-white">Denton Plumbing Pros</span>
+            <span class="block text-[10px] text-slate-400">24/7 Live Response Dispatch Desk</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400">
+      <span>✓ 100% In-House Technicians</span>
+      <span>✓ Background-Checked & Drug-Tested</span>
+      <span>✓ Full Commercial Liability Insurance</span>
+      <span>✓ 30-Day Satisfaction Warranty</span>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,76 @@
+---
+const testimonials = [
+  {
+    quote: "Our water heater started flooding our garage on a Sunday night. Called Denton Plumbing Pros and a technician was at our door in 25 minutes flat! Honest upfront estimate, replaced the unit with a high-efficiency Rheem model, and hauled away the old tank. Absolute lifesavers!",
+    author: "Marcus & Kimberly T.",
+    location: "Teasley Ln, Southridge Subdivision, Denton, TX",
+    rating: 5,
+  },
+  {
+    quote: "We had a slab leak that two other companies wanted to jackhammer our entire living room floor to fix. Marcus came out, electronically traced the exact line, and rerouted it through our attic with PEX in just one afternoon. Saved our engineered wood flooring and thousands of dollars!",
+    author: "Robert G.",
+    location: "Robson Ranch, Denton, TX",
+    rating: 5,
+  },
+  {
+    quote: "Severe tree root clog in our main sewer line. Their technician Aaron ran a high-def camera, showed us the root invasion, and cleared it completely with hydro-jetting. Upfront pricing with no surprise charges. Highly recommend!",
+    author: "Sarah K.",
+    location: "Nottingham Dr (Idiots Hill), Denton, TX",
+    rating: 5,
+  },
+];
+---
+
+<section class="py-16 bg-gradient-to-r from-emergency-700 via-emergency-600 to-emergency-700 text-white px-4 sm:px-6 lg:px-8 shadow-2xl relative overflow-hidden">
+  <!-- Subtle Texas Star Pattern -->
+  <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_2px,transparent_2px)] [background-size:24px_24px] pointer-events-none"></div>
+
+  <div class="max-w-5xl mx-auto text-center relative z-10">
+    
+    <span class="text-xs font-black uppercase tracking-widest text-white/80 block mb-2">
+      100% VERIFIED LOCAL REVIEWS
+    </span>
+    <h2 class="text-2xl sm:text-4xl font-black text-white uppercase tracking-tight mb-8">
+      WHAT OUR AWESOME PLUMBING CUSTOMERS HAVE TO SAY
+    </h2>
+
+    <!-- Dynamic Review Slider / Carousel -->
+    <div class="relative">
+      
+      <!-- Stars -->
+      <div class="flex justify-center text-amber-300 gap-1.5 mb-6">
+        {Array.from({ length: 5 }).map(() => (
+          <svg class="w-6 h-6 fill-current drop-shadow" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+        ))}
+      </div>
+
+      <!-- Quote Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+        {testimonials.map((t) => (
+          <div class="bg-black/20 backdrop-blur-sm border border-white/20 p-6 rounded-2xl flex flex-col justify-between shadow-xl">
+            <p class="text-sm text-white/95 leading-relaxed italic mb-4">
+              "{t.quote}"
+            </p>
+            <div class="pt-3 border-t border-white/20">
+              <span class="block font-black text-white text-sm">{t.author}</span>
+              <span class="block text-xs text-white/80 font-medium">{t.location}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+
+    <!-- Rating Summary Footer -->
+    <div class="mt-10 pt-6 border-t border-white/20 flex flex-wrap items-center justify-center gap-6 text-xs text-white/90 font-bold">
+      <span>⭐ Rated 4.9/5 Over 187+ Reviews</span>
+      <span>•</span>
+      <span>✓ Google Verified Customer Reviews</span>
+      <span>•</span>
+      <span>✓ Zero Unresolved Complaints</span>
+    </div>
+
+  </div>
+</section>

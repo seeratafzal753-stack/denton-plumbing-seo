@@ -1,0 +1,267 @@
+---
+import { siteConfig } from '../siteConfig';
+
+const rooms = [
+  {
+    id: "utility",
+    name: "Utility Closet",
+    icon: "🔥",
+    service: "Water Heater Repair & Replacement",
+    href: "/denton-tx/water-heater-repair/",
+    issues: ["Tank leaking from base", "No hot water / pilot light out", "Popping noises from Denton hard water scale"],
+    solution: "Same-day diagnostic, element replacement, or tankless conversion.",
+    top: "22%",
+    left: "24%",
+  },
+  {
+    id: "laundry",
+    name: "Laundry Room",
+    icon: "🧺",
+    service: "Washing Machine Lines & Drain Overflow",
+    href: "/denton-tx/drain-cleaning/",
+    issues: ["Standpipe overflowing during drain cycle", "Corroded rubber supply hoses", "Water hammer knocking in walls"],
+    solution: "Braided stainless steel line upgrade & motorized drain clearing.",
+    top: "28%",
+    left: "48%",
+  },
+  {
+    id: "kitchen",
+    name: "Kitchen",
+    icon: "🍽️",
+    service: "Garbage Disposal & Sink Drainage",
+    href: "/denton-tx/drain-cleaning/",
+    issues: ["Jammed or humming garbage disposal", "Foul grease odor from double sink", "Leaking faucet base or spray wand"],
+    solution: "Heavy-duty disposal install & chemical-free drain scouring.",
+    top: "42%",
+    left: "72%",
+  },
+  {
+    id: "bathroom",
+    name: "Bathrooms",
+    icon: "🚿",
+    service: "Toilets, Showers & Clogged Drains",
+    href: "/denton-tx/emergency-plumbing/",
+    issues: ["Toilet running non-stop or overflowing", "Shower water draining very slowly", "Low hot water pressure in fixtures"],
+    solution: "Flapper & valve rebuilding, motorized snake clearing.",
+    top: "52%",
+    left: "32%",
+  },
+  {
+    id: "slab",
+    name: "Foundation & Outdoors",
+    icon: "🏠",
+    service: "Slab Leak Tracing & Main Sewer Line",
+    href: "/denton-tx/slab-leak-repair/",
+    issues: ["Warm floor spot on concrete slab", "Spinning water meter with faucets off", "Soggy front yard patches from sewer break"],
+    solution: "Non-invasive electronic acoustic leak detection & PEX overhead reroute.",
+    top: "70%",
+    left: "15%",
+  },
+];
+---
+
+<section class="py-20 bg-slate-950 text-white px-4 sm:px-6 lg:px-8 border-b border-slate-800 relative overflow-hidden">
+  
+  <!-- Subtle Background Mascot Graphic -->
+  <div class="absolute -right-20 -bottom-20 w-96 h-96 opacity-10 pointer-events-none">
+    <svg class="w-full h-full" viewBox="0 0 200 200" fill="none">
+      <circle cx="100" cy="100" r="90" stroke="#ffffff" stroke-width="4"/>
+      <polygon points="100,20 120,80 180,80 130,120 150,180 100,140 50,180 70,120 20,80 80,80" fill="#ffffff"/>
+    </svg>
+  </div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    
+    <!-- Section Title -->
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-xs font-black uppercase tracking-widest text-slate-400 block mb-1">
+        INTERACTIVE RESIDENTIAL DIAGNOSTIC
+      </span>
+      <h2 class="text-2xl sm:text-4xl font-black text-emergency-500 uppercase tracking-tight">
+        WHERE IN YOUR HOME ARE YOUR PLUMBING PROBLEMS?
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base mt-2">
+        Click or tap any room in our interactive 3D floorplan below to identify your symptom and view instant solutions:
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- 3D House Cutaway Floorplan Canvas -->
+      <div class="lg:col-span-7 bg-slate-900/90 border-2 border-slate-700 rounded-3xl p-4 sm:p-6 shadow-2xl relative">
+        
+        <div class="relative w-full aspect-[4/3] rounded-2xl bg-gradient-to-b from-slate-900 via-slate-800 to-slate-950 border border-slate-700/60 overflow-hidden flex items-center justify-center">
+          
+          <!-- Vector Isometric 3D House Layout Blueprint -->
+          <svg class="w-full h-full p-4" viewBox="0 0 600 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Isometric Foundation Base -->
+            <polygon points="300,50 550,190 300,340 50,190" fill="#1e293b" stroke="#475569" stroke-width="3"/>
+            <polygon points="50,190 300,340 300,380 50,230" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+            <polygon points="550,190 300,340 300,380 550,230" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+
+            <!-- Room Partitions (Walls) -->
+            <!-- Back Left Room (Utility Closet) -->
+            <polygon points="300,50 175,120 220,150 345,80" fill="#334155" stroke="#64748b" stroke-width="2"/>
+            <!-- Back Right Room (Kitchen) -->
+            <polygon points="300,50 425,120 380,150 255,80" fill="#1e3a8a" opacity="0.6" stroke="#64748b" stroke-width="2"/>
+            <!-- Middle Room (Laundry) -->
+            <polygon points="255,80 380,150 300,200 175,130" fill="#334155" stroke="#64748b" stroke-width="2"/>
+            <!-- Front Left Room (Bathroom) -->
+            <polygon points="175,130 300,200 200,260 75,190" fill="#0284c7" opacity="0.4" stroke="#64748b" stroke-width="2"/>
+            <!-- Front Right Room (Living / Outdoors Slab) -->
+            <polygon points="300,200 425,130 525,190 400,260" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+            <polygon points="200,260 300,200 400,260 300,320" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
+          </svg>
+
+          <!-- Interactive Hotspot Pins -->
+          {rooms.map((r) => (
+            <button
+              class="room-pin absolute transform -translate-x-1/2 -translate-y-1/2 group cursor-pointer"
+              style={`top: ${r.top}; left: ${r.left};`}
+              data-room={r.id}
+            >
+              <span class="relative flex h-8 w-8 sm:h-10 sm:w-10">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emergency-400 opacity-75"></span>
+                <span class="relative inline-flex items-center justify-center rounded-full h-8 w-8 sm:h-10 sm:w-10 bg-emergency-600 border-2 border-white text-white font-black text-xs sm:text-sm shadow-xl group-hover:scale-125 transition duration-200">
+                  {r.icon}
+                </span>
+              </span>
+              <span class="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2 py-0.5 rounded bg-black/90 text-[10px] font-bold text-white whitespace-nowrap shadow border border-slate-700">
+                {r.name}
+              </span>
+            </button>
+          ))}
+
+        </div>
+
+        <div class="mt-3 text-center text-xs text-slate-400">
+          💡 <em>Click any hotspot above or select from the diagnosis panel on the right.</em>
+        </div>
+
+      </div>
+
+      <!-- Right Interactive Problem Details Card -->
+      <div class="lg:col-span-5">
+        <div id="room-detail-card" class="bg-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-8 shadow-2xl">
+          
+          <div class="flex items-center gap-3 mb-4">
+            <span id="detail-icon" class="text-3xl p-2.5 bg-emergency-500/20 text-emergency-400 rounded-2xl border border-emergency-500/30">
+              🔥
+            </span>
+            <div>
+              <span class="text-xs uppercase font-bold text-slate-400">Selected Zone</span>
+              <h3 id="detail-title" class="text-xl sm:text-2xl font-black text-white">Utility Closet</h3>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <h4 class="text-xs uppercase font-black text-emergency-400 tracking-wider mb-2">Common Local Symptoms:</h4>
+            <ul id="detail-issues" class="space-y-2 text-xs sm:text-sm text-slate-300">
+              <li class="flex items-start gap-2">
+                <span class="text-emergency-500 font-bold">•</span>
+                <span>Tank leaking from base</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emergency-500 font-bold">•</span>
+                <span>No hot water / pilot light won't ignite</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emergency-500 font-bold">•</span>
+                <span>Popping noises from Denton hard water scale</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 mb-6">
+            <span class="text-[11px] font-black uppercase tracking-wider text-brand-400 block mb-1">
+              OUR CERTIFIED SOLUTION:
+            </span>
+            <p id="detail-solution" class="text-xs sm:text-sm text-slate-200">
+              Same-day diagnostic, element replacement, or tankless conversion with full Denton code compliance.
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <a
+              href={`tel:${siteConfig.phoneRaw}`}
+              class="flex-1 py-3 px-4 rounded-xl bg-emergency-600 hover:bg-emergency-500 text-white font-black text-sm text-center shadow-lg transition transform hover:-translate-y-0.5"
+            >
+              📞 Call Now: {siteConfig.phone}
+            </a>
+            <a
+              id="detail-link"
+              href="/denton-tx/water-heater-repair/"
+              class="py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs text-center transition"
+            >
+              View Service Details →
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const roomsData = {
+    utility: {
+      name: "Utility Closet",
+      icon: "🔥",
+      issues: ["Tank leaking around bottom base", "No hot water or pilot light outage", "Loud popping sounds from calcium mineral scale"],
+      solution: "Same-day diagnostic, heating element replacement, or energy-efficient tankless conversion.",
+      link: "/denton-tx/water-heater-repair/"
+    },
+    laundry: {
+      name: "Laundry Room",
+      icon: "🧺",
+      issues: ["Standpipe backing up during spin cycle", "Aged rubber supply hoses with bulges", "Sudden loud knocking water hammer in walls"],
+      solution: "Braided stainless steel hose upgrade & high-pressure motorized line clearing.",
+      link: "/denton-tx/drain-cleaning/"
+    },
+    kitchen: {
+      name: "Kitchen",
+      icon: "🍽️",
+      issues: ["Jammed or humming garbage disposal", "Foul grease odor coming from double sink", "Leaking pull-down spray wand or under-sink trap"],
+      solution: "Heavy-duty commercial-grade disposal install & non-corrosive drain scouring.",
+      link: "/denton-tx/drain-cleaning/"
+    },
+    bathroom: {
+      name: "Bathrooms",
+      icon: "🚿",
+      issues: ["Toilet running non-stop or overflowing", "Slow draining tub / shower pan pooling water", "Low water pressure in sink aerator or showerhead"],
+      solution: "Flapper & fill valve rebuild, high-definition camera pass, and mechanical clog removal.",
+      link: "/denton-tx/emergency-plumbing/"
+    },
+    slab: {
+      name: "Foundation & Outdoors",
+      icon: "🏠",
+      issues: ["Warm spot felt through concrete slab flooring", "Water meter dial continuously turning with fixtures off", "Unusually lush, soggy grass above buried sewer line"],
+      solution: "Non-invasive electronic acoustic listening sensors & PEX attic pipe bypass reroute.",
+      link: "/denton-tx/slab-leak-repair/"
+    }
+  };
+
+  const pins = document.querySelectorAll('.room-pin');
+  const titleEl = document.getElementById('detail-title');
+  const iconEl = document.getElementById('detail-icon');
+  const issuesEl = document.getElementById('detail-issues');
+  const solutionEl = document.getElementById('detail-solution');
+  const linkEl = document.getElementById('detail-link') as HTMLAnchorElement;
+
+  pins.forEach(pin => {
+    pin.addEventListener('click', () => {
+      const roomId = pin.getAttribute('data-room') as keyof typeof roomsData;
+      const data = roomsData[roomId];
+      if (data && titleEl && iconEl && issuesEl && solutionEl && linkEl) {
+        titleEl.textContent = data.name;
+        iconEl.textContent = data.icon;
+        solutionEl.textContent = data.solution;
+        linkEl.href = data.link;
+        issuesEl.innerHTML = data.issues.map(i => `<li class="flex items-start gap-2"><span class="text-emergency-500 font-bold">•</span><span>${i}</span></li>`).join('');
+      }
+    });
+  });
+</script>

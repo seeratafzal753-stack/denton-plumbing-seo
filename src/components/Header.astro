@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../siteConfig';
+import MascotBadge from './MascotBadge.astro';
 
 interface Props {
   currentPath?: string;
@@ -20,41 +21,62 @@ const navLinks = [
 ];
 ---
 
-<header class="w-full bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
-  <!-- 24/7 Top Texas Emergency Bar -->
-  <div class="bg-slate-950 text-white text-xs sm:text-sm py-2 px-4 border-b border-slate-800">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
+<header class="w-full bg-white border-b border-slate-200 sticky top-0 z-40 shadow-md">
+  
+  <!-- Reference Layout Top Action Pill Bar (Dark Navy Header Bar) -->
+  <div class="bg-slate-950 text-white text-xs sm:text-sm py-2.5 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      
+      <!-- Left Live Indicator -->
       <div class="flex items-center space-x-2">
-        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emergency-500 animate-pulse-live"></span>
-        <span class="font-black text-emergency-400 uppercase tracking-wider text-xs">24/7 Denton County Live Dispatch</span>
-        <span class="hidden md:inline text-slate-400">| Serving ZIPs 76201–76226 • TX Master Plumber #M-42918</span>
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse-live"></span>
+        <span class="font-black text-emerald-400 uppercase tracking-wider text-xs">24/7 DENTON EMERGENCY DISPATCH</span>
+        <span class="hidden lg:inline text-slate-400">| TSBPE Master Plumber #M-42918</span>
       </div>
-      <div class="flex items-center space-x-4">
-        <span class="hidden sm:inline text-slate-300">Avg Arrival: <strong class="text-white">28–35 Mins</strong></span>
-        <a href={`tel:${siteConfig.phoneRaw}`} class="font-black text-amber-400 hover:text-amber-300 transition flex items-center gap-1">
-          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-          </svg>
-          {siteConfig.phone}
+
+      <!-- Right 3 Action Pill Buttons Matching Reference -->
+      <div class="flex items-center space-x-2">
+        <!-- Pill 1: Blue Phone -->
+        <a
+          href={`tel:${siteConfig.phoneRaw}`}
+          class="px-3.5 py-1 rounded-full bg-brand-700 hover:bg-brand-600 text-white font-black text-xs flex items-center gap-1 shadow-sm transition"
+        >
+          <span>📞</span>
+          <span>{siteConfig.phone}</span>
+        </a>
+
+        <!-- Pill 2: Red Schedule -->
+        <a
+          href="/contact/"
+          class="px-3.5 py-1 rounded-full bg-emergency-600 hover:bg-emergency-500 text-white font-black text-xs uppercase tracking-wider shadow-sm transition"
+        >
+          <span>SCHEDULE SERVICE</span>
+        </a>
+
+        <!-- Pill 3: Dark Account / Specials -->
+        <a
+          href="#neighborhoods"
+          class="hidden md:inline-flex px-3 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs shadow-sm transition"
+        >
+          <span>VIEW ETAS</span>
         </a>
       </div>
+
     </div>
   </div>
 
-  <!-- Main Navigation Bar -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex justify-between items-center">
-    <!-- Brand Logo with Texas Lone Star Badge -->
+  <!-- Main Navigation Bar with Mascot Logo -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+    
+    <!-- Brand Logo with Mascot Emblem -->
     <a href="/" class="flex items-center gap-3 group">
-      <div class="w-11 h-11 rounded-xl bg-brand-700 flex items-center justify-center text-white font-black text-xl shadow-md group-hover:bg-brand-800 transition relative overflow-hidden">
-        <span class="relative z-10">DP</span>
-        <span class="absolute -bottom-1 -right-1 text-xs opacity-40">⭐</span>
-      </div>
+      <MascotBadge size="sm" />
       <div>
-        <span class="block font-black text-lg sm:text-xl text-slate-900 leading-tight">
-          Denton<span class="text-brand-600">Plumbing</span>Pros
+        <span class="block font-black text-xl sm:text-2xl text-slate-900 leading-tight">
+          DENTON<span class="text-emergency-600">PLUMBING</span>PROS
         </span>
-        <span class="block text-xs font-bold text-slate-500 flex items-center gap-1">
-          <span class="text-rose-600">★</span> Locally Owned in Denton County, TX
+        <span class="block text-[11px] font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1">
+          <span class="text-emergency-600 font-black">★</span> YOUR LOCAL EXPERT PLUMBER
         </span>
       </div>
     </a>
@@ -64,10 +86,10 @@ const navLinks = [
       {navLinks.map((link) => (
         <a
           href={link.href}
-          class={`text-sm font-bold transition ${
+          class={`text-xs font-black uppercase tracking-wider transition ${
             currentPath === link.href
-              ? 'text-brand-600 border-b-2 border-brand-600 pb-1'
-              : 'text-slate-700 hover:text-brand-600'
+              ? 'text-emergency-600 border-b-2 border-emergency-600 pb-1'
+              : 'text-slate-700 hover:text-emergency-600'
           }`}
         >
           {link.name}
@@ -75,19 +97,16 @@ const navLinks = [
       ))}
     </nav>
 
-    <!-- Header CTA Button -->
+    <!-- Header Right Quick Call Button -->
     <div class="flex items-center gap-3">
       <a
         href={`tel:${siteConfig.phoneRaw}`}
-        class="hidden sm:inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-emergency-600 hover:bg-emergency-700 text-white font-black text-sm shadow-md transition transform hover:-translate-y-0.5"
+        class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-xl bg-emergency-600 hover:bg-emergency-700 text-white font-black text-xs sm:text-sm shadow-md transition transform hover:-translate-y-0.5 uppercase"
       >
-        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-        </svg>
-        <span>Call (940) 310-4499</span>
+        <span>📞 (940) 310-4499</span>
       </a>
 
-      <!-- Mobile Menu Button -->
+      <!-- Mobile Menu Hamburger Button -->
       <button
         id="mobile-menu-btn"
         aria-label="Toggle navigation menu"
@@ -98,6 +117,7 @@ const navLinks = [
         </svg>
       </button>
     </div>
+
   </div>
 
   <!-- Mobile Menu Drawer -->
@@ -105,18 +125,19 @@ const navLinks = [
     {navLinks.map((link) => (
       <a
         href={link.href}
-        class="block py-2 px-3 rounded-md text-base font-bold text-slate-800 hover:bg-brand-50 hover:text-brand-600"
+        class="block py-2 px-3 rounded-md text-sm font-bold text-slate-800 hover:bg-emergency-50 hover:text-emergency-600"
       >
         {link.name}
       </a>
     ))}
     <a
       href={`tel:${siteConfig.phoneRaw}`}
-      class="block w-full text-center py-3 rounded-xl bg-emergency-600 text-white font-black text-base shadow mt-3"
+      class="block w-full text-center py-3 rounded-xl bg-emergency-600 text-white font-black text-sm uppercase shadow mt-3"
     >
       📞 Call Denton Dispatch: {siteConfig.phone}
     </a>
   </div>
+
 </header>
 
 <script>

@@ -16,6 +16,14 @@ export const siteConfig = {
   addressLocality: "Denton",
   addressRegion: "TX",
   addressCountry: "US",
+
+  nap: {
+    address: "110 W Hickory St, Suite 200",
+    city: "Denton",
+    state: "TX",
+    zip: "76201",
+    phone: "(940) 310-4499",
+  },
   
   geo: {
     latitude: 33.2148,

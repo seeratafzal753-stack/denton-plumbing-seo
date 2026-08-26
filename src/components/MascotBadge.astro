@@ -1,0 +1,56 @@
+---
+interface Props {
+  className?: string;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { className = '', size = 'md' } = Astro.props;
+
+const sizeClasses = {
+  sm: 'w-16 h-16',
+  md: 'w-24 h-24 sm:w-28 sm:h-28',
+  lg: 'w-48 h-48 sm:w-64 sm:h-64',
+};
+---
+
+<div class={`relative inline-flex items-center justify-center rounded-full bg-gradient-to-b from-brand-900 to-slate-950 p-2 border-4 border-emergency-600 shadow-2xl shrink-0 ${sizeClasses[size]} ${className}`}>
+  <!-- Texas Longhorn Plumber Mascot Vector Illustration -->
+  <svg class="w-full h-full" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Outer Ring Accent -->
+    <circle cx="100" cy="100" r="92" stroke="#dc2626" stroke-width="6" stroke-dasharray="8 4"/>
+    <circle cx="100" cy="100" r="84" fill="#0f172a"/>
+    
+    <!-- Lone Star Background -->
+    <path d="M100 28 L108 52 L133 52 L113 67 L120 91 L100 76 L80 91 L87 67 L67 52 L92 52 Z" fill="#1e293b" opacity="0.6"/>
+
+    <!-- Mascot Longhorn Head -->
+    <!-- Horns -->
+    <path d="M40 75 C20 40 10 35 5 38 C0 42 15 62 45 82 Z" fill="#e2e8f0" stroke="#0f172a" stroke-width="3"/>
+    <path d="M160 75 C180 40 190 35 195 38 C200 42 185 62 155 82 Z" fill="#e2e8f0" stroke="#0f172a" stroke-width="3"/>
+    
+    <!-- Bull Head Silhouette -->
+    <path d="M60 85 C60 65 80 60 100 60 C120 60 140 65 140 85 C140 115 125 140 100 140 C75 140 60 115 60 85 Z" fill="#1e3a8a" stroke="#0f172a" stroke-width="4"/>
+    
+    <!-- Texas Flag Snout/Muzzle -->
+    <ellipse cx="100" cy="115" rx="28" ry="18" fill="#dc2626" stroke="#0f172a" stroke-width="3"/>
+    <circle cx="90" cy="115" r="4" fill="#0f172a"/>
+    <circle cx="110" cy="115" r="4" fill="#0f172a"/>
+    <ellipse cx="100" cy="123" rx="10" ry="4" fill="#991b1b"/>
+
+    <!-- Fierce Eyes -->
+    <polygon points="78,82 92,86 82,92" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+    <circle cx="85" cy="87" r="3" fill="#dc2626"/>
+    <polygon points="122,82 108,86 118,92" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+    <circle cx="115" cy="87" r="3" fill="#dc2626"/>
+
+    <!-- Heavy Duty Pipe Wrench in Mouth / Fist -->
+    <path d="M50 120 L150 150 L145 162 L45 132 Z" fill="#dc2626" stroke="#0f172a" stroke-width="3"/>
+    <!-- Wrench Jaw -->
+    <path d="M40 110 L65 118 L55 140 L30 132 Z" fill="#64748b" stroke="#0f172a" stroke-width="3"/>
+    <rect x="42" y="115" width="6" height="18" fill="#334155"/>
+    <circle cx="140" cy="155" r="5" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+
+    <!-- Lone Star on Forehead -->
+    <polygon points="100,68 103,76 111,76 105,81 107,89 100,84 93,89 95,81 89,76 97,76" fill="#f8fafc"/>
+  </svg>
+</div>

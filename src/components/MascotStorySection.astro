@@ -1,0 +1,71 @@
+---
+import MascotBadge from './MascotBadge.astro';
+import { siteConfig } from '../siteConfig';
+---
+
+<section class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    
+    <!-- Left Big Mascot Emblem -->
+    <div class="lg:col-span-5 flex justify-center">
+      <div class="relative group">
+        <!-- Pulse Glow -->
+        <div class="absolute inset-0 rounded-full bg-emergency-500/20 blur-2xl group-hover:scale-110 transition duration-500"></div>
+        <MascotBadge size="lg" className="relative z-10" />
+      </div>
+    </div>
+
+    <!-- Right Brand Story Text -->
+    <div class="lg:col-span-7">
+      <span class="text-xs font-black uppercase tracking-widest text-slate-500 block mb-1">
+        DENTON COUNTY'S TRUSTED LOCAL MASTER PLUMBERS
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-emergency-600 tracking-tight leading-tight mb-6 uppercase">
+        PRIDE IN <br class="hidden sm:inline" />
+        <span class="text-slate-900">PLUMBING SOLUTIONS</span>
+      </h2>
+
+      <div class="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
+        <p>
+          At <strong>Denton Plumbing Pros</strong>, we treat every home with the utmost respect, providing the highest standard of residential and commercial plumbing workmanship across North Texas. Whether you are dealing with a sudden late-night pipe burst, a failing water heater, or a stubborn main sewer obstruction, our team arrives fully prepared with state-of-the-art diagnostic tools and genuine replacement parts.
+        </p>
+        <p>
+          We pride ourselves on <strong>100% upfront, transparent pricing</strong> with zero hidden trip fees, zero overtime charges on weekends or holidays, and honest expert recommendations tailored to your budget.
+        </p>
+      </div>
+
+      <!-- Quick Trust Counters -->
+      <div class="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-slate-200 text-center sm:text-left">
+        <div>
+          <span class="block text-2xl sm:text-3xl font-black text-emergency-600">100%</span>
+          <span class="text-xs font-bold text-slate-500 uppercase">Licensed TSBPE</span>
+        </div>
+        <div>
+          <span class="block text-2xl sm:text-3xl font-black text-slate-900">28 Min</span>
+          <span class="text-xs font-bold text-slate-500 uppercase">Avg. Response</span>
+        </div>
+        <div>
+          <span class="block text-2xl sm:text-3xl font-black text-brand-600">4.9★</span>
+          <span class="text-xs font-bold text-slate-500 uppercase">187+ Reviews</span>
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+        <a
+          href={`tel:${siteConfig.phoneRaw}`}
+          class="px-8 py-4 rounded-xl bg-emergency-600 hover:bg-emergency-700 text-white font-black text-base shadow-xl text-center transition transform hover:-translate-y-0.5"
+        >
+          📞 Call (940) 310-4499 For Fast Dispatch
+        </a>
+        <a
+          href="/about-us/"
+          class="px-6 py-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-base text-center transition"
+        >
+          Learn About Our Team →
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
