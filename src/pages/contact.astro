@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import LeadForm from '../components/LeadForm.astro';
 import TrustBadges from '../components/TrustBadges.astro';
+import Icon from '../components/Icon.astro';
 import { siteConfig } from '../siteConfig';
 
 const crumbs = [
@@ -41,8 +42,9 @@ const crumbs = [
           <div class="space-y-6 text-sm">
             <div>
               <strong class="block text-xs uppercase text-slate-500 font-bold mb-1">Emergency Dispatch Phone:</strong>
-              <a href={`tel:${siteConfig.phoneRaw}`} class="text-2xl font-black text-emergency-600 hover:underline">
-                {siteConfig.phone}
+              <a href={`tel:${siteConfig.phoneRaw}`} class="text-2xl font-black text-emergency-600 hover:underline flex items-center gap-2">
+                <Icon name="phone" class="w-6 h-6 text-red-600" />
+                <span>{siteConfig.phone}</span>
               </a>
               <p class="text-xs text-slate-500 mt-1">Available 24 Hours / 7 Days a Week</p>
             </div>
@@ -56,28 +58,34 @@ const crumbs = [
 
             <div>
               <strong class="block text-xs uppercase text-slate-500 font-bold mb-1">Primary Service Hub:</strong>
-              <p class="text-slate-800 font-medium">
-                Denton, TX {siteConfig.postalCode}
+              <p class="text-slate-800 font-medium flex items-center gap-1.5">
+                <Icon name="map-pin" class="w-4 h-4 text-slate-500" />
+                <span>Denton, TX {siteConfig.postalCode}</span>
               </p>
-              <p class="text-xs text-slate-500 mt-1">Serving all Denton neighborhoods & Denton County</p>
+              <p class="text-xs text-slate-500 mt-1">Serving all Denton neighborhoods &amp; Denton County</p>
             </div>
 
             <div>
               <strong class="block text-xs uppercase text-slate-500 font-bold mb-1">Operating Hours:</strong>
-              <p class="text-slate-800 font-medium">
-                Monday – Sunday: 24 Hours Open (Emergency Service Always Active)
+              <p class="text-slate-800 font-medium flex items-center gap-1.5">
+                <Icon name="clock" class="w-4 h-4 text-emerald-600" />
+                <span>Monday – Sunday: 24 Hours Open (Emergency Service Always Active)</span>
               </p>
             </div>
           </div>
         </div>
 
         <div class="p-6 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-sm">
-          <strong class="block font-bold mb-1">⚡ For Active Flooding / Burst Pipes:</strong>
+          <strong class="flex items-center gap-1.5 font-bold mb-1">
+            <Icon name="alert" class="w-4 h-4 text-amber-700" />
+            <span>For Active Flooding / Burst Pipes:</span>
+          </strong>
           <p class="text-xs text-amber-800 mb-3">
             Please immediately turn off your main water shutoff valve (usually near your water meter or inside your garage) and call our emergency line directly.
           </p>
-          <a href={`tel:${siteConfig.phoneRaw}`} class="inline-block px-4 py-2 bg-amber-600 text-white font-bold text-xs rounded-lg">
-            📞 Direct Call: {siteConfig.phone}
+          <a href={`tel:${siteConfig.phoneRaw}`} class="inline-flex items-center gap-2 px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs rounded-lg transition">
+            <Icon name="phone" class="w-3.5 h-3.5 text-white" />
+            <span>Direct Call: {siteConfig.phone}</span>
           </a>
         </div>
       </div>

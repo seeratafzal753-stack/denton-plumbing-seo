@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../siteConfig';
+import Icon from './Icon.astro';
 
 interface Props {
   currentPath?: string;
@@ -7,19 +8,19 @@ interface Props {
 
 const { currentPath = '' } = Astro.props;
 
-const servicesList = [
-  { name: 'Emergency Plumbing', href: '/denton-tx/emergency-plumbing/', tag: '24/7 Urgent', icon: '🚨' },
-  { name: 'Water Heaters', href: '/denton-tx/water-heater-repair/', tag: 'Tank & Tankless', icon: '🔥' },
-  { name: 'Drain Cleaning', href: '/denton-tx/drain-cleaning/', tag: 'Hydro-Jetting', icon: '💧' },
-  { name: 'Slab Leaks', href: '/denton-tx/slab-leak-repair/', tag: 'Non-Invasive', icon: '🔍' },
-  { name: 'Sewer Line Repair', href: '/denton-tx/sewer-line-repair/', tag: 'Camera Inspection', icon: '🛠️' },
-  { name: 'All Services', href: '/services/', tag: 'Full Directory', icon: '📋' },
+const servicesList: Array<{ name: string; href: string; tag: string; icon: 'alert' | 'flame' | 'droplet' | 'search' | 'wrench' | 'clipboard' }> = [
+  { name: 'Emergency Plumbing', href: '/denton-tx/emergency-plumbing/', tag: '24/7 Urgent', icon: 'alert' },
+  { name: 'Water Heaters', href: '/denton-tx/water-heater-repair/', tag: 'Tank & Tankless', icon: 'flame' },
+  { name: 'Drain Cleaning', href: '/denton-tx/drain-cleaning/', tag: 'Hydro-Jetting', icon: 'droplet' },
+  { name: 'Slab Leaks', href: '/denton-tx/slab-leak-repair/', tag: 'Non-Invasive', icon: 'search' },
+  { name: 'Sewer Line Repair', href: '/denton-tx/sewer-line-repair/', tag: 'Camera Inspection', icon: 'wrench' },
+  { name: 'All Services', href: '/services/', tag: 'Full Directory', icon: 'clipboard' },
 ];
 ---
 
 <header class="w-full bg-white sticky top-0 z-50 shadow-md">
   
-  <!-- 1. SIMPLIFIED TOP ANNOUNCEMENT BAR (Clean, Minimal, Focused) -->
+  <!-- 1. SIMPLIFIED TOP ANNOUNCEMENT BAR (Real SVG Icons, Clean & Focused) -->
   <div class="bg-slate-950 text-white py-2 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
     <div class="max-w-7xl mx-auto flex items-center justify-center sm:justify-between text-xs sm:text-sm font-medium">
       
@@ -34,15 +35,19 @@ const servicesList = [
         </span>
         <a
           href={`tel:${siteConfig.phoneRaw}`}
-          class="font-black text-red-400 hover:text-white transition tracking-tight flex items-center gap-1 underline underline-offset-2"
+          class="font-black text-red-400 hover:text-white transition tracking-tight flex items-center gap-1.5 underline underline-offset-2"
         >
+          <Icon name="phone" class="w-3.5 h-3.5 text-red-400" />
           <span>{siteConfig.phone}</span>
         </a>
       </div>
 
       <!-- Right: Service Location Tag (Desktop Only) -->
       <div class="hidden sm:flex items-center gap-2 text-slate-400 text-xs font-semibold">
-        <span>⚡ 28–35 Min Arrival</span>
+        <span class="flex items-center gap-1">
+          <Icon name="bolt" class="w-3.5 h-3.5 text-amber-400" />
+          <span>28–35 Min Arrival</span>
+        </span>
         <span>•</span>
         <span>Denton County, TX</span>
       </div>
@@ -104,7 +109,9 @@ const servicesList = [
                 class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 hover:text-red-600 transition-colors group/item"
               >
                 <div class="flex items-center gap-2.5">
-                  <span class="text-sm">{service.icon}</span>
+                  <div class="w-5 h-5 rounded-md bg-slate-100 group-hover/item:bg-red-50 text-slate-700 group-hover/item:text-red-600 flex items-center justify-center">
+                    <Icon name={service.icon} class="w-3.5 h-3.5" />
+                  </div>
                   <span>{service.name}</span>
                 </div>
                 <span class="text-[10px] font-semibold text-slate-400 group-hover/item:text-red-600 bg-slate-100 group-hover/item:bg-red-50 px-2 py-0.5 rounded-md">
@@ -159,7 +166,7 @@ const servicesList = [
       >
         <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400">24/7 Live Dispatch</span>
         <span class="text-sm md:text-base lg:text-lg font-black text-slate-900 group-hover:text-red-600 transition tracking-tight flex items-center gap-1.5">
-          <span class="text-red-600">📞</span>
+          <Icon name="phone" class="w-4 h-4 text-red-600" />
           {siteConfig.phone}
         </span>
       </a>
@@ -204,7 +211,7 @@ const servicesList = [
       >
         <span>Services</span>
         <svg id="mobile-services-chevron" class="w-4 h-4 transition-transform duration-200 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
 
@@ -215,7 +222,7 @@ const servicesList = [
             class="flex items-center justify-between py-2.5 px-3 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-50 hover:text-red-600 transition"
           >
             <span class="flex items-center gap-2">
-              <span>{service.icon}</span>
+              <Icon name={service.icon} class="w-4 h-4 text-slate-500" />
               <span>{service.name}</span>
             </span>
             <span class="text-[10px] font-medium text-slate-400">{service.tag}</span>
@@ -250,7 +257,8 @@ const servicesList = [
         href={`tel:${siteConfig.phoneRaw}`}
         class="block w-full text-center py-3.5 rounded-xl bg-slate-900 hover:bg-black text-white font-black text-sm shadow flex items-center justify-center gap-2 min-h-[48px]"
       >
-        <span>📞 Call {siteConfig.phone}</span>
+        <Icon name="phone" class="w-4 h-4 text-red-500" />
+        <span>Call {siteConfig.phone}</span>
       </a>
       <a
         href="#estimate-form"

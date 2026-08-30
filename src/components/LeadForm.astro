@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../siteConfig';
+import Icon from './Icon.astro';
 
 interface Props {
   formTitle?: string;
@@ -15,7 +16,8 @@ const {
 <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-8">
   <div class="mb-6 text-center sm:text-left">
     <div class="inline-flex items-center gap-1.5 bg-amber-100 text-amber-900 text-xs font-bold px-2.5 py-1 rounded-full mb-2">
-      <span>🔥 Fast Callback in < 5 Mins</span>
+      <Icon name="bolt" class="w-3.5 h-3.5 text-amber-700" />
+      <span>Fast Callback in &lt; 5 Mins</span>
     </div>
     <h3 class="text-xl sm:text-2xl font-black text-slate-900">{formTitle}</h3>
     <p class="text-xs sm:text-sm text-slate-500 mt-1">
@@ -96,15 +98,25 @@ const {
       type="submit"
       class="w-full py-4 px-6 rounded-xl bg-emergency-600 hover:bg-emergency-700 text-white font-black text-base shadow-lg transition transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 cursor-pointer"
     >
-      <span>⚡ REQUEST INSTANT CALLBACK & ESTIMATE</span>
+      <Icon name="bolt" class="w-5 h-5 text-white" />
+      <span>REQUEST INSTANT CALLBACK & ESTIMATE</span>
     </button>
 
     <div class="flex items-center justify-center gap-3 text-xs text-slate-500 pt-2">
-      <span>🔒 100% Privacy</span>
+      <span class="flex items-center gap-1">
+        <Icon name="lock" class="w-3 h-3 text-slate-400" />
+        <span>100% Privacy</span>
+      </span>
       <span>•</span>
-      <span>⚡ No Spam</span>
+      <span class="flex items-center gap-1">
+        <Icon name="shield-check" class="w-3 h-3 text-emerald-500" />
+        <span>No Spam</span>
+      </span>
       <span>•</span>
-      <span>🛠️ Free Estimate with Repair</span>
+      <span class="flex items-center gap-1">
+        <Icon name="wrench" class="w-3 h-3 text-slate-400" />
+        <span>Free Estimate with Repair</span>
+      </span>
     </div>
   </form>
 </div>

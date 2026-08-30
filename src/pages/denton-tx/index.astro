@@ -5,6 +5,7 @@ import LeadForm from '../../components/LeadForm.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import FaqAccordion from '../../components/FaqAccordion.astro';
 import CallToAction from '../../components/CallToAction.astro';
+import Icon from '../../components/Icon.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '../../siteConfig';
 
@@ -43,7 +44,8 @@ const faqs = [
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
       <div class="lg:col-span-7">
         <div class="inline-flex items-center gap-2 bg-brand-600/90 text-white text-xs uppercase font-bold tracking-widest px-3.5 py-1.5 rounded-full mb-4">
-          <span>📍 Primary City Hub | Denton, Texas</span>
+          <Icon name="map-pin" class="w-3.5 h-3.5 text-white" />
+          <span>Primary City Hub | Denton, Texas</span>
         </div>
 
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 text-white">
@@ -59,9 +61,7 @@ const faqs = [
             href={`tel:${siteConfig.phoneRaw}`}
             class="flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-emergency-600 hover:bg-emergency-500 text-white font-black text-lg shadow-xl transition"
           >
-            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-              <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-            </svg>
+            <Icon name="phone" class="w-6 h-6 text-white" />
             <span>Call Denton Desk: {siteConfig.phone}</span>
           </a>
         </div>
@@ -116,12 +116,13 @@ const faqs = [
   <section class="py-14 bg-white px-4 sm:px-6 lg:px-8 border-t border-slate-200">
     <div class="max-w-7xl mx-auto">
       <h2 class="text-2xl font-black text-slate-900 text-center mb-6">
-        Denton Communities & Neighborhoods We Actively Serve
+        Denton Communities &amp; Neighborhoods We Actively Serve
       </h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 text-center">
         {siteConfig.neighborhoods.map((n) => (
-          <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold text-slate-700">
-            📍 {n}
+          <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold text-slate-700 flex items-center justify-center gap-1.5">
+            <Icon name="map-pin" class="w-3.5 h-3.5 text-slate-400" />
+            <span>{n}</span>
           </div>
         ))}
       </div>

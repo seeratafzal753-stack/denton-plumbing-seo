@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../siteConfig';
+import Icon from './Icon.astro';
 ---
 
 <section class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200 overflow-hidden">
@@ -22,15 +23,21 @@ import { siteConfig } from '../siteConfig';
 
       <ul class="space-y-3 text-sm font-bold text-slate-800 mb-8">
         <li class="flex items-center gap-3">
-          <span class="w-6 h-6 rounded-full bg-emergency-100 text-emergency-600 flex items-center justify-center text-xs">✓</span>
-          <span>Strategically staged along I-35E, I-35W & Loop 288 corridors</span>
+          <span class="w-6 h-6 rounded-full bg-emergency-100 text-emergency-600 flex items-center justify-center text-xs">
+            <Icon name="check" class="w-3.5 h-3.5" />
+          </span>
+          <span>Strategically staged along I-35E, I-35W &amp; Loop 288 corridors</span>
         </li>
         <li class="flex items-center gap-3">
-          <span class="w-6 h-6 rounded-full bg-emergency-100 text-emergency-600 flex items-center justify-center text-xs">✓</span>
-          <span>Live GPS technician tracking & arrival notifications</span>
+          <span class="w-6 h-6 rounded-full bg-emergency-100 text-emergency-600 flex items-center justify-center text-xs">
+            <Icon name="check" class="w-3.5 h-3.5" />
+          </span>
+          <span>Live GPS technician tracking &amp; arrival notifications</span>
         </li>
         <li class="flex items-center gap-3">
-          <span class="w-6 h-6 rounded-full bg-emergency-100 text-emergency-600 flex items-center justify-center text-xs">✓</span>
+          <span class="w-6 h-6 rounded-full bg-emergency-100 text-emergency-600 flex items-center justify-center text-xs">
+            <Icon name="check" class="w-3.5 h-3.5" />
+          </span>
           <span>Zero after-hours or weekend emergency surcharge in Denton</span>
         </li>
       </ul>
@@ -39,7 +46,8 @@ import { siteConfig } from '../siteConfig';
         href={`tel:${siteConfig.phoneRaw}`}
         class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-emergency-600 hover:bg-emergency-700 text-white font-black text-base shadow-xl transition transform hover:-translate-y-0.5"
       >
-        <span>📞 Dispatch A Technician Now: {siteConfig.phone}</span>
+        <Icon name="phone" class="w-5 h-5 text-white" />
+        <span>Dispatch A Technician Now: {siteConfig.phone}</span>
       </a>
     </div>
 
@@ -63,7 +71,7 @@ import { siteConfig } from '../siteConfig';
             <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between">
               <div>
                 <span class="font-black text-white">Unit #1 (Master Plumber David)</span>
-                <span class="block text-slate-400 text-xs">Staged near Locust St & University Dr</span>
+                <span class="block text-slate-400 text-xs">Staged near Locust St &amp; University Dr</span>
               </div>
               <span class="text-emerald-400 font-bold">Available</span>
             </div>
@@ -71,7 +79,7 @@ import { siteConfig } from '../siteConfig';
             <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between">
               <div>
                 <span class="font-black text-white">Unit #2 (Lead Tech Aaron)</span>
-                <span class="block text-slate-400 text-xs">Staged near Teasley Ln & I-35E</span>
+                <span class="block text-slate-400 text-xs">Staged near Teasley Ln &amp; I-35E</span>
               </div>
               <span class="text-amber-400 font-bold">En Route</span>
             </div>
@@ -79,7 +87,7 @@ import { siteConfig } from '../siteConfig';
             <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between">
               <div>
                 <span class="font-black text-white">Unit #3 (Specialist Marcus)</span>
-                <span class="block text-slate-400 text-xs">Staged near Rayzor Ranch & US-380</span>
+                <span class="block text-slate-400 text-xs">Staged near Rayzor Ranch &amp; US-380</span>
               </div>
               <span class="text-emerald-400 font-bold">Available</span>
             </div>

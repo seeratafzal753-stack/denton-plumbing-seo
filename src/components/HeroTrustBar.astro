@@ -1,38 +1,46 @@
 ---
-const trustItems = [
+import Icon from './Icon.astro';
+
+const trustItems: Array<{
+  icon: 'shield' | 'bolt' | 'dollar' | 'star' | 'lock';
+  title: string;
+  subtitle: string;
+  iconColor: string;
+  bgColor: string;
+}> = [
   {
-    icon: '🛡️',
+    icon: 'shield',
     title: 'TSBPE Master Plumber',
     subtitle: 'Texas Lic #M-42918',
-    color: 'text-slate-900',
+    iconColor: 'text-slate-800',
     bgColor: 'bg-slate-100',
   },
   {
-    icon: '⚡',
+    icon: 'bolt',
     title: '28-Min Fast Arrival',
     subtitle: 'Denton County Wide',
-    color: 'text-red-600',
+    iconColor: 'text-red-600',
     bgColor: 'bg-red-50',
   },
   {
-    icon: '💰',
+    icon: 'dollar',
     title: '100% Upfront Pricing',
     subtitle: 'No Hidden Overtime Fees',
-    color: 'text-emerald-700',
+    iconColor: 'text-emerald-700',
     bgColor: 'bg-emerald-50',
   },
   {
-    icon: '⭐',
+    icon: 'star',
     title: '4.9/5 Google Rating',
     subtitle: '187+ Verified Reviews',
-    color: 'text-amber-500',
+    iconColor: 'text-amber-500',
     bgColor: 'bg-amber-50',
   },
   {
-    icon: '🔒',
+    icon: 'lock',
     title: '$2M Fully Insured',
     subtitle: 'Residential & Commercial',
-    color: 'text-sky-700',
+    iconColor: 'text-sky-700',
     bgColor: 'bg-sky-50',
   },
 ];
@@ -44,8 +52,8 @@ const trustItems = [
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
       {trustItems.map((item) => (
         <div class="bg-slate-50/80 hover:bg-white border border-slate-200/90 hover:border-brand-500 rounded-2xl p-3.5 sm:p-4 flex items-center gap-3 transition-all duration-200 shadow-sm hover:shadow group">
-          <div class={`w-10 h-10 rounded-xl ${item.bgColor} flex items-center justify-center text-lg shrink-0 border border-slate-200/50 group-hover:scale-105 transition-transform`}>
-            <span>{item.icon}</span>
+          <div class={`w-10 h-10 rounded-xl ${item.bgColor} ${item.iconColor} flex items-center justify-center shrink-0 border border-slate-200/50 group-hover:scale-105 transition-transform`}>
+            <Icon name={item.icon} class="w-5 h-5" />
           </div>
           <div class="min-w-0">
             <span class="block text-xs sm:text-sm font-extrabold text-slate-900 leading-tight truncate">

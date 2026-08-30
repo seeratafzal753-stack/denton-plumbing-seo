@@ -9,6 +9,7 @@ import LocalWaterSoilWidget from '../components/LocalWaterSoilWidget.astro';
 import NeighborhoodExplorer from '../components/NeighborhoodExplorer.astro';
 import FaqAccordion from '../components/FaqAccordion.astro';
 import LeadForm from '../components/LeadForm.astro';
+import Icon from '../components/Icon.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '../siteConfig';
 
@@ -47,7 +48,7 @@ const faqs = [
 >
 
   <!-- ========================================================= -->
-  <!-- 1. HERO SECTION (Clean, Focused, Branded Van & Technician) -->
+  <!-- 1. HERO SECTION (Real SVG Icons, Clean & Focused) -->
   <!-- ========================================================= -->
   <section class="bg-gradient-to-b from-sky-50/40 via-white to-slate-50/30 border-b border-slate-200 py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
     
@@ -76,10 +77,16 @@ const faqs = [
           Professional plumbing services in Denton, TX and surrounding areas. From emergency water heater leaks and clogged mainlines to non-invasive slab leak detection, get prompt master-level service.
         </p>
 
-        <!-- Reviews Row with Bold Dot Dividers and Gold Stars -->
+        <!-- Reviews Row with SVG Stars and Bold Dividers -->
         <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3 bg-slate-50 border border-slate-200/90 rounded-2xl px-4 py-2 shadow-sm text-xs">
-          <div class="flex items-center gap-1 text-amber-500 font-bold">
-            <span class="text-sm">★★★★★</span>
+          <div class="flex items-center gap-1.5 text-amber-500 font-bold">
+            <div class="flex items-center gap-0.5">
+              <Icon name="star" class="w-3.5 h-3.5" />
+              <Icon name="star" class="w-3.5 h-3.5" />
+              <Icon name="star" class="w-3.5 h-3.5" />
+              <Icon name="star" class="w-3.5 h-3.5" />
+              <Icon name="star" class="w-3.5 h-3.5" />
+            </div>
             <span class="text-slate-900 font-black ml-0.5">4.9 / 5.0</span>
           </div>
           <span class="text-slate-400 font-black text-xs leading-none">•</span>
@@ -88,7 +95,8 @@ const faqs = [
           </span>
           <span class="text-slate-400 font-black text-xs leading-none">•</span>
           <span class="text-emerald-700 font-extrabold flex items-center gap-1">
-            <span>🛡️</span> 1,500+ Homes Serviced
+            <Icon name="shield-check" class="w-3.5 h-3.5 text-emerald-600" />
+            <span>1,500+ Homes Serviced</span>
           </span>
         </div>
 
@@ -100,16 +108,16 @@ const faqs = [
             href={`tel:${siteConfig.phoneRaw}`}
             class="w-full sm:w-auto min-h-[52px] sm:min-h-[56px] px-7 py-3.5 rounded-2xl bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-black text-base uppercase tracking-wider shadow-xl shadow-red-600/25 hover:shadow-2xl hover:shadow-red-600/35 transition-all duration-200 ease-out transform hover:-translate-y-0.5 active:translate-y-0.5 flex items-center justify-center gap-2.5 text-center group cursor-pointer"
           >
-            <span class="text-lg group-hover:scale-110 transition-transform">📞</span>
+            <Icon name="phone" class="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
             <span>CALL NOW: {siteConfig.phone}</span>
           </a>
 
           <!-- Secondary CTA: BOOK ONLINE (Dark Slate) -->
           <a
             href="#estimate-form"
-            class="w-full sm:w-auto min-h-[52px] sm:min-h-[56px] px-7 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-950 active:bg-black text-white font-black text-base uppercase tracking-wider shadow-md hover:shadow-lg transition-all duration-200 ease-out transform hover:-translate-y-0.5 active:translate-y-0.5 flex items-center justify-center gap-2 text-center cursor-pointer"
+            class="w-full sm:w-auto min-h-[52px] sm:min-h-[56px] px-7 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-950 active:bg-black text-white font-black text-base uppercase tracking-wider shadow-md hover:shadow-lg transition-all duration-200 ease-out transform hover:-translate-y-0.5 active:translate-y-0.5 flex items-center justify-center gap-2.5 text-center cursor-pointer"
           >
-            <span>📅</span>
+            <Icon name="calendar" class="w-5 h-5 text-slate-300" />
             <span>BOOK ONLINE</span>
           </a>
 
@@ -145,7 +153,9 @@ const faqs = [
       <div class="lg:col-span-5 order-2 lg:order-1">
         <div class="bg-slate-100 border border-slate-200 rounded-2xl p-6 text-center shadow-sm">
           <div class="aspect-square bg-slate-900 rounded-xl flex flex-col items-center justify-center p-6 text-white relative">
-            <div class="text-6xl mb-3">🔥</div>
+            <div class="w-16 h-16 rounded-2xl bg-slate-800 text-sky-400 flex items-center justify-center mb-4">
+              <Icon name="flame" class="w-10 h-10" />
+            </div>
             <span class="font-extrabold text-white text-xl font-serif">Clean, Hot Water On Demand</span>
             <span class="text-xs text-slate-300 mt-2 max-w-xs">High-efficiency tank &amp; tankless systems installed with full code compliance.</span>
           </div>
@@ -162,13 +172,16 @@ const faqs = [
         </p>
         <ul class="space-y-2 text-sm text-slate-700">
           <li class="flex items-center gap-2">
-            <span class="text-brand-700 font-bold">•</span> Annual water heater descaling &amp; anode protection
+            <Icon name="check" class="w-4 h-4 text-brand-700 font-bold shrink-0" />
+            <span>Annual water heater descaling &amp; anode protection</span>
           </li>
           <li class="flex items-center gap-2">
-            <span class="text-brand-700 font-bold">•</span> High-volume tankless conversions with 40% lower energy bills
+            <Icon name="check" class="w-4 h-4 text-brand-700 font-bold shrink-0" />
+            <span>High-volume tankless conversions with 40% lower energy bills</span>
           </li>
           <li class="flex items-center gap-2">
-            <span class="text-brand-700 font-bold">•</span> Quiet, leak-free PEX water supply lines
+            <Icon name="check" class="w-4 h-4 text-brand-700 font-bold shrink-0" />
+            <span>Quiet, leak-free PEX water supply lines</span>
           </li>
         </ul>
         <div class="pt-4">
@@ -210,7 +223,9 @@ const faqs = [
       <div class="lg:col-span-5">
         <div class="bg-slate-100 border border-slate-200 rounded-2xl p-6 text-center shadow-sm">
           <div class="aspect-[4/3] bg-white rounded-xl flex flex-col items-center justify-center p-6 border border-slate-200">
-            <div class="text-5xl mb-2">🛡️</div>
+            <div class="w-14 h-14 rounded-2xl bg-slate-100 text-slate-900 flex items-center justify-center mb-3">
+              <Icon name="shield" class="w-8 h-8" />
+            </div>
             <span class="font-extrabold text-slate-900 text-lg font-serif">100% Satisfaction Warranty</span>
             <span class="text-xs text-slate-500 mt-1">Written guarantee on all parts &amp; labor</span>
           </div>
@@ -230,7 +245,9 @@ const faqs = [
       <div class="lg:col-span-5 order-2 lg:order-1">
         <div class="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm">
           <div class="aspect-square bg-slate-50 rounded-xl flex flex-col items-center justify-center p-6 border border-slate-200">
-            <div class="text-6xl mb-2">⚡</div>
+            <div class="w-16 h-16 rounded-2xl bg-slate-100 text-amber-500 flex items-center justify-center mb-3">
+              <Icon name="bolt" class="w-9 h-9" />
+            </div>
             <span class="font-bold text-slate-900 text-base font-serif">Smart Digital Control</span>
             <span class="text-xs text-slate-500 mt-1">Navien &amp; Rheem High-Efficiency Systems</span>
           </div>

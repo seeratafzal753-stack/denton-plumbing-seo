@@ -3,13 +3,14 @@ import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import FaqAccordion from '../components/FaqAccordion.astro';
 import CallToAction from '../components/CallToAction.astro';
+import Icon from '../components/Icon.astro';
 import { siteConfig } from '../siteConfig';
 
 interface Props {
   title: string;
-  description: string;
+  metaTitle: string;
+  metaDescription: string;
   pubDate: Date;
-  updatedDate?: Date;
   author: string;
   category: string;
   targetKeywords?: string[];
@@ -18,34 +19,33 @@ interface Props {
 
 const {
   title,
-  description,
+  metaTitle,
+  metaDescription,
   pubDate,
-  updatedDate,
-  author = 'Denton Plumbing Specialist',
+  author,
   category,
   targetKeywords = [],
   faqs = [],
 } = Astro.props;
+
+const crumbs = [
+  { name: 'Blog', item: '/blog/' },
+  { name: title, item: Astro.url.pathname },
+];
 
 const formattedDate = new Intl.DateTimeFormat('en-US', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 }).format(pubDate);
-
-const crumbs = [
-  { name: 'Plumbing Guides & Blog', item: '/blog/' },
-  { name: title, item: Astro.url.pathname },
-];
 ---
 
 <BaseLayout
-  title={`${title} | Denton Plumbing Pros`}
-  description={description}
+  title={metaTitle}
+  description={metaDescription}
   type="Article"
   faqs={faqs}
   breadcrumbs={crumbs}
-  publishDate={pubDate.toISOString()}
 >
   <Breadcrumbs crumbs={crumbs} />
 
@@ -63,26 +63,36 @@ const crumbs = [
         </h1>
 
         <div class="flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm text-slate-500 border-y border-slate-200 py-3">
-          <span>✍️ By <strong class="text-slate-800">{author}</strong></span>
+          <span>By <strong class="text-slate-800">{author}</strong></span>
           <span>•</span>
-          <span>📅 Published: {formattedDate}</span>
+          <span class="flex items-center gap-1">
+            <Icon name="calendar" class="w-3.5 h-3.5 text-slate-400" />
+            <span>Published: {formattedDate}</span>
+          </span>
           <span>•</span>
-          <span>📍 Region: Denton County, TX</span>
+          <span class="flex items-center gap-1">
+            <Icon name="map-pin" class="w-3.5 h-3.5 text-slate-400" />
+            <span>Region: Denton County, TX</span>
+          </span>
         </div>
       </header>
 
       <!-- In-Article Emergency Dispatch Callout Box -->
       <div class="my-8 p-6 rounded-2xl bg-gradient-to-r from-brand-900 to-slate-900 text-white shadow-lg flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
-          <span class="text-xs uppercase font-bold text-amber-400">⚡ Dealing With a Plumbing Emergency in Denton?</span>
+          <span class="text-xs uppercase font-bold text-amber-400 flex items-center gap-1.5">
+            <Icon name="bolt" class="w-3.5 h-3.5 text-amber-400" />
+            <span>Dealing With a Plumbing Emergency in Denton?</span>
+          </span>
           <h3 class="text-lg font-black text-white mt-0.5">Need a Master Plumber Today?</h3>
           <p class="text-xs text-slate-300">Same-day dispatch across all Denton neighborhoods and ZIP codes.</p>
         </div>
         <a
           href={`tel:${siteConfig.phoneRaw}`}
-          class="shrink-0 px-6 py-3 rounded-xl bg-emergency-600 hover:bg-emergency-700 text-white font-bold text-sm shadow transition"
+          class="shrink-0 px-6 py-3 rounded-xl bg-emergency-600 hover:bg-emergency-700 text-white font-bold text-sm shadow transition flex items-center gap-2"
         >
-          📞 Call {siteConfig.phone}
+          <Icon name="phone" class="w-4 h-4 text-white" />
+          <span>Call {siteConfig.phone}</span>
         </a>
       </div>
 

@@ -1,4 +1,6 @@
 ---
+import Icon from './Icon.astro';
+
 const reviews = [
   {
     title: "Fast Sunday Night Water Heater Emergency",
@@ -29,8 +31,15 @@ const reviews = [
       {reviews.map((r) => (
         <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 flex flex-col justify-between shadow-sm hover:border-brand-500 hover:shadow-md transition">
           <div>
-            <div class="flex text-amber-500 mb-3 text-sm">
-              ★★★★★ <span class="text-slate-600 text-xs ml-2 font-bold">(Verified Homeowner)</span>
+            <div class="flex items-center gap-1 text-amber-500 mb-3">
+              <div class="flex items-center gap-0.5">
+                <Icon name="star" class="w-4 h-4 text-amber-500" />
+                <Icon name="star" class="w-4 h-4 text-amber-500" />
+                <Icon name="star" class="w-4 h-4 text-amber-500" />
+                <Icon name="star" class="w-4 h-4 text-amber-500" />
+                <Icon name="star" class="w-4 h-4 text-amber-500" />
+              </div>
+              <span class="text-slate-600 text-xs ml-2 font-bold">(Verified Homeowner)</span>
             </div>
             <h3 class="font-bold text-slate-900 text-base mb-2 font-serif">
               "{r.title}"

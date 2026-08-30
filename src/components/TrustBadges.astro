@@ -1,22 +1,28 @@
 ---
-const badges = [
+import Icon from './Icon.astro';
+
+const badges: Array<{
+  icon: 'shield-check' | 'bolt' | 'flask' | 'dollar';
+  title: string;
+  desc: string;
+}> = [
   {
-    icon: '⭐',
+    icon: 'shield-check',
     title: 'Texas Master Plumber',
     desc: 'TSBPE Licensed #M-42918 & Fully Insured',
   },
   {
-    icon: '⚡',
+    icon: 'bolt',
     title: '28–35 Min Arrival',
     desc: 'Trucks staged near I-35E & Loop 288',
   },
   {
-    icon: '🧪',
+    icon: 'flask',
     title: 'North Texas Soil & Scale Pros',
     desc: 'Slab leak & hard water specialists',
   },
   {
-    icon: '💵',
+    icon: 'dollar',
     title: '100% Upfront Pricing',
     desc: 'Zero night/weekend surge pricing in Denton',
   },
@@ -27,8 +33,8 @@ const badges = [
   <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6">
     {badges.map((b) => (
       <div class="flex items-start gap-3">
-        <div class="text-2xl p-2.5 bg-brand-50 rounded-xl shrink-0 border border-brand-100 shadow-sm">
-          {b.icon}
+        <div class="w-10 h-10 bg-brand-50 text-brand-700 rounded-xl shrink-0 border border-brand-100 shadow-sm flex items-center justify-center">
+          <Icon name={b.icon} class="w-5 h-5" />
         </div>
         <div>
           <h4 class="font-black text-slate-900 text-sm sm:text-base leading-tight">{b.title}</h4>

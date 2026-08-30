@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import TrustBadges from '../../components/TrustBadges.astro';
 import CallToAction from '../../components/CallToAction.astro';
+import Icon from '../../components/Icon.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '../../siteConfig';
 
@@ -61,8 +62,9 @@ const crumbs = [
                 <span class="text-xs font-bold uppercase text-slate-500 tracking-wider block mb-2">Common Fixes:</span>
                 <ul class="text-xs text-slate-700 space-y-1.5">
                   {service.data.problemsSolved.slice(0, 3).map((p) => (
-                    <li class="flex items-center gap-1.5">
-                      <span class="text-emerald-500">✓</span> {p}
+                    <li class="flex items-center gap-2">
+                      <Icon name="check" class="w-3.5 h-3.5 text-emerald-500 font-bold shrink-0" />
+                      <span>{p}</span>
                     </li>
                   ))}
                 </ul>
@@ -78,9 +80,10 @@ const crumbs = [
               </a>
               <a
                 href={`tel:${siteConfig.phoneRaw}`}
-                class="text-xs font-bold text-emergency-600"
+                class="text-xs font-bold text-emergency-600 hover:underline flex items-center gap-1"
               >
-                📞 Call Now
+                <Icon name="phone" class="w-3.5 h-3.5 text-red-600" />
+                <span>Call Now</span>
               </a>
             </div>
           </div>
