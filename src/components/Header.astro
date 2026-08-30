@@ -7,116 +7,197 @@ interface Props {
 
 const { currentPath = '' } = Astro.props;
 
-const navLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'Water Heaters', href: '/denton-tx/water-heater-repair/' },
-  { name: 'Drain Cleaning', href: '/denton-tx/drain-cleaning/' },
-  { name: 'Slab Leaks', href: '/denton-tx/slab-leak-repair/' },
-  { name: 'Emergency Plumbing', href: '/denton-tx/emergency-plumbing/' },
-  { name: 'All Services', href: '/services/' },
-  { name: 'Service Areas', href: '/service-areas/' },
-  { name: 'Blog', href: '/blog/' },
-  { name: 'Contact', href: '/contact/' },
+const servicesList = [
+  { name: 'Emergency Plumbing', href: '/denton-tx/emergency-plumbing/', tag: '24/7 Urgent', icon: '🚨' },
+  { name: 'Water Heaters', href: '/denton-tx/water-heater-repair/', tag: 'Tank & Tankless', icon: '🔥' },
+  { name: 'Drain Cleaning', href: '/denton-tx/drain-cleaning/', tag: 'Hydro-Jetting', icon: '💧' },
+  { name: 'Slab Leaks', href: '/denton-tx/slab-leak-repair/', tag: 'Non-Invasive', icon: '🔍' },
+  { name: 'Sewer Line Repair', href: '/denton-tx/sewer-line-repair/', tag: 'Camera Inspection', icon: '🛠️' },
+  { name: 'All Services', href: '/services/', tag: 'Full Directory', icon: '📋' },
 ];
 ---
 
 <header class="w-full bg-white sticky top-0 z-50 shadow-md">
   
-  <!-- 1. SLIM EMERGENCY ANNOUNCEMENT BAR AT THE VERY TOP -->
-  <div class="bg-red-600 text-white py-2 px-4 shadow-sm border-b border-red-700">
-    <div class="max-w-7xl mx-auto flex items-center justify-center sm:justify-between text-center sm:text-left">
+  <!-- 1. REDESIGNED SLATE TOP ANNOUNCEMENT BAR -->
+  <div class="bg-slate-900 text-white py-2.5 px-4 sm:px-6 lg:px-8 border-b border-slate-800 shadow-inner">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-4 text-center sm:text-left">
       
-      <!-- Strong Red / High-Visibility Urgency Text -->
-      <div class="flex items-center justify-center gap-2.5 mx-auto sm:mx-0">
-        <span class="relative flex h-2.5 w-2.5">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-90"></span>
-          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+      <!-- Left: Announcement Text with Live Pulse Beacon -->
+      <div class="flex items-center justify-center sm:justify-start gap-2.5">
+        <span class="relative flex h-2.5 w-2.5 shrink-0">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-90"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-600 shadow-sm"></span>
         </span>
-        <span class="text-xs sm:text-sm font-extrabold tracking-wide uppercase text-white drop-shadow-sm">
-          Plumbing Emergency? We’re Available 24/7/365
+        <span class="text-xs sm:text-sm font-extrabold tracking-wide uppercase text-slate-100 drop-shadow-sm">
+          PLUMBING EMERGENCY? WE’RE AVAILABLE 24/7/365
         </span>
       </div>
 
-      <!-- Right Support Notice (Desktop) -->
-      <div class="hidden md:flex items-center gap-4 text-xs font-bold text-red-100">
-        <span>⚡ 28–35 Min Avg Arrival Across Denton County</span>
-        <span>•</span>
-        <a href={`tel:${siteConfig.phoneRaw}`} class="text-white hover:text-amber-200 underline font-black transition">
-          Direct Line: {siteConfig.phone}
+      <!-- Right: Arrival Time Badge + Direct Phone Number -->
+      <div class="flex items-center flex-wrap justify-center gap-2 sm:gap-3 text-xs">
+        
+        <!-- Arrival Time Badge -->
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700/80 text-slate-200 text-[11px] sm:text-xs font-bold shadow-sm">
+          <span class="text-amber-400">⚡</span>
+          <span>28–35 Min Arrival</span>
+        </span>
+
+        <!-- Direct Line Button -->
+        <a
+          href={`tel:${siteConfig.phoneRaw}`}
+          class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-red-600 hover:bg-red-700 text-white font-black text-[11px] sm:text-xs shadow-md hover:shadow-lg transition-all transform hover:scale-105 active:scale-95"
+          aria-label={`Call direct at ${siteConfig.phone}`}
+        >
+          <span>📞</span>
+          <span>Direct: {siteConfig.phone}</span>
         </a>
+
       </div>
 
     </div>
   </div>
 
-  <!-- 2. MAIN HEADER (BELOW EMERGENCY BAR) -->
+  <!-- 2. MAIN NAVBAR -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center bg-white">
     
-    <!-- LEFT: Professional Plumbing Company Logo & Name with Mascot -->
-    <a href="/" class="flex items-center gap-3 group shrink-0">
-      <div class="relative w-12 h-12 rounded-xl bg-gradient-to-br from-brand-900 via-brand-800 to-slate-950 flex items-center justify-center shadow-md border border-brand-700 group-hover:scale-105 transition transform overflow-hidden p-0.5">
+    <!-- LEFT: Logo & Branding -->
+    <a href="/" class="flex items-center gap-2.5 group shrink-0" aria-label="Denton Plumbing Pros Homepage">
+      <div class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-slate-900 via-brand-900 to-slate-900 flex items-center justify-center shadow-sm border border-slate-700/50 group-hover:scale-105 transition transform overflow-hidden p-0.5">
         <img
           src="/images/plumber-mascot.png"
-          alt="Denton Plumber Mascot"
+          alt="Denton Plumbing Pros Mascot"
           class="w-full h-full object-contain object-top"
-          width="48"
-          height="48"
+          width="44"
+          height="44"
         />
       </div>
       <div>
-        <span class="block font-black text-xl sm:text-2xl text-slate-900 leading-none tracking-tight">
+        <span class="block font-black text-lg sm:text-xl text-slate-900 leading-none tracking-tight">
           Denton<span class="text-brand-700">Plumbing</span><span class="text-red-600">Pros</span>
         </span>
         <span class="block text-[10px] uppercase font-bold text-slate-500 tracking-wider mt-1">
-          Licensed Master Plumbers • Lic #M-42918
+          24/7 Local Plumbing • Denton, TX
         </span>
       </div>
     </a>
 
-    <!-- CENTER: Horizontally Aligned, Spacious Navigation Menu -->
-    <nav class="hidden xl:flex items-center space-x-5 2xl:space-x-7">
-      {navLinks.map((link) => (
-        <a
-          href={link.href}
-          class={`text-sm font-bold transition tracking-tight ${
-            currentPath === link.href
-              ? 'text-red-600 border-b-2 border-red-600 pb-1'
-              : 'text-slate-700 hover:text-red-600'
+    <!-- CENTER: Desktop Navigation Menu -->
+    <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 text-sm font-bold text-slate-700">
+      
+      <!-- Home Link (Harmonized Styling) -->
+      <a
+        href="/"
+        class={`px-3 py-2 rounded-lg transition-colors hover:text-red-600 hover:bg-slate-50 ${
+          currentPath === '/' || currentPath === '' ? 'text-red-600 font-black bg-red-50/50' : 'text-slate-700 font-bold'
+        }`}
+      >
+        Home
+      </a>
+
+      <!-- Services Dropdown (Opens on Hover) -->
+      <div class="relative group">
+        <button
+          type="button"
+          class={`flex items-center gap-1.5 px-3 py-2 rounded-lg transition-colors hover:text-red-600 hover:bg-slate-50 ${
+            currentPath.includes('/services') || currentPath.includes('/denton-tx/') ? 'text-red-600 font-black bg-red-50/50' : 'text-slate-700 font-bold'
           }`}
+          aria-expanded="false"
+          aria-haspopup="true"
         >
-          {link.name}
-        </a>
-      ))}
+          <span>Services</span>
+          <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180 text-slate-500 group-hover:text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        <!-- Dropdown Menu Panel -->
+        <div class="absolute top-full left-0 w-72 bg-white rounded-2xl shadow-2xl border border-slate-200 py-2 hidden group-hover:block transition-all duration-150 z-50 animate-fadeIn mt-1">
+          <div class="px-4 py-2 text-[11px] font-black uppercase text-slate-400 tracking-wider border-b border-slate-100 flex items-center justify-between">
+            <span>Our Plumbing Services</span>
+            <span class="text-[10px] text-red-600 font-bold">24/7 Dispatch</span>
+          </div>
+          <div class="p-1 space-y-0.5">
+            {servicesList.map((service) => (
+              <a
+                href={service.href}
+                class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold text-slate-700 hover:bg-red-50 hover:text-red-600 transition-colors group/item"
+              >
+                <div class="flex items-center gap-2.5">
+                  <span class="text-sm">{service.icon}</span>
+                  <span>{service.name}</span>
+                </div>
+                <span class="text-[10px] font-semibold text-slate-400 group-hover/item:text-red-500 bg-slate-50 group-hover/item:bg-red-100/60 px-2 py-0.5 rounded-md">
+                  {service.tag}
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Areas (Standalone Link) -->
+      <a
+        href="/service-areas/"
+        class={`px-3 py-2 rounded-lg transition-colors hover:text-red-600 hover:bg-slate-50 ${
+          currentPath.includes('/service-areas') ? 'text-red-600 font-black bg-red-50/50' : 'text-slate-700 font-bold'
+        }`}
+      >
+        Service Areas
+      </a>
+
+      <!-- Blog (Standalone Link) -->
+      <a
+        href="/blog/"
+        class={`px-3 py-2 rounded-lg transition-colors hover:text-red-600 hover:bg-slate-50 ${
+          currentPath.includes('/blog') ? 'text-red-600 font-black bg-red-50/50' : 'text-slate-700 font-bold'
+        }`}
+      >
+        Blog
+      </a>
+
+      <!-- Contact (Standalone Link) -->
+      <a
+        href="/contact/"
+        class={`px-3 py-2 rounded-lg transition-colors hover:text-red-600 hover:bg-slate-50 ${
+          currentPath.includes('/contact') ? 'text-red-600 font-black bg-red-50/50' : 'text-slate-700 font-bold'
+        }`}
+      >
+        Contact
+      </a>
+
     </nav>
 
-    <!-- RIGHT: Prominent Phone Number & Professional BOOK NOW CTA -->
+    <!-- RIGHT: Phone Call & BOOK SERVICE CTA -->
     <div class="flex items-center gap-3 sm:gap-4 shrink-0">
       
-      <!-- Prominent Phone Number -->
+      <!-- Phone Link -->
       <a
         href={`tel:${siteConfig.phoneRaw}`}
         class="hidden sm:flex flex-col items-end text-right group"
+        aria-label={`Call us at ${siteConfig.phone}`}
       >
-        <span class="text-[10px] uppercase font-black tracking-widest text-slate-500">24/7 Live Dispatch</span>
-        <span class="text-base lg:text-lg font-black text-slate-900 group-hover:text-red-600 transition tracking-tight flex items-center gap-1.5">
+        <span class="text-[10px] uppercase font-extrabold tracking-widest text-slate-500">24/7 Live Dispatch</span>
+        <span class="text-sm md:text-base lg:text-lg font-black text-slate-900 group-hover:text-red-600 transition tracking-tight flex items-center gap-1.5">
           <span class="text-red-600">📞</span>
           {siteConfig.phone}
         </span>
       </a>
 
-      <!-- Professional BOOK NOW High-Conversion CTA Button -->
+      <!-- Primary CTA Button: BOOK SERVICE -->
       <a
         href="#estimate-form"
-        class="inline-flex items-center justify-center px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+        class="inline-flex items-center justify-center px-4 sm:px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-center"
       >
-        <span>BOOK NOW</span>
+        <span>BOOK SERVICE</span>
       </a>
 
-      <!-- Mobile Menu Hamburger Button -->
+      <!-- Mobile Hamburger Button -->
       <button
         id="mobile-menu-btn"
         aria-label="Toggle navigation menu"
-        class="xl:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none"
+        aria-expanded="false"
+        class="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none"
       >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -127,31 +208,78 @@ const navLinks = [
 
   </div>
 
-  <!-- Subtle Bottom Border Accent -->
-  <div class="h-0.5 w-full bg-slate-100"></div>
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 py-4 space-y-2 shadow-2xl max-h-[85vh] overflow-y-auto">
+    <a
+      href="/"
+      class="block py-2.5 px-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-red-50 hover:text-red-600 transition"
+    >
+      Home
+    </a>
 
-  <!-- Mobile Navigation Menu Drawer -->
-  <div id="mobile-menu" class="hidden xl:hidden bg-white border-t border-slate-200 px-4 py-4 space-y-2 shadow-2xl">
-    {navLinks.map((link) => (
-      <a
-        href={link.href}
-        class="block py-2.5 px-3 rounded-lg text-sm font-bold text-slate-800 hover:bg-red-50 hover:text-red-600 transition"
+    <!-- Mobile Services Accordion (Tap to Toggle) -->
+    <div class="border-y border-slate-100 py-1">
+      <button
+        id="mobile-services-btn"
+        type="button"
+        class="flex items-center justify-between w-full py-2.5 px-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-red-50 hover:text-red-600 transition"
+        aria-expanded="false"
       >
-        {link.name}
-      </a>
-    ))}
-    <div class="pt-4 border-t border-slate-100 space-y-2">
+        <span>Services</span>
+        <svg id="mobile-services-chevron" class="w-4 h-4 transition-transform duration-200 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      <div id="mobile-services-menu" class="hidden pl-3 pr-1 py-1 space-y-1">
+        {servicesList.map((service) => (
+          <a
+            href={service.href}
+            class="flex items-center justify-between py-2 px-3 rounded-lg text-xs font-bold text-slate-700 hover:bg-red-50 hover:text-red-600 transition"
+          >
+            <span class="flex items-center gap-2">
+              <span>{service.icon}</span>
+              <span>{service.name}</span>
+            </span>
+            <span class="text-[10px] font-medium text-slate-400">{service.tag}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Mobile Standalone Links -->
+    <a
+      href="/service-areas/"
+      class="block py-2.5 px-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-red-50 hover:text-red-600 transition"
+    >
+      Service Areas
+    </a>
+    <a
+      href="/blog/"
+      class="block py-2.5 px-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-red-50 hover:text-red-600 transition"
+    >
+      Blog
+    </a>
+    <a
+      href="/contact/"
+      class="block py-2.5 px-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-red-50 hover:text-red-600 transition"
+    >
+      Contact
+    </a>
+
+    <!-- Mobile Action Buttons -->
+    <div class="pt-3 border-t border-slate-200 space-y-2">
       <a
         href={`tel:${siteConfig.phoneRaw}`}
-        class="block w-full text-center py-3.5 rounded-xl bg-slate-900 text-white font-black text-sm shadow flex items-center justify-center gap-2"
+        class="block w-full text-center py-3 rounded-xl bg-slate-900 hover:bg-black text-white font-black text-sm shadow flex items-center justify-center gap-2"
       >
-        <span>📞 Call (940) 310-4499</span>
+        <span>📞 Call {siteConfig.phone}</span>
       </a>
       <a
         href="#estimate-form"
-        class="block w-full text-center py-3.5 rounded-xl bg-red-600 text-white font-black text-sm uppercase tracking-wider shadow"
+        class="block w-full text-center py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-black text-sm uppercase tracking-wider shadow"
       >
-        BOOK NOW
+        BOOK SERVICE
       </a>
     </div>
   </div>
@@ -163,7 +291,29 @@ const navLinks = [
   const menu = document.getElementById('mobile-menu');
   if (btn && menu) {
     btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
+      const isHidden = menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isHidden));
+    });
+    
+    // Auto-close menu when clicking direct anchor links (excluding the services toggle)
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // Mobile services accordion tap handler
+  const servicesBtn = document.getElementById('mobile-services-btn');
+  const servicesMenu = document.getElementById('mobile-services-menu');
+  const servicesChevron = document.getElementById('mobile-services-chevron');
+  if (servicesBtn && servicesMenu && servicesChevron) {
+    servicesBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isHidden = servicesMenu.classList.toggle('hidden');
+      servicesBtn.setAttribute('aria-expanded', String(!isHidden));
+      servicesChevron.classList.toggle('rotate-180', !isHidden);
     });
   }
 </script>

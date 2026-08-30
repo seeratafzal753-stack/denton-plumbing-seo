@@ -2,17 +2,29 @@
 import { siteConfig } from '../siteConfig';
 ---
 
-<!-- Fixed Mobile Bottom Call Bar -->
-<div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-md p-2.5 border-t border-slate-800 shadow-2xl">
-  <div class="max-w-md mx-auto flex items-center gap-2">
+<!-- Fixed Mobile Bottom CTA Bar (Split CALL NOW | BOOK SERVICE) -->
+<div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-md px-3 py-2 border-t border-slate-800 shadow-2xl safe-area-inset-bottom">
+  <div class="max-w-lg mx-auto grid grid-cols-2 gap-2.5">
+    
+    <!-- Red Call Now Action -->
     <a
       href={`tel:${siteConfig.phoneRaw}`}
-      class="flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emergency-600 active:bg-emergency-700 text-white font-black text-base shadow-lg transition transform active:scale-95 animate-pulse-live"
+      class="flex items-center justify-center gap-1.5 py-3 px-3 rounded-xl bg-red-600 active:bg-red-700 text-white font-black text-xs sm:text-sm shadow-md transition transform active:scale-95 text-center"
+      aria-label="Call Denton Plumbing Pros"
     >
-      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-      </svg>
-      <span>CALL NOW (940) 310-4499</span>
+      <span class="text-sm">📞</span>
+      <span>CALL NOW</span>
     </a>
+
+    <!-- Navy Book Service Action -->
+    <a
+      href="#estimate-form"
+      class="flex items-center justify-center gap-1.5 py-3 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 active:bg-slate-900 text-white font-black text-xs sm:text-sm border border-slate-700 shadow-md transition transform active:scale-95 text-center"
+      aria-label="Book Denton Plumbing Service"
+    >
+      <span>BOOK SERVICE</span>
+    </a>
+
   </div>
 </div>
+
