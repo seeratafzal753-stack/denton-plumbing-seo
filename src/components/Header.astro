@@ -19,49 +19,44 @@ const servicesList = [
 
 <header class="w-full bg-white sticky top-0 z-50 shadow-md">
   
-  <!-- 1. TOP ANNOUNCEMENT BANNER (Clean, High Spacing, Balanced) -->
+  <!-- 1. SIMPLIFIED TOP ANNOUNCEMENT BAR (Clean, Minimal, Focused) -->
   <div class="bg-slate-950 text-white py-2 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 text-center sm:text-left">
+    <div class="max-w-7xl mx-auto flex items-center justify-center sm:justify-between text-xs sm:text-sm font-medium">
       
-      <!-- Left: Announcement Text with Live Pulse Beacon -->
-      <div class="flex items-center justify-center sm:justify-start gap-2">
-        <span class="relative flex h-2.5 w-2.5 shrink-0">
+      <!-- Clean Single Emergency Line -->
+      <div class="flex items-center gap-2">
+        <span class="relative flex h-2 w-2 shrink-0">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-90"></span>
-          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-600"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
         </span>
-        <span class="text-xs sm:text-sm font-extrabold tracking-wide uppercase text-slate-100">
-          PLUMBING EMERGENCY? WE’RE AVAILABLE 24/7/365
+        <span class="font-extrabold text-slate-100 uppercase tracking-wide text-xs">
+          24/7 Live Emergency Dispatch:
         </span>
-      </div>
-
-      <!-- Right: Arrival Time Badge & Direct Line -->
-      <div class="flex items-center flex-wrap justify-center gap-2.5 text-xs">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-300 text-xs font-semibold">
-          <span class="text-amber-400">⚡</span>
-          <span>28–35 Min Arrival</span>
-        </span>
-
         <a
           href={`tel:${siteConfig.phoneRaw}`}
-          class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-red-600 hover:bg-red-700 text-white font-black text-xs shadow transition-all transform hover:scale-105 active:scale-95"
-          aria-label={`Call direct at ${siteConfig.phone}`}
+          class="font-black text-red-400 hover:text-white transition tracking-tight flex items-center gap-1 underline underline-offset-2"
         >
-          <span>📞</span>
-          <span>Direct: {siteConfig.phone}</span>
+          <span>{siteConfig.phone}</span>
         </a>
+      </div>
+
+      <!-- Right: Service Location Tag (Desktop Only) -->
+      <div class="hidden sm:flex items-center gap-2 text-slate-400 text-xs font-semibold">
+        <span>⚡ 28–35 Min Arrival</span>
+        <span>•</span>
+        <span>Denton County, TX</span>
       </div>
 
     </div>
   </div>
 
-  <!-- 2. MAIN NAVBAR (Professional Custom Logo & Clean Dropdown) -->
+  <!-- 2. MAIN NAVBAR -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex justify-between items-center bg-white">
     
-    <!-- LEFT: Professional Branded Plumbing Logo (Wrench + Drop Emblem) -->
+    <!-- LEFT: Logo & Branding -->
     <a href="/" class="flex items-center gap-3 group shrink-0" aria-label="Denton Plumbing Pros Homepage">
-      <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-slate-950 via-slate-900 to-brand-900 flex items-center justify-center shadow-md border border-slate-800 text-white p-2 group-hover:scale-105 transition transform">
-        <!-- Modern Wrench & Water Drop SVG Emblem -->
-        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-slate-950 via-slate-900 to-brand-900 flex items-center justify-center shadow-md border border-slate-800 text-white p-2 group-hover:scale-105 transition transform">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2C8.5 6.5 5 11 5 15C5 18.866 8.134 22 12 22C15.866 22 19 18.866 19 15C19 11 15.5 6.5 12 2Z" fill="#0284c7" fill-opacity="0.25" stroke="#38bdf8" stroke-width="1.5"/>
           <path d="M17.5 7.5L14 11L12.5 9.5L16 6C16.8 5.2 18.1 5.2 18.9 6C19.7 6.8 19.7 8.1 18.9 8.9L17.5 7.5Z" fill="#ef4444"/>
           <path d="M8 17L12.5 12.5L11 11L6.5 15.5C5.8 16.2 5.8 17.3 6.5 18C7.2 18.7 8.3 18.7 9 18L8 17Z" fill="#ffffff"/>
@@ -209,7 +204,7 @@ const servicesList = [
       >
         <span>Services</span>
         <svg id="mobile-services-chevron" class="w-4 h-4 transition-transform duration-200 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
 

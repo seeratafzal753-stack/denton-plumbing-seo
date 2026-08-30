@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PlumberMascotHero from '../components/PlumberMascotHero.astro';
+import HeroTrustBar from '../components/HeroTrustBar.astro';
 import PillButton from '../components/PillButton.astro';
 import ReviewCardsClean from '../components/ReviewCardsClean.astro';
 import ThreeStepProcess from '../components/ThreeStepProcess.astro';
@@ -46,9 +47,9 @@ const faqs = [
 >
 
   <!-- ========================================================= -->
-  <!-- HERO SECTION (Above-the-fold Optimized & Balanced) -->
+  <!-- 1. HERO SECTION (Clean, Focused, Branded Van & Technician) -->
   <!-- ========================================================= -->
-  <section class="bg-gradient-to-b from-sky-50/40 via-white to-slate-50/30 border-b border-slate-200 py-6 sm:py-8 lg:py-12 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
+  <section class="bg-gradient-to-b from-sky-50/40 via-white to-slate-50/30 border-b border-slate-200 py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
     
     <!-- Subtle Background Grid Accent -->
     <div class="absolute inset-0 bg-[radial-gradient(#e0f2fe_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none"></div>
@@ -64,7 +65,7 @@ const faqs = [
           <span>Denton County’s Trusted Local Plumber</span>
         </div>
 
-        <!-- Balanced Heading (font-extrabold with breathing line-height) -->
+        <!-- Balanced Heading -->
         <h1 class="text-2xl sm:text-4xl lg:text-4xl 2xl:text-5xl font-extrabold tracking-tight leading-snug sm:leading-[1.18] text-slate-900 font-serif">
           <span>Trusted Plumbing Services in Denton, TX</span>
           <span class="text-red-600 block mt-1 font-black">When You Need Us Most</span>
@@ -75,7 +76,7 @@ const faqs = [
           Professional plumbing services in Denton, TX and surrounding areas. From emergency water heater leaks and clogged mainlines to non-invasive slab leak detection, get prompt master-level service.
         </p>
 
-        <!-- Point 4: Reviews Row with Bold Dot Dividers and Gold Stars -->
+        <!-- Reviews Row with Bold Dot Dividers and Gold Stars -->
         <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3 bg-slate-50 border border-slate-200/90 rounded-2xl px-4 py-2 shadow-sm text-xs">
           <div class="flex items-center gap-1 text-amber-500 font-bold">
             <span class="text-sm">★★★★★</span>
@@ -91,7 +92,7 @@ const faqs = [
           </span>
         </div>
 
-        <!-- Point 5: Strong Above-The-Fold CTA Buttons (min 52px height) -->
+        <!-- Strong Above-The-Fold CTA Buttons (min 52px height) -->
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-1">
           
           <!-- Primary CTA: CALL NOW (Red, High-Impact) -->
@@ -114,29 +115,9 @@ const faqs = [
 
         </div>
 
-        <!-- Trust Signals Grid -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2 text-xs font-bold text-slate-700 border-t border-slate-100">
-          <div class="flex items-center justify-center lg:justify-start gap-1.5">
-            <span class="text-red-600 font-black">✓</span>
-            <span>24/7 Emergency</span>
-          </div>
-          <div class="flex items-center justify-center lg:justify-start gap-1.5">
-            <span class="text-red-600 font-black">✓</span>
-            <span>Same-Day Dispatch</span>
-          </div>
-          <div class="flex items-center justify-center lg:justify-start gap-1.5">
-            <span class="text-red-600 font-black">✓</span>
-            <span>Upfront Pricing</span>
-          </div>
-          <div class="flex items-center justify-center lg:justify-start gap-1.5">
-            <span class="text-red-600 font-black">✓</span>
-            <span>Master Plumbers</span>
-          </div>
-        </div>
-
       </div>
 
-      <!-- RIGHT SIDE: Real Master Plumber Photo Card with Zero Blank Space -->
+      <!-- RIGHT SIDE: Real Branded Master Plumber Photo Card -->
       <div class="lg:col-span-5 flex justify-center">
         <PlumberMascotHero />
       </div>
@@ -145,12 +126,17 @@ const faqs = [
   </section>
 
   <!-- ========================================================= -->
-  <!-- 2. "WHAT YOUR NEIGHBORS ARE SAYING" (Social Proof Cards) -->
+  <!-- 2. DEDICATED FULL-WIDTH TRUST BAR STRIP -->
+  <!-- ========================================================= -->
+  <HeroTrustBar />
+
+  <!-- ========================================================= -->
+  <!-- 3. "WHAT YOUR NEIGHBORS ARE SAYING" (Social Proof Cards) -->
   <!-- ========================================================= -->
   <ReviewCardsClean />
 
   <!-- ========================================================= -->
-  <!-- 3. EDITORIAL SECTION: LOVE YOUR PLUMBING & WATER AGAIN -->
+  <!-- 4. EDITORIAL SECTION: LOVE YOUR PLUMBING & WATER AGAIN -->
   <!-- ========================================================= -->
   <section id="about" class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -194,12 +180,12 @@ const faqs = [
   </section>
 
   <!-- ========================================================= -->
-  <!-- 4. 3-STEP PROCESS (With You, Every Step of the Way) -->
+  <!-- 5. 3-STEP PROCESS (With You, Every Step of the Way) -->
   <!-- ========================================================= -->
   <ThreeStepProcess />
 
   <!-- ========================================================= -->
-  <!-- 5. EDITORIAL SECTION: UNMATCHED WARRANTIES -->
+  <!-- 6. EDITORIAL SECTION: UNMATCHED WARRANTIES -->
   <!-- ========================================================= -->
   <section class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -235,7 +221,7 @@ const faqs = [
   </section>
 
   <!-- ========================================================= -->
-  <!-- 6. EDITORIAL SECTION: LIFETIME PROTECTION & SMART CONTROLS -->
+  <!-- 7. EDITORIAL SECTION: LIFETIME PROTECTION & SMART CONTROLS -->
   <!-- ========================================================= -->
   <section class="py-16 bg-slate-50 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -268,19 +254,19 @@ const faqs = [
   </section>
 
   <!-- ========================================================= -->
-  <!-- 7. HARD WATER & CLAY SOIL GEOLOGICAL DIAGNOSTICS -->
+  <!-- 8. HARD WATER & CLAY SOIL GEOLOGICAL DIAGNOSTICS -->
   <!-- ========================================================= -->
   <LocalWaterSoilWidget />
 
   <!-- ========================================================= -->
-  <!-- 8. NEIGHBORHOOD EXPLORER GRID -->
+  <!-- 9. NEIGHBORHOOD EXPLORER GRID -->
   <!-- ========================================================= -->
   <div id="neighborhoods">
     <NeighborhoodExplorer />
   </div>
 
   <!-- ========================================================= -->
-  <!-- 9. FAST ESTIMATE CALLBACK FORM -->
+  <!-- 10. FAST ESTIMATE CALLBACK FORM -->
   <!-- ========================================================= -->
   <section id="estimate-form" class="py-16 bg-slate-900 text-white px-4 sm:px-6 lg:px-8 border-t border-slate-800">
     <div class="max-w-4xl mx-auto">
@@ -300,7 +286,7 @@ const faqs = [
   </section>
 
   <!-- ========================================================= -->
-  <!-- 10. LATEST PLUMBING & HOMEOWNER GUIDES (BLOGS) -->
+  <!-- 11. LATEST PLUMBING & HOMEOWNER GUIDES (BLOGS) -->
   <!-- ========================================================= -->
   <section class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-t border-slate-200">
     <div class="max-w-6xl mx-auto">
@@ -364,7 +350,7 @@ const faqs = [
   </section>
 
   <!-- ========================================================= -->
-  <!-- 11. CLEAN FAQS ACCORDION -->
+  <!-- 12. CLEAN FAQS ACCORDION -->
   <!-- ========================================================= -->
   <FaqAccordion faqs={faqs} />
 
