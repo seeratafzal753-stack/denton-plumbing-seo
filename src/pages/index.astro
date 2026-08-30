@@ -61,7 +61,7 @@ const faqs = [
       <div class="lg:col-span-7 text-center lg:text-left space-y-6">
         
         <!-- Small Location / Trust Badge -->
-        <div class="inline-flex items-center gap-2 bg-red-50 text-red-700 border border-red-200/80 px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider shadow-sm">
+        <div class="inline-flex items-center gap-2 bg-slate-100 text-slate-800 border border-slate-200 px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider shadow-sm">
           <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
           <span>DENTON COUNTY’S TRUSTED LOCAL PLUMBER</span>
         </div>
@@ -77,15 +77,54 @@ const faqs = [
           Professional plumbing services in Denton, TX and surrounding areas. From emergency plumbing and water heater problems to drain cleaning and slab leak detection, get dependable help when you need it.
         </p>
 
+        <!-- Google Rating & Social Proof Trust Row (Item 5) -->
+        <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-3 bg-slate-50 border border-slate-200/80 rounded-2xl px-4 py-2.5 shadow-sm">
+          <div class="flex items-center gap-1 text-amber-500">
+            <span class="text-base font-black">★★★★★</span>
+            <span class="text-slate-900 font-extrabold text-xs sm:text-sm ml-1">4.9 / 5.0</span>
+          </div>
+          <span class="text-slate-300 hidden sm:inline">•</span>
+          <span class="text-xs text-slate-700 font-semibold">
+            <strong class="text-slate-900 font-bold">187+ Google Reviews</strong>
+          </span>
+          <span class="text-slate-300 hidden sm:inline">•</span>
+          <span class="text-xs text-emerald-700 font-bold flex items-center gap-1">
+            <span>🛡️</span> 1,500+ Denton Homes Serviced
+          </span>
+        </div>
+
+        <!-- Hero Call-to-Action Buttons (Item 4: Stronger CTA Buttons, min 54px height) -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3.5 sm:gap-4 pt-1">
+          
+          <!-- Primary CTA: CALL NOW (Red, High Impact) -->
+          <a
+            href={`tel:${siteConfig.phoneRaw}`}
+            class="w-full sm:w-auto min-h-[54px] sm:min-h-[58px] px-8 py-4 rounded-2xl bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-black text-base sm:text-lg uppercase tracking-wider shadow-xl shadow-red-600/30 hover:shadow-2xl hover:shadow-red-600/40 transition-all duration-200 ease-out transform hover:-translate-y-0.5 active:translate-y-0.5 flex items-center justify-center gap-3 text-center group cursor-pointer"
+          >
+            <span class="text-xl group-hover:scale-110 transition-transform">📞</span>
+            <span>CALL NOW — {siteConfig.phone}</span>
+          </a>
+
+          <!-- Secondary CTA: BOOK SERVICE (Dark Slate) -->
+          <a
+            href="#estimate-form"
+            class="w-full sm:w-auto min-h-[54px] sm:min-h-[58px] px-8 py-4 rounded-2xl bg-slate-900 hover:bg-slate-950 active:bg-black text-white font-black text-base sm:text-lg uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-200 ease-out transform hover:-translate-y-0.5 active:translate-y-0.5 flex items-center justify-center gap-2.5 text-center cursor-pointer"
+          >
+            <span>📅</span>
+            <span>BOOK ONLINE</span>
+          </a>
+
+        </div>
+
         <!-- Compact Lightweight Trust Signals Grid -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-1 text-xs font-bold text-slate-800">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-xs font-bold text-slate-700 border-t border-slate-100">
           <div class="flex items-center justify-center lg:justify-start gap-1.5">
             <span class="text-red-600 text-sm font-black">✓</span>
-            <span>24/7 Emergency Service</span>
+            <span>24/7 Emergency</span>
           </div>
           <div class="flex items-center justify-center lg:justify-start gap-1.5">
             <span class="text-red-600 text-sm font-black">✓</span>
-            <span>Same-Day Service</span>
+            <span>Same-Day Dispatch</span>
           </div>
           <div class="flex items-center justify-center lg:justify-start gap-1.5">
             <span class="text-red-600 text-sm font-black">✓</span>
@@ -93,31 +132,8 @@ const faqs = [
           </div>
           <div class="flex items-center justify-center lg:justify-start gap-1.5">
             <span class="text-red-600 text-sm font-black">✓</span>
-            <span>Professional Plumbers</span>
+            <span>Master Plumbers</span>
           </div>
-        </div>
-
-        <!-- Hero Call-to-Action Buttons (Red Call Now + Slate Book Service) -->
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3.5 sm:gap-4 pt-3">
-          
-          <!-- Primary CTA: CALL NOW (Red, High Impact, Vibrant Glow) -->
-          <a
-            href={`tel:${siteConfig.phoneRaw}`}
-            class="w-full sm:w-auto min-h-[52px] sm:min-h-[56px] px-8 py-4 rounded-2xl bg-gradient-to-r from-red-600 via-red-600 to-red-700 hover:from-red-500 hover:to-red-700 text-white font-black text-base sm:text-lg uppercase tracking-wider shadow-xl shadow-red-600/30 hover:shadow-2xl hover:shadow-red-600/40 border border-red-500/40 transition-all duration-200 ease-out transform hover:-translate-y-1 hover:scale-[1.02] active:translate-y-0.5 active:scale-[0.98] flex items-center justify-center gap-3 text-center group cursor-pointer"
-          >
-            <span class="text-xl group-hover:scale-110 transition-transform">📞</span>
-            <span>CALL NOW — {siteConfig.phone}</span>
-          </a>
-
-          <!-- Secondary CTA: BOOK SERVICE (Dark Slate, Strong Contrast) -->
-          <a
-            href="#estimate-form"
-            class="w-full sm:w-auto min-h-[52px] sm:min-h-[56px] px-8 py-4 rounded-2xl bg-slate-900 hover:bg-slate-950 text-white font-black text-base sm:text-lg uppercase tracking-wider shadow-lg hover:shadow-xl shadow-slate-900/20 border-2 border-slate-800 hover:border-slate-700 transition-all duration-200 ease-out transform hover:-translate-y-1 hover:scale-[1.02] active:translate-y-0.5 active:scale-[0.98] flex items-center justify-center gap-2.5 text-center cursor-pointer"
-          >
-            <span>📅</span>
-            <span>BOOK SERVICE NOW</span>
-          </a>
-
         </div>
 
       </div>
@@ -144,7 +160,7 @@ const faqs = [
       <!-- Left Graphic Card -->
       <div class="lg:col-span-5 order-2 lg:order-1">
         <div class="bg-slate-100 border border-slate-200 rounded-2xl p-6 text-center shadow-sm">
-          <div class="aspect-square bg-gradient-to-tr from-brand-900 via-brand-800 to-slate-900 rounded-xl flex flex-col items-center justify-center p-6 text-white relative">
+          <div class="aspect-square bg-slate-900 rounded-xl flex flex-col items-center justify-center p-6 text-white relative">
             <div class="text-6xl mb-3">🔥</div>
             <span class="font-extrabold text-white text-xl font-serif">Clean, Hot Water On Demand</span>
             <span class="text-xs text-slate-300 mt-2 max-w-xs">High-efficiency tank &amp; tankless systems installed with full code compliance.</span>
