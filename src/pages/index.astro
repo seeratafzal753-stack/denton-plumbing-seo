@@ -143,62 +143,66 @@ const faqs = [
   <ReviewCardsClean />
 
   <!-- ========================================================= -->
-  <!-- 4. EDITORIAL SECTION: LOVE YOUR PLUMBING & WATER AGAIN -->
+  <!-- 4. WATER HEATER SERVICES IN DENTON -->
   <!-- ========================================================= -->
-  <section id="about" class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
+  <section id="water-heaters" class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
       
-      <!-- Left Graphic Card (High Resolution Water Heater Photo) -->
-      <div class="lg:col-span-5 order-2 lg:order-1">
+      <!-- Left Graphic Card (Water Heater Photo with Clean Presentation) -->
+      <div class="lg:col-span-5 order-1 lg:order-1">
         <div class="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 bg-white group">
           <img
             src="/images/rheem-water-heater.jpg"
-            alt="Professional Water Heater Installation with Thermal Expansion Tank in Denton TX"
+            alt="Water Heater Installation and Repair in Denton TX"
             class="w-full h-auto max-h-[380px] object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
             width="800"
             height="600"
             loading="lazy"
           />
           <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/85 via-slate-900/40 to-transparent p-4 text-white">
-            <span class="block text-xs font-black text-white">High-Efficiency Water Heating Solutions</span>
-            <span class="block text-[11px] text-slate-300">Connecting Homeowners with Top Tank &amp; Tankless Installers</span>
+            <span class="block text-xs font-black text-white">Water Heater Solutions</span>
+            <span class="block text-[11px] text-slate-300">Repair • Installation • Replacement</span>
           </div>
         </div>
       </div>
 
       <!-- Right Editorial -->
-      <div class="lg:col-span-7 order-1 lg:order-2 space-y-4">
-        <div class="inline-flex items-center gap-2 bg-brand-50 text-brand-800 border border-brand-200 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider">
-          <Icon name="flame" class="w-3.5 h-3.5 text-brand-700" />
-          <span>ENDLESS CLEAN HOT WATER</span>
+      <div class="lg:col-span-7 order-2 lg:order-2 space-y-4">
+        <div class="inline-flex items-center gap-2 bg-red-50 text-red-700 border border-red-200 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider">
+          <Icon name="flame" class="w-3.5 h-3.5 text-red-600" />
+          <span>WATER HEATER SERVICES IN DENTON</span>
         </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-serif tracking-tight">
-          Love Your Plumbing &amp; Water Again
+        
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-serif tracking-tight leading-tight">
+          Water Heater Repair &amp; Replacement in Denton, TX
         </h2>
+
         <p class="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
-          From hard water mineral buildup that damages appliances to sluggish bathroom drains and unexpected cold showers, plumbing breakdowns disrupt your household routine. Our referral network connects you with local Denton specialists who restore optimal pressure, endless hot water, and clear drains quickly.
+          Need reliable hot water for your Denton home? Get professional water heater service for common problems, repairs, replacements, and new installations. Whether your water heater is leaking, not heating properly, or ready for an upgrade, get help choosing the right solution for your home.
         </p>
+
         <ul class="space-y-2.5 text-sm sm:text-base text-slate-800 font-medium">
           <li class="flex items-center gap-2.5">
             <Icon name="check" class="w-4 h-4 text-emerald-600 font-bold shrink-0" />
-            <span>Annual water heater descaling &amp; sacrificial anode service</span>
+            <span>Water heater repair &amp; troubleshooting</span>
           </li>
           <li class="flex items-center gap-2.5">
             <Icon name="check" class="w-4 h-4 text-emerald-600 font-bold shrink-0" />
-            <span>High-efficiency tankless replacements that reduce energy costs</span>
+            <span>Tank and tankless water heater installation</span>
           </li>
           <li class="flex items-center gap-2.5">
             <Icon name="check" class="w-4 h-4 text-emerald-600 font-bold shrink-0" />
-            <span>Durable, leak-resistant PEX water supply repiping</span>
+            <span>Water heater replacement &amp; upgrades</span>
           </li>
         </ul>
-        <div class="pt-3">
+
+        <div class="pt-2">
           <a
             href={`tel:${siteConfig.phoneRaw}`}
-            class="inline-flex items-center gap-2.5 px-6 sm:px-8 py-3.5 rounded-xl bg-slate-900 hover:bg-black text-white font-black text-sm sm:text-base uppercase tracking-wider shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5"
+            class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-2xl bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-black text-sm sm:text-base uppercase tracking-wider shadow-lg shadow-red-600/20 hover:shadow-xl hover:shadow-red-600/30 transition-all duration-200 ease-out transform hover:-translate-y-0.5 active:translate-y-0"
           >
-            <Icon name="phone" class="w-4 h-4 text-red-500" />
-            <span>Connect for Water Heater Service</span>
+            <Icon name="phone" class="w-4 h-4 text-white" />
+            <span>CALL FOR WATER HEATER SERVICE: {siteConfig.phone}</span>
           </a>
         </div>
       </div>
