@@ -1,82 +1,96 @@
 export const siteConfig = {
+  // Core Business Identity (Lead Generation & Homeowner Referral Service)
   name: "Denton Plumbing Pros",
-  shortName: "Denton Plumbers",
-  tagline: "24/7 Fast Local Plumbing & Emergency Drain Services in Denton, TX",
+  legalName: "Denton Plumbing Pros Referral Network",
   domain: "https://dentonplumbingpros.com",
-  phone: "(940) 310-4499", // High-intent call-tracking placeholder
+  tagline: "Connecting Denton Homeowners with Top Local Plumbing Contractors 24/7",
+  isLeadGen: true,
+  
+  // Primary Contact Points
+  phone: "(940) 310-4499",
   phoneRaw: "+19403104499",
   email: "dispatch@dentonplumbingpros.com",
-  priceRange: "$$",
-  
-  // Primary Geo & Entity Data
-  primaryCity: "Denton",
-  state: "TX",
-  stateFull: "Texas",
-  postalCode: "76201",
+
+  // Location / Primary Service Area Details
+  address: "Denton, TX",
   addressLocality: "Denton",
   addressRegion: "TX",
   addressCountry: "US",
+  city: "Denton",
+  state: "TX",
+  stateFull: "Texas",
+  postalCode: "76201",
+  county: "Denton County",
+  priceRange: "$$",
 
+  // NAP Object for components
   nap: {
-    address: "110 W Hickory St, Suite 200",
+    name: "Denton Plumbing Pros Referral Network",
+    address: "Denton, TX",
     city: "Denton",
     state: "TX",
     zip: "76201",
     phone: "(940) 310-4499",
   },
   
-  geo: {
-    latitude: 33.2148,
-    longitude: -97.1331,
+  // Geo Coordinates (Denton County Central Hub)
+  coordinates: {
+    lat: "33.2148",
+    lng: "-97.1331",
   },
-  
-  // All Denton ZIP codes for hyper-local signals & schema
+  geo: {
+    latitude: "33.2148",
+    longitude: "-97.1331",
+  },
+
+  // Service Hours
+  hours: "24/7 Referral & Emergency Dispatch Connection",
+  openingHoursSchema: "Mo-Su 00:00-23:59",
+
+  // Top Denton ZIP Codes Served
   zipCodes: [
-    "76201",
-    "76205",
-    "76207",
-    "76208",
-    "76209",
-    "76210",
-    "76226",
-    "76249"
+    "76201", // Historic Downtown, Square, TWU
+    "76205", // Southridge, Teasley, Ryan High Area
+    "76207", // Rayzor Ranch, University West, Robson Ranch
+    "76208", // Forrestridge, Loop 288, Cooper Creek
+    "76209", // Idiots Hill, Sherman Dr, North Denton
+    "76210", // Corinth border, South Denton, Guyer area
+    "76226", // Argyle border, Robson Ranch south
+    "76249", // Krum border, Northwest Denton
   ],
 
-  // Key Neighborhoods in Denton
+  // Service Area Municipalities
+  serviceAreas: [
+    { name: "Corinth", zip: "76210" },
+    { name: "Argyle", zip: "76226" },
+    { name: "Lake Dallas", zip: "75065" },
+    { name: "Little Elm", zip: "75068" },
+    { name: "Sanger", zip: "76266" },
+    { name: "Aubrey", zip: "76227" },
+    { name: "Highland Village", zip: "75077" },
+  ],
+
+  // Neighborhoods & Subdivisions
   neighborhoods: [
     "Downtown Denton Square",
     "Idiots Hill",
     "Southridge",
     "Rayzor Ranch",
-    "North Lakes",
-    "Forrestridge",
-    "Timber Links",
-    "Cooper Creek",
-    "Oakmont",
     "Robson Ranch",
-    "Denia",
-    "Cross Timbers"
+    "Cooper Creek",
+    "Forrestridge",
+    "Mack Park Area",
+    "Oakmont",
+    "Vintage Township",
+    "Woodrow",
+    "North Lakes",
   ],
 
-  // Surrounding Tier-2 Service Areas in Denton County
-  serviceAreas: [
-    { name: "Corinth", slug: "corinth-tx", zip: "76210", distance: "6 miles south" },
-    { name: "Argyle", slug: "argyle-tx", zip: "76226", distance: "8 miles south" },
-    { name: "Lake Dallas", slug: "lake-dallas-tx", zip: "76249", distance: "9 miles southeast" },
-    { name: "Little Elm", slug: "little-elm-tx", zip: "75068", distance: "14 miles east" },
-    { name: "Sanger", slug: "sanger-tx", zip: "76266", distance: "11 miles north" },
-    { name: "Aubrey", slug: "aubrey-tx", zip: "76227", distance: "12 miles northeast" },
-    { name: "Highland Village", slug: "highland-village-tx", zip: "75077", distance: "13 miles south" }
+  // Trust Points for Lead Gen
+  trustPoints: [
+    "Pre-Screened Local Plumbing Contractors",
+    "Fast Same-Day Connection & Estimates",
+    "No-Obligation Upfront Pricing",
+    "24/7 Emergency Referral Matching",
   ],
-
-  // Value props & trust badges
-  guarantees: [
-    "Same-Day Rapid Dispatch",
-    "Licensed & Insured Master Plumbers",
-    "100% Upfront Transparent Pricing",
-    "Zero Extra Fees on Nights & Weekends",
-    "North Texas Clay Soil & Slab Leak Experts"
-  ],
-
-  hours: "Open 24 Hours / 7 Days a Week",
 };

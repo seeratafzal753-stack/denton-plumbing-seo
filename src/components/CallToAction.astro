@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../siteConfig';
+import Icon from './Icon.astro';
 
 interface Props {
   heading?: string;
@@ -10,8 +11,8 @@ interface Props {
 
 const {
   heading = "Need a Fast, Reliable Plumber in Denton, TX?",
-  subheading = "Don't let a leak or broken water heater ruin your home. Our licensed Denton plumbing technicians are on standby for immediate same-day dispatch.",
-  buttonText = "Call (940) 310-4499 for Rapid Dispatch",
+  subheading = "Don't let a leak or broken water heater ruin your home. Connect with trusted independent local plumbing specialists for fast assistance.",
+  buttonText = "Call (940) 310-4499 for Referral",
   emergency = true,
 } = Astro.props;
 ---
@@ -20,9 +21,9 @@ const {
   <div class="max-w-5xl mx-auto text-center relative z-10">
     <div class="inline-flex items-center gap-2 bg-emergency-600/90 text-white text-xs uppercase font-bold tracking-widest px-3 py-1 rounded-full mb-4">
       <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
-      <span>24/7 Denton County Dispatch Ready</span>
+      <span>24/7 Denton County Referral Ready</span>
     </div>
-    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-4 leading-tight">
+    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-4 leading-tight font-serif">
       {heading}
     </h2>
     <p class="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto mb-8 leading-relaxed">
@@ -34,9 +35,7 @@ const {
         href={`tel:${siteConfig.phoneRaw}`}
         class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-emergency-600 hover:bg-emergency-500 text-white font-black text-lg shadow-2xl transition transform hover:-translate-y-1"
       >
-        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-          <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-        </svg>
+        <Icon name="phone" class="w-6 h-6 text-white" />
         <span>{buttonText}</span>
       </a>
 
@@ -44,15 +43,27 @@ const {
         href="/contact/"
         class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-base backdrop-blur-sm border border-white/20 transition"
       >
-        <span>Get Online Estimate</span>
+        <span>Request Estimate Online</span>
       </a>
     </div>
 
     <div class="mt-8 flex flex-wrap justify-center items-center gap-6 text-xs text-slate-400">
-      <span>✓ Same-Day Arrival</span>
-      <span>✓ No Weekend Surcharge</span>
-      <span>✓ Texas Licensed Master Plumbers</span>
-      <span>✓ Serving All Denton ZIPs</span>
+      <span class="flex items-center gap-1.5">
+        <Icon name="check" class="w-3.5 h-3.5 text-emerald-400" />
+        <span>Fast Local Matching</span>
+      </span>
+      <span class="flex items-center gap-1.5">
+        <Icon name="check" class="w-3.5 h-3.5 text-emerald-400" />
+        <span>Upfront Estimates</span>
+      </span>
+      <span class="flex items-center gap-1.5">
+        <Icon name="check" class="w-3.5 h-3.5 text-emerald-400" />
+        <span>Independent Local Specialists</span>
+      </span>
+      <span class="flex items-center gap-1.5">
+        <Icon name="check" class="w-3.5 h-3.5 text-emerald-400" />
+        <span>Serving All Denton ZIPs</span>
+      </span>
     </div>
   </div>
 </section>

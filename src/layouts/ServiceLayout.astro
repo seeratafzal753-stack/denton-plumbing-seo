@@ -58,7 +58,7 @@ const crumbs = [
       <div class="lg:col-span-7">
         <div class="inline-flex items-center gap-2 bg-emergency-600/90 text-white text-xs uppercase font-black tracking-widest px-3.5 py-1.5 rounded-full mb-4">
           <span class="w-2 h-2 rounded-full bg-white animate-pulse-live"></span>
-          <span>{urgencyLevel} Plumbing Dispatch in {cityName}</span>
+          <span>{urgencyLevel} Plumbing Referral in {cityName}</span>
         </div>
 
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 text-white">
@@ -83,29 +83,29 @@ const crumbs = [
             href="#estimate-form"
             class="flex items-center justify-center px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-base backdrop-blur-sm border border-white/20 transition"
           >
-            <span>Get Quick Estimate ↓</span>
+            <span>Get Free Estimate ↓</span>
           </a>
         </div>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-300">
           <div class="flex items-center gap-1.5">
             <Icon name="check" class="w-3.5 h-3.5 text-emerald-400 font-bold" />
-            <span>28–35 Min Arrival</span>
+            <span>Fast Local Dispatch</span>
           </div>
           <div class="flex items-center gap-1.5">
             <Icon name="check" class="w-3.5 h-3.5 text-emerald-400 font-bold" />
-            <span>No Diagnostic Fee w/ Repair</span>
+            <span>Upfront Contractor Quotes</span>
           </div>
           <div class="flex items-center gap-1.5">
             <Icon name="check" class="w-3.5 h-3.5 text-emerald-400 font-bold" />
-            <span>TX Licensed RMP #M-42918</span>
+            <span>Local Independent Pros</span>
           </div>
         </div>
       </div>
 
       <!-- Right Lead Form -->
       <div id="estimate-form" class="lg:col-span-5">
-        <LeadForm formTitle={`Book ${title}`} servicePreselect={title} />
+        <LeadForm formTitle={`Find Plumber for ${title}`} servicePreselect={title} />
       </div>
 
     </div>
@@ -121,7 +121,7 @@ const crumbs = [
       <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
         <div class="inline-flex items-center gap-2 p-2.5 bg-rose-50 text-rose-600 rounded-xl mb-4 font-bold text-sm">
           <Icon name="alert" class="w-4 h-4 text-rose-500" />
-          <span>Common Issues We Fix in Denton</span>
+          <span>Common Plumbing Issues in Denton</span>
         </div>
         <h2 class="text-2xl font-black text-slate-900 mb-4">
           Signs You Need {title}
@@ -140,10 +140,10 @@ const crumbs = [
       <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
         <div class="inline-flex items-center gap-2 p-2.5 bg-emerald-50 text-emerald-600 rounded-xl mb-4 font-bold text-sm">
           <Icon name="wrench" class="w-4 h-4 text-emerald-600" />
-          <span>Our Professional Service Solutions</span>
+          <span>Professional Service Solutions</span>
         </div>
         <h2 class="text-2xl font-black text-slate-900 mb-4">
-          What’s Included in Our Service
+          What’s Included in Professional Service
         </h2>
         <ul class="space-y-3">
           {features.map((feat) => (
@@ -175,10 +175,10 @@ const crumbs = [
   <section class="py-10 bg-slate-100 px-4 sm:px-6 border-y border-slate-200">
     <div class="max-w-5xl mx-auto text-center">
       <h3 class="text-xl font-bold text-slate-900 mb-2">
-        Providing {title} Throughout Denton County
+        Connecting Homeowners for {title} Across Denton County
       </h3>
       <p class="text-sm text-slate-600 mb-4">
-        Our mobile response trucks are stationed near I-35E, I-35W, and Loop 288 for rapid dispatch to:
+        Local independent contractors are available near I-35E, I-35W, and Loop 288 for rapid referral in:
       </p>
       <div class="flex flex-wrap justify-center gap-2 text-xs">
         {siteConfig.neighborhoods.map((n) => (
@@ -200,6 +200,6 @@ const crumbs = [
   <!-- Final Emergency Call CTA -->
   <CallToAction
     heading={`Need Immediate ${title} in Denton, TX?`}
-    subheading={`Call our 24/7 Denton dispatch desk right now. A licensed master plumber can be at your door in under 35 minutes.`}
+    subheading={`Call our 24/7 Denton referral desk right now to connect with an independent local plumbing contractor.`}
   />
 </BaseLayout>

@@ -3,7 +3,7 @@ import { siteConfig } from '../siteConfig';
 
 const servicesList = [
   { name: 'Water Heater Repair & Replacement', href: '/denton-tx/water-heater-repair/' },
-  { name: '24/7 Emergency Plumbing', href: '/denton-tx/emergency-plumbing/' },
+  { name: '24/7 Emergency Plumbing Connection', href: '/denton-tx/emergency-plumbing/' },
   { name: 'Drain Cleaning & Hydro-Jetting', href: '/denton-tx/drain-cleaning/' },
   { name: 'Slab Leak Detection & Reroutes', href: '/denton-tx/slab-leak-repair/' },
   { name: 'Tankless Water Heaters', href: '/denton-tx/tankless-water-heaters/' },
@@ -18,15 +18,15 @@ const citiesList = [
 ];
 ---
 
-<footer class="bg-slate-900 text-slate-300 border-t border-slate-800">
+<footer class="bg-slate-950 text-slate-300 border-t border-slate-800">
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
       
-      <!-- Col 1: Brand & Credentials -->
+      <!-- Col 1: Brand & Referral Identity -->
       <div>
         <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center p-2 shadow">
+          <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center p-2 shadow">
             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 2C8.5 6.5 5 11 5 15C5 18.866 8.134 22 12 22C15.866 22 19 18.866 19 15C19 11 15.5 6.5 12 2Z" fill="#0284c7" fill-opacity="0.25" stroke="#38bdf8" stroke-width="1.5"/>
               <path d="M17.5 7.5L14 11L12.5 9.5L16 6C16.8 5.2 18.1 5.2 18.9 6C19.7 6.8 19.7 8.1 18.9 8.9L17.5 7.5Z" fill="#ef4444"/>
@@ -38,18 +38,18 @@ const citiesList = [
           </span>
         </div>
         <p class="text-xs text-slate-400 leading-relaxed mb-4">
-          Licensed, insured, and locally dispatched master plumbing services engineered for Denton County's unique water mineralogy and clay sub-soils.
+          A free community referral network connecting Denton County homeowners with reputable, independent local plumbing contractors 24/7.
         </p>
         <div class="text-xs text-slate-400 space-y-1">
-          <p><strong class="text-white">TSBPE License:</strong> Master Plumber #M-42918</p>
-          <p><strong class="text-white">Insurance:</strong> $2M General Commercial Liability</p>
+          <p><strong class="text-slate-300">Service:</strong> 100% Free Homeowner Matching</p>
+          <p><strong class="text-slate-300">Coverage:</strong> Denton County &amp; North Texas</p>
         </div>
       </div>
 
       <!-- Col 2: Services -->
       <div>
         <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">
-          Plumbing Services
+          Plumbing Categories
         </h4>
         <ul class="space-y-2 text-xs">
           {servicesList.map((s) => (
@@ -65,7 +65,7 @@ const citiesList = [
       <!-- Col 3: Service Areas -->
       <div>
         <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">
-          Coverage Areas
+          Denton County Areas
         </h4>
         <ul class="space-y-2 text-xs">
           {citiesList.map((c) => (
@@ -87,44 +87,57 @@ const citiesList = [
       <!-- Col 4: Contact & Hours -->
       <div>
         <h4 class="font-bold text-white text-sm uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">
-          Contact & Dispatch
+          Dispatch &amp; Contact
         </h4>
         <div class="space-y-3 text-xs">
           <div>
-            <span class="block text-slate-400 text-[11px]">24/7 Phone Line:</span>
+            <span class="block text-slate-400 text-[11px]">24/7 Referral Hotline:</span>
             <a href={`tel:${siteConfig.phoneRaw}`} class="text-base font-bold text-amber-400 hover:underline">
               {siteConfig.phone}
             </a>
           </div>
           <div>
-            <span class="block text-slate-400 text-[11px]">Physical Address:</span>
+            <span class="block text-slate-400 text-[11px]">Service Hub:</span>
             <p class="text-slate-300">
-              {siteConfig.nap.address}<br />
-              {siteConfig.nap.city}, {siteConfig.nap.state} {siteConfig.nap.zip}
+              Denton, Texas {siteConfig.postalCode}
             </p>
           </div>
           <div>
             <span class="block text-slate-400 text-[11px]">Operating Hours:</span>
             <p class="text-emerald-400 font-semibold">
-              ● Open 24 Hours / 7 Days a Week
+              ● 24 Hours Open / 7 Days a Week
             </p>
           </div>
         </div>
       </div>
 
     </div>
+
+    <!-- Prominent Legal Disclaimer Box (Crucial for Lead Generation Compliance) -->
+    <div class="mt-12 pt-8 border-t border-slate-800/80">
+      <div class="bg-slate-900/60 rounded-2xl p-5 border border-slate-800 text-[11px] text-slate-400 leading-relaxed">
+        <p class="font-semibold text-slate-300 mb-1.5 uppercase tracking-wide">
+          Consumer Disclosure &amp; Independent Contractor Notice:
+        </p>
+        <p>
+          {siteConfig.name} is a free advertising and referral service designed to assist homeowners in connecting with independent local plumbing contractors. {siteConfig.name} is not a plumbing contractor, does not perform plumbing services, and does not employ plumbers. All contractors in our referral network are independent service providers. It is the sole responsibility of the customer to verify that the contractor they hire holds the appropriate licenses, insurance, and permits required by the State of Texas (TSBPE) or local municipality before work begins. Any agreements, service warranties, quotes, or contracts are strictly between the homeowner and the independent contractor.
+        </p>
+      </div>
+    </div>
+
   </div>
 
   <!-- Bottom Legal Bar -->
-  <div class="bg-slate-950 text-slate-500 text-xs py-5 px-4 border-t border-slate-800">
+  <div class="bg-black text-slate-500 text-xs py-5 px-4 border-t border-slate-900">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
       <p>
-        © {new Date().getFullYear()} Denton Plumbing Pros. All rights reserved. Regulated by the Texas State Board of Plumbing Examiners (TSBPE).
+        © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
       </p>
-      <div class="flex space-x-6 text-slate-400">
-        <a href="/robots.txt" class="hover:text-white transition">Robots.txt</a>
+      <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-slate-400">
+        <a href="/privacy-policy/" class="hover:text-white transition underline">Privacy Policy</a>
+        <a href="/terms-and-conditions/" class="hover:text-white transition underline">Terms &amp; Conditions</a>
+        <a href="/contact/" class="hover:text-white transition">Contact Us</a>
         <a href="/sitemap-index.xml" class="hover:text-white transition">Sitemap</a>
-        <a href="/contact/" class="hover:text-white transition">Privacy & Terms</a>
       </div>
     </div>
   </div>

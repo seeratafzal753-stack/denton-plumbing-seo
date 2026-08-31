@@ -2,7 +2,7 @@
 title: "How North Texas Clay Soil Causes Slab Leaks (And How to Catch Them Early)"
 description: "Learn why expansive clay soils in Denton County crack underground plumbing lines and the early warning signs every homeowner should watch for."
 pubDate: 2026-08-22
-author: "Master Plumber Team"
+author: "Plumbing Editorial Team"
 category: "Slab Leaks"
 targetKeywords:
   - "slab leak denton tx"

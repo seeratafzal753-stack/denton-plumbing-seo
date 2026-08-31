@@ -2,7 +2,7 @@
 title: "The Homeowner's Guide to Denton's Hard Water & Plumbing Damage"
 description: "Discover how Denton's hard water impacts your water heater, appliances, and pipes, plus actionable steps to prevent expensive plumbing repairs."
 pubDate: 2026-08-20
-author: "Master Plumber Team"
+author: "Plumbing Editorial Team"
 category: "Water Quality"
 targetKeywords:
   - "denton hard water"

@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { siteConfig } from '../siteConfig';
+
+const crumbs = [
+  { name: 'Privacy Policy', item: '/privacy-policy/' },
+];
+---
+
+<BaseLayout
+  title="Privacy Policy | Denton Plumbing Pros"
+  description="Read our Privacy Policy to understand how Denton Plumbing Pros collects, uses, and protects your information as a plumbing lead generation and homeowner referral service."
+  breadcrumbs={crumbs}
+>
+  <Breadcrumbs crumbs={crumbs} />
+
+  <section class="py-12 lg:py-16 bg-slate-900 text-white px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="text-xs uppercase font-bold tracking-widest text-brand-400">Legal &amp; Compliance</span>
+      <h1 class="text-3xl sm:text-5xl font-black mt-2 mb-4 font-serif">
+        Privacy Policy
+      </h1>
+      <p class="text-slate-300 text-sm sm:text-base">
+        Last Updated: August 30, 2026
+      </p>
+    </div>
+  </section>
+
+  <article class="py-16 bg-white px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto prose prose-slate prose-lg">
+      
+      <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 not-prose mb-8 text-xs text-slate-600 leading-relaxed">
+        <strong class="text-slate-900 block mb-1 font-bold uppercase tracking-wide">Important Consumer Disclosure:</strong>
+        {siteConfig.name} is a free referral and lead generation service. We connect consumers and homeowners seeking plumbing services with independent local plumbing contractors in Denton County, Texas. We are not a licensed plumbing contractor and do not perform plumbing services directly.
+      </div>
+
+      <h2>1. Information We Collect</h2>
+      <p>
+        When you use our website, fill out an estimate request form, or call our phone number (<strong>{siteConfig.phone}</strong>), we may collect the following types of information:
+      </p>
+      <ul>
+        <li><strong>Personal Identifiable Information (PII):</strong> Your full name, telephone number, email address, physical address, and ZIP code.</li>
+        <li><strong>Service Request Details:</strong> Description of the plumbing issue (e.g., water heater leak, clogged drain, slab leak symptoms) and your requested timeline.</li>
+        <li><strong>Call Records:</strong> Inbound and outbound phone calls made to our referral dispatch desk may be monitored or recorded for quality assurance, training, and lead verification purposes.</li>
+        <li><strong>Automated &amp; Analytics Data:</strong> IP address, browser type, device information, operating system, referring URLs, and website interactions through cookies and analytics tracking tags.</li>
+      </ul>
+
+      <h2>2. How We Use Your Information</h2>
+      <p>
+        The primary purpose of collecting your information is to facilitate your request for plumbing repair and installation services. We use your data to:
+      </p>
+      <ul>
+        <li>Connect you with independent, third-party local plumbing contractors operating in Denton, TX and surrounding areas.</li>
+        <li>Transmit your contact information and service request to contractors so they may contact you directly via phone, SMS, or email with quotes and scheduling availability.</li>
+        <li>Verify service coverage and route emergency requests to on-call local service providers.</li>
+        <li>Improve our website functionality, user experience, and customer service operations.</li>
+        <li>Comply with applicable legal, regulatory, and reporting obligations.</li>
+      </ul>
+
+      <h2>3. Information Sharing &amp; Third-Party Contractors</h2>
+      <p>
+        Because we operate as a lead generation and referral matching platform, <strong>we share the personal information you provide with independent third-party plumbing service providers</strong> and contractor networks.
+      </p>
+      <p>
+        By submitting your information on this site or calling our dispatch number, you provide your express written consent for {siteConfig.name} and its partner contractors to contact you using automated dialing technology, SMS, and email, even if your phone number is listed on a state or national Do-Not-Call registry. Consent is not a condition of purchasing any goods or services.
+      </p>
+
+      <h2>4. Cookies and Tracking Technologies</h2>
+      <p>
+        We use cookies, web beacons, and similar tracking technologies to analyze site traffic, personalize content, and track the effectiveness of our marketing campaigns. You may set your browser to refuse all or some browser cookies; however, some parts of the site may become inaccessible or not function properly.
+      </p>
+
+      <h2>5. Data Security &amp; Retention</h2>
+      <p>
+        We employ industry-standard administrative, technical, and physical security measures to safeguard your personal data from unauthorized access, loss, or misuse. However, no data transmission over the Internet can be guaranteed 100% secure. We retain your information only as long as necessary to fulfill the purposes outlined in this policy or to comply with statutory legal requirements.
+      </p>
+
+      <h2>6. Your Privacy Rights (California CCPA &amp; Texas Privacy Laws)</h2>
+      <p>
+        Depending on your jurisdiction, you may have the right to request access to the personal data we hold about you, request corrections to inaccurate information, or request the deletion of your personal data.
+      </p>
+      <p>
+        To exercise any of these privacy rights, please contact us by email at <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a> with the subject line <em>"Privacy Request"</em>.
+      </p>
+
+      <h2>7. Children's Privacy</h2>
+      <p>
+        Our services are strictly directed to adult homeowners and property managers aged 18 and older. We do not knowingly collect or solicit personal information from individuals under the age of 18.
+      </p>
+
+      <h2>8. Changes to This Privacy Policy</h2>
+      <p>
+        We reserve the right to update or modify this Privacy Policy at any time without prior notice. Any changes will be posted on this page with an updated "Last Updated" revision date.
+      </p>
+
+      <h2>9. Contact Us</h2>
+      <p>
+        If you have questions, concerns, or feedback regarding this Privacy Policy, you may contact our privacy compliance team at:
+      </p>
+      <p>
+        <strong>{siteConfig.name}</strong><br />
+        Email: <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a><br />
+        Phone: <a href={`tel:${siteConfig.phoneRaw}`}>{siteConfig.phone}</a><br />
+        Location: Denton, Texas {siteConfig.postalCode}
+      </p>
+
+    </div>
+  </article>
+</BaseLayout>

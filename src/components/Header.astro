@@ -20,7 +20,7 @@ const servicesList: Array<{ name: string; href: string; tag: string; icon: 'aler
 
 <header class="w-full bg-white sticky top-0 z-50 shadow-md">
   
-  <!-- 1. SIMPLIFIED TOP ANNOUNCEMENT BAR (Real SVG Icons, Clean & Focused) -->
+  <!-- 1. TOP ANNOUNCEMENT BAR (Lead Gen Connection & Hotline) -->
   <div class="bg-slate-950 text-white py-2 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
     <div class="max-w-7xl mx-auto flex items-center justify-center sm:justify-between text-xs sm:text-sm font-medium">
       
@@ -31,7 +31,7 @@ const servicesList: Array<{ name: string; href: string; tag: string; icon: 'aler
           <span class="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
         </span>
         <span class="font-extrabold text-slate-100 uppercase tracking-wide text-xs">
-          24/7 Live Emergency Dispatch:
+          24/7 Emergency Referral Line:
         </span>
         <a
           href={`tel:${siteConfig.phoneRaw}`}
@@ -46,7 +46,7 @@ const servicesList: Array<{ name: string; href: string; tag: string; icon: 'aler
       <div class="hidden sm:flex items-center gap-2 text-slate-400 text-xs font-semibold">
         <span class="flex items-center gap-1">
           <Icon name="bolt" class="w-3.5 h-3.5 text-amber-400" />
-          <span>28–35 Min Arrival</span>
+          <span>Fast Local Matching</span>
         </span>
         <span>•</span>
         <span>Denton County, TX</span>
@@ -72,7 +72,7 @@ const servicesList: Array<{ name: string; href: string; tag: string; icon: 'aler
           Denton<span class="text-brand-800">Plumbing</span><span class="text-red-600">Pros</span>
         </span>
         <span class="block text-[10px] uppercase font-bold text-slate-500 tracking-wider mt-1">
-          TSBPE Master Plumber #M-42918 • Denton, TX
+          Local Plumbing Connection • Denton, TX
         </span>
       </div>
     </a>
@@ -99,8 +99,8 @@ const servicesList: Array<{ name: string; href: string; tag: string; icon: 'aler
         <!-- Dropdown Menu Panel -->
         <div class="absolute top-full left-0 w-72 bg-white rounded-2xl shadow-2xl border border-slate-200 py-2 hidden group-hover:block transition-all duration-150 z-50 mt-1">
           <div class="px-4 py-2 text-[11px] font-black uppercase text-slate-400 tracking-wider border-b border-slate-100 flex items-center justify-between">
-            <span>Our Plumbing Services</span>
-            <span class="text-[10px] text-red-600 font-bold">24/7 Dispatch</span>
+            <span>Find Local Plumbers</span>
+            <span class="text-[10px] text-red-600 font-bold">24/7 Match</span>
           </div>
           <div class="p-1 space-y-0.5">
             {servicesList.map((service) => (
@@ -164,19 +164,19 @@ const servicesList: Array<{ name: string; href: string; tag: string; icon: 'aler
         class="hidden sm:flex flex-col items-end text-right group"
         aria-label={`Call us at ${siteConfig.phone}`}
       >
-        <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400">24/7 Live Dispatch</span>
+        <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400">24/7 Match Line</span>
         <span class="text-sm md:text-base lg:text-lg font-black text-slate-900 group-hover:text-red-600 transition tracking-tight flex items-center gap-1.5">
           <Icon name="phone" class="w-4 h-4 text-red-600" />
           {siteConfig.phone}
         </span>
       </a>
 
-      <!-- Primary CTA Button: BOOK SERVICE -->
+      <!-- Primary CTA Button: GET AN ESTIMATE -->
       <a
         href="#estimate-form"
         class="inline-flex items-center justify-center px-4 sm:px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-center min-h-[44px]"
       >
-        <span>BOOK SERVICE</span>
+        <span>GET AN ESTIMATE</span>
       </a>
 
       <!-- Mobile Hamburger Button -->
@@ -250,6 +250,18 @@ const servicesList: Array<{ name: string; href: string; tag: string; icon: 'aler
     >
       Contact
     </a>
+    <a
+      href="/privacy-policy/"
+      class="block py-2 px-3 rounded-xl text-xs text-slate-500 hover:bg-slate-50 hover:text-red-600 transition"
+    >
+      Privacy Policy
+    </a>
+    <a
+      href="/terms-and-conditions/"
+      class="block py-2 px-3 rounded-xl text-xs text-slate-500 hover:bg-slate-50 hover:text-red-600 transition"
+    >
+      Terms &amp; Conditions
+    </a>
 
     <!-- Mobile Action Buttons -->
     <div class="pt-3 border-t border-slate-200 space-y-2.5">
@@ -264,7 +276,7 @@ const servicesList: Array<{ name: string; href: string; tag: string; icon: 'aler
         href="#estimate-form"
         class="block w-full text-center py-3.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-black text-sm uppercase tracking-wider shadow min-h-[48px]"
       >
-        BOOK SERVICE
+        GET AN ESTIMATE
       </a>
     </div>
   </div>
@@ -280,7 +292,6 @@ const servicesList: Array<{ name: string; href: string; tag: string; icon: 'aler
       btn.setAttribute('aria-expanded', String(!isHidden));
     });
     
-    // Auto-close menu when clicking direct anchor links (excluding the services toggle)
     menu.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
         menu.classList.add('hidden');
@@ -289,7 +300,6 @@ const servicesList: Array<{ name: string; href: string; tag: string; icon: 'aler
     });
   }
 
-  // Mobile services accordion tap handler
   const servicesBtn = document.getElementById('mobile-services-btn');
   const servicesMenu = document.getElementById('mobile-services-menu');
   const servicesChevron = document.getElementById('mobile-services-chevron');

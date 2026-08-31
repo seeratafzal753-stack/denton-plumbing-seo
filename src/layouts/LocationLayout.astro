@@ -56,15 +56,15 @@ const crumbs = [
       <div class="lg:col-span-7">
         <div class="inline-flex items-center gap-2 bg-brand-600/80 text-white text-xs uppercase font-bold tracking-widest px-3.5 py-1.5 rounded-full mb-4">
           <Icon name="map-pin" class="w-3.5 h-3.5 text-white" />
-          <span>Local Plumber in {cityName}, {state} ({county})</span>
+          <span>Local Plumber Connection in {cityName}, {state} ({county})</span>
         </div>
 
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 text-white">
-          Plumbing & Emergency Drain Services in <span class="text-brand-400">{cityName}, {state}</span>
+          Find Plumbers &amp; Emergency Drain Services in <span class="text-brand-400">{cityName}, {state}</span>
         </h1>
 
         <p class="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed">
-          Fast, licensed, and affordable 24/7 plumbing repair, water heater replacement, and drain cleaning throughout {cityName} and ZIP codes {postalCodes.join(', ')}.
+          Fast, affordable 24/7 plumbing referral, water heater replacement, and drain cleaning connections throughout {cityName} and ZIP codes {postalCodes.join(', ')}.
         </p>
 
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8">
@@ -73,7 +73,7 @@ const crumbs = [
             class="flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-emergency-600 hover:bg-emergency-500 text-white font-black text-lg shadow-xl transition transform hover:-translate-y-0.5"
           >
             <Icon name="phone" class="w-6 h-6 text-white" />
-            <span>Call Plumber: {siteConfig.phone}</span>
+            <span>Call Referral Line: {siteConfig.phone}</span>
           </a>
 
           <a
@@ -87,7 +87,7 @@ const crumbs = [
 
       <!-- Lead Form -->
       <div id="estimate-form" class="lg:col-span-5">
-        <LeadForm formTitle={`Service in ${cityName}, TX`} />
+        <LeadForm formTitle={`Service Match in ${cityName}, TX`} />
       </div>
 
     </div>
@@ -117,7 +117,7 @@ const crumbs = [
       <div class="p-8 rounded-2xl bg-brand-50/60 border border-brand-200">
         <h2 class="text-xl font-bold text-brand-950 mb-4 flex items-center gap-2">
           <Icon name="map-pin" class="w-5 h-5 text-brand-700" />
-          <span>Neighborhoods & Landmarks We Serve in {cityName}</span>
+          <span>Neighborhoods &amp; Landmarks in {cityName}</span>
         </h2>
         <div class="mb-4">
           <h3 class="text-xs uppercase font-bold tracking-wider text-slate-600 mb-2">Key Neighborhoods:</h3>
@@ -155,6 +155,6 @@ const crumbs = [
 
   <CallToAction
     heading={`Need a Fast Plumber in ${cityName}, TX?`}
-    subheading={`Our licensed technicians are ready for emergency response throughout ${cityName} and ZIP codes ${postalCodes.join(', ')}.`}
+    subheading={`Connect with local plumbing specialists ready to assist throughout ${cityName} and ZIP codes ${postalCodes.join(', ')}.`}
   />
 </BaseLayout>

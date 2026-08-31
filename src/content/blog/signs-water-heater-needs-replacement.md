@@ -2,7 +2,7 @@
 title: "7 Clear Signs Your Water Heater Needs Immediate Replacement"
 description: "Is your water heater failing? Here are the 7 warning signs that it is time to replace your old tank before an emergency flood occurs in your Denton home."
 pubDate: 2026-08-25
-author: "Master Plumber Team"
+author: "Plumbing Editorial Team"
 category: "Water Heaters"
 targetKeywords:
   - "water heater replacement denton"

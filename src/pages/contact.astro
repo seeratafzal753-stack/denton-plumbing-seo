@@ -12,20 +12,20 @@ const crumbs = [
 ---
 
 <BaseLayout
-  title="Contact Us | 24/7 Denton Plumbing Dispatch"
-  description="Contact Denton Plumbing Pros for 24/7 emergency dispatch, same-day estimates, or general plumbing inquiries in Denton, TX. Call (940) 310-4499."
+  title="Contact Us | 24/7 Denton Plumbing Referral Desk"
+  description="Contact Denton Plumbing Pros for 24/7 emergency matching, contractor estimates, or plumbing inquiries in Denton, TX. Call (940) 310-4499."
   breadcrumbs={crumbs}
 >
   <Breadcrumbs crumbs={crumbs} />
 
   <section class="py-12 lg:py-16 bg-slate-900 text-white px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto text-center">
-      <span class="text-xs uppercase font-bold tracking-widest text-brand-400">Direct Local Dispatch</span>
-      <h1 class="text-3xl sm:text-5xl font-black mt-2 mb-4">
+      <span class="text-xs uppercase font-bold tracking-widest text-brand-400">Local Referral Network</span>
+      <h1 class="text-3xl sm:text-5xl font-black mt-2 mb-4 font-serif">
         Contact Denton Plumbing Pros
       </h1>
       <p class="text-slate-300 text-base sm:text-lg">
-        Need emergency service or want to schedule an upcoming repair? Our Denton dispatch team is ready 24/7.
+        Need emergency service assistance or want to schedule an upcoming plumbing repair? Our local Denton referral desk is available 24/7.
       </p>
     </div>
   </section>
@@ -37,11 +37,11 @@ const crumbs = [
       
       <div class="lg:col-span-5 space-y-8">
         <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
-          <h2 class="text-2xl font-black text-slate-900 mb-6">Dispatch Information</h2>
+          <h2 class="text-2xl font-black text-slate-900 mb-6 font-serif">Referral &amp; Matching Desk</h2>
           
           <div class="space-y-6 text-sm">
             <div>
-              <strong class="block text-xs uppercase text-slate-500 font-bold mb-1">Emergency Dispatch Phone:</strong>
+              <strong class="block text-xs uppercase text-slate-500 font-bold mb-1">24/7 Hotline:</strong>
               <a href={`tel:${siteConfig.phoneRaw}`} class="text-2xl font-black text-emergency-600 hover:underline flex items-center gap-2">
                 <Icon name="phone" class="w-6 h-6 text-red-600" />
                 <span>{siteConfig.phone}</span>
@@ -57,19 +57,18 @@ const crumbs = [
             </div>
 
             <div>
-              <strong class="block text-xs uppercase text-slate-500 font-bold mb-1">Primary Service Hub:</strong>
+              <strong class="block text-xs uppercase text-slate-500 font-bold mb-1">Primary Coverage:</strong>
               <p class="text-slate-800 font-medium flex items-center gap-1.5">
                 <Icon name="map-pin" class="w-4 h-4 text-slate-500" />
-                <span>Denton, TX {siteConfig.postalCode}</span>
+                <span>Denton, TX {siteConfig.postalCode} (All Denton County ZIPs)</span>
               </p>
-              <p class="text-xs text-slate-500 mt-1">Serving all Denton neighborhoods &amp; Denton County</p>
             </div>
 
             <div>
-              <strong class="block text-xs uppercase text-slate-500 font-bold mb-1">Operating Hours:</strong>
+              <strong class="block text-xs uppercase text-slate-500 font-bold mb-1">Service Model:</strong>
               <p class="text-slate-800 font-medium flex items-center gap-1.5">
-                <Icon name="clock" class="w-4 h-4 text-emerald-600" />
-                <span>Monday – Sunday: 24 Hours Open (Emergency Service Always Active)</span>
+                <Icon name="shield-check" class="w-4 h-4 text-emerald-600" />
+                <span>Free Homeowner Referral &amp; Contractor Matching</span>
               </p>
             </div>
           </div>
@@ -81,7 +80,7 @@ const crumbs = [
             <span>For Active Flooding / Burst Pipes:</span>
           </strong>
           <p class="text-xs text-amber-800 mb-3">
-            Please immediately turn off your main water shutoff valve (usually near your water meter or inside your garage) and call our emergency line directly.
+            Please immediately turn off your main water shutoff valve (usually near your water meter or inside your garage) and call our referral line directly for priority matching.
           </p>
           <a href={`tel:${siteConfig.phoneRaw}`} class="inline-flex items-center gap-2 px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs rounded-lg transition">
             <Icon name="phone" class="w-3.5 h-3.5 text-white" />

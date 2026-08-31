@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { siteConfig } from '../siteConfig';
+
+const crumbs = [
+  { name: 'Terms & Conditions', item: '/terms-and-conditions/' },
+];
+---
+
+<BaseLayout
+  title="Terms & Conditions | Denton Plumbing Pros"
+  description="Review the Terms and Conditions for using Denton Plumbing Pros. Learn about our lead generation referral service, independent contractor relationships, and limitation of liability."
+  breadcrumbs={crumbs}
+>
+  <Breadcrumbs crumbs={crumbs} />
+
+  <section class="py-12 lg:py-16 bg-slate-900 text-white px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="text-xs uppercase font-bold tracking-widest text-brand-400">Legal Terms of Use</span>
+      <h1 class="text-3xl sm:text-5xl font-black mt-2 mb-4 font-serif">
+        Terms &amp; Conditions
+      </h1>
+      <p class="text-slate-300 text-sm sm:text-base">
+        Last Updated: August 30, 2026
+      </p>
+    </div>
+  </section>
+
+  <article class="py-16 bg-white px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto prose prose-slate prose-lg">
+      
+      <div class="p-6 bg-amber-50 rounded-2xl border border-amber-200 not-prose mb-8 text-xs text-amber-950 leading-relaxed">
+        <strong class="text-amber-900 block mb-1 font-bold uppercase tracking-wide">⚠️ Referral Service Disclaimer:</strong>
+        {siteConfig.name} is a free referral and marketing platform connecting property owners with independent local plumbing service contractors. We do not perform plumbing work, provide direct estimates, employ contractors, or guarantee any contractor work. Please review these terms carefully before submitting a service request.
+      </div>
+
+      <h2>1. Acceptance of Terms</h2>
+      <p>
+        By accessing, browsing, submitting forms, or making phone calls through <strong>{siteConfig.name}</strong> (the "Website" or "Service"), you agree to be bound by these Terms and Conditions and our Privacy Policy. If you do not agree with any part of these Terms, you must discontinue use of the Website immediately.
+      </p>
+
+      <h2>2. Nature of the Referral Service</h2>
+      <p>
+        {siteConfig.name} operates strictly as a lead generation, advertising, and referral service. Our sole function is to connect consumers who require plumbing services in Denton County, Texas with independent third-party plumbing professionals and contractors.
+      </p>
+      <ul>
+        <li><strong>No Employer / Agency Relationship:</strong> Participating plumbing contractors are independent third-party businesses. They are not employees, agents, representatives, or subcontractors of {siteConfig.name}.</li>
+        <li><strong>No Direct Contracting:</strong> We do not enter into contracts for plumbing repairs, replacements, or installations with consumers. Any contract, quote, warranty, or financial agreement is formed exclusively between the homeowner and the independent contractor.</li>
+        <li><strong>Free Service to Consumers:</strong> Using our website or calling our phone number to connect with a contractor is 100% free of charge for homeowners.</li>
+      </ul>
+
+      <h2>3. Homeowner Responsibilities &amp; Due Diligence</h2>
+      <p>
+        While we strive to connect you with reputable local specialists, <strong>it is the sole responsibility of the customer/homeowner to:</strong>
+      </p>
+      <ul>
+        <li>Verify that the contractor holds an active license with the Texas State Board of Plumbing Examiners (TSBPE) or relevant regulatory body before authorizing work.</li>
+        <li>Confirm that the contractor carries sufficient commercial general liability insurance and worker's compensation coverage.</li>
+        <li>Review all written estimates, scope of work documents, contracts, payment terms, and warranty terms prior to authorizing service.</li>
+        <li>Obtain necessary municipal plumbing permits required by the City of Denton or local jurisdiction.</li>
+      </ul>
+
+      <h2>4. Disclaimer of Warranties</h2>
+      <p>
+        TO THE MAXIMUM EXTENT PERMITTED UNDER TEXAS LAW, THE WEBSITE AND ALL REFERRAL SERVICES ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+      </p>
+      <p>
+        {siteConfig.name} EXPRESSLY DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO:
+      </p>
+      <ul>
+        <li>The quality, safety, legality, timeliness, or accuracy of any plumbing repair, diagnosis, or installation performed by independent contractors.</li>
+        <li>The licensing status, insurance coverage, background checks, or credentials of any third-party service provider.</li>
+        <li>Specific arrival times, pricing estimates, or availability of service during emergency periods.</li>
+      </ul>
+
+      <h2>5. Limitation of Liability</h2>
+      <p>
+        UNDER NO CIRCUMSTANCES SHALL {siteConfig.name}, ITS OWNERS, DIRECTORS, EMPLOYEES, AFFILIATES, OR MARKETING PARTNERS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, PUNITIVE, OR EXEMPLARY DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROPERTY DAMAGE, WATER DAMAGE, LOSS OF PROFITS, DISPUTES WITH CONTRACTORS, OR PERSONAL INJURY) ARISING OUT OF OR IN CONNECTION WITH:
+      </p>
+      <ul>
+        <li>Your use of or inability to use this Website;</li>
+        <li>Any act, omission, negligence, delay, breach of contract, or substandard work by any independent contractor referred through this Service;</li>
+        <li>Any pricing disputes, billing disagreements, or property damage caused by a third-party service professional.</li>
+      </ul>
+
+      <h2>6. Phone Calls, SMS Consent &amp; Recording</h2>
+      <p>
+        When you submit a contact form or call the phone number displayed on this site, you consent to receive telephone calls and text messages (SMS/MMS) from {siteConfig.name} and independent contractor partners regarding your inquiry, including through the use of automated dialing systems. You acknowledge that calls may be recorded for training and quality assurance.
+      </p>
+
+      <h2>7. Intellectual Property</h2>
+      <p>
+        All content, graphics, logos, layouts, text, code, and design elements on this Website are the exclusive property of {siteConfig.name} or its content suppliers and are protected under United States and international copyright and trademark laws.
+      </p>
+
+      <h2>8. Governing Law &amp; Dispute Resolution</h2>
+      <p>
+        These Terms and Conditions shall be governed by and construed in accordance with the laws of the State of Texas, without giving effect to any principles of conflicts of law. Any legal action or proceeding arising out of these Terms shall be instituted exclusively in the state or federal courts located in Denton County, Texas.
+      </p>
+
+      <h2>9. Modifications to Terms</h2>
+      <p>
+        We reserve the right to revise, modify, or replace these Terms and Conditions at our sole discretion at any time. The most current version will always be posted on this page.
+      </p>
+
+      <h2>10. Contact Information</h2>
+      <p>
+        If you have questions regarding these Terms &amp; Conditions, please contact us at:
+      </p>
+      <p>
+        <strong>{siteConfig.name}</strong><br />
+        Legal &amp; Compliance Department<br />
+        Email: <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a><br />
+        Phone: <a href={`tel:${siteConfig.phoneRaw}`}>{siteConfig.phone}</a><br />
+        Denton, Texas {siteConfig.postalCode}
+      </p>
+
+    </div>
+  </article>
+</BaseLayout>
