@@ -8,27 +8,27 @@ interface Props {
 }
 
 const {
-  formTitle = "Request Plumbing Service Connection",
-  servicePreselect = "Water Heater Repair"
+  formTitle = "Need a Plumber in Denton?",
+  servicePreselect = ""
 } = Astro.props;
 ---
 
 <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-8">
   <div class="mb-6 text-center sm:text-left">
-    <div class="inline-flex items-center gap-1.5 bg-amber-100 text-amber-900 text-xs font-bold px-2.5 py-1 rounded-full mb-2">
-      <Icon name="bolt" class="w-3.5 h-3.5 text-amber-700" />
-      <span>Fast Local Connection</span>
+    <div class="inline-flex items-center gap-1.5 bg-red-50 text-red-700 text-xs font-bold px-2.5 py-1 rounded-full mb-2 border border-red-100">
+      <Icon name="bolt" class="w-3.5 h-3.5 text-red-600" />
+      <span>Fast Local Response</span>
     </div>
     <h3 class="text-xl sm:text-2xl font-black text-slate-900 font-serif">{formTitle}</h3>
-    <p class="text-xs sm:text-sm text-slate-500 mt-1">
-      Fill out below to match with a local Denton plumbing specialist or call directly: 
-      <a href={`tel:${siteConfig.phoneRaw}`} class="font-bold text-brand-600 underline">
+    <p class="text-xs sm:text-sm text-slate-600 mt-1">
+      Tell us what you need and we'll help connect you with a local plumbing professional, or call directly: 
+      <a href={`tel:${siteConfig.phoneRaw}`} class="font-bold text-red-600 underline">
         {siteConfig.phone}
       </a>
     </p>
   </div>
 
-  <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Your service request has been received. An independent local Denton plumbing specialist will contact you shortly.');">
+  <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Your request has been received. A local Denton plumbing professional will call you back shortly.');">
     <div>
       <label for="name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Your Full Name</label>
       <input
@@ -37,19 +37,19 @@ const {
         name="name"
         required
         placeholder="e.g. John Miller"
-        class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm outline-none transition"
+        class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm outline-none transition"
       />
     </div>
 
     <div>
-      <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Phone Number (Required for Contractor Callback)</label>
+      <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Phone Number</label>
       <input
         type="tel"
         id="phone"
         name="phone"
         required
         placeholder="(940) 555-0199"
-        class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm outline-none transition"
+        class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm outline-none transition"
       />
     </div>
 
@@ -59,15 +59,17 @@ const {
         <select
           id="service"
           name="service"
-          class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm outline-none transition bg-white"
+          required
+          class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm outline-none transition bg-white text-slate-800"
         >
-          <option value="Water Heater Repair" selected={servicePreselect === "Water Heater Repair"}>Water Heater Repair</option>
-          <option value="Tankless Water Heater" selected={servicePreselect === "Tankless Water Heater"}>Tankless Water Heater</option>
+          <option value="" disabled selected={!servicePreselect}>Select a service</option>
           <option value="Emergency Plumbing" selected={servicePreselect === "Emergency Plumbing"}>Emergency Plumbing</option>
-          <option value="Drain Cleaning / Clog" selected={servicePreselect === "Drain Cleaning"}>Drain Cleaning / Clog</option>
-          <option value="Slab Leak Detection" selected={servicePreselect === "Slab Leak Detection"}>Slab Leak Detection</option>
+          <option value="Water Heater Repair" selected={servicePreselect === "Water Heater Repair" || servicePreselect === "Water Heaters"}>Water Heater Repair</option>
+          <option value="Drain Cleaning" selected={servicePreselect === "Drain Cleaning"}>Drain Cleaning</option>
+          <option value="Slab Leak Repair" selected={servicePreselect === "Slab Leak Detection" || servicePreselect === "Slab Leak Repair" || servicePreselect === "Slab Leaks"}>Slab Leak Repair</option>
           <option value="Sewer Line Repair" selected={servicePreselect === "Sewer Line Repair"}>Sewer Line Repair</option>
-          <option value="Other Service">Other Plumbing Repair</option>
+          <option value="Plumbing Repair" selected={servicePreselect === "Plumbing Repair"}>Plumbing Repair</option>
+          <option value="Other" selected={servicePreselect === "Other"}>Other</option>
         </select>
       </div>
 
@@ -78,7 +80,7 @@ const {
           id="zip"
           name="zip"
           placeholder="e.g. 76201"
-          class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm outline-none transition"
+          class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm outline-none transition"
         />
       </div>
     </div>
@@ -89,38 +91,38 @@ const {
         id="details"
         name="details"
         rows="2"
-        placeholder="e.g. Water leaking from base of 50-gal heater, no hot water in bathrooms..."
-        class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-sm outline-none transition"
+        placeholder="e.g. Water leaking from base of water heater, toilet clogged..."
+        class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm outline-none transition"
       ></textarea>
     </div>
 
     <button
       type="submit"
-      class="w-full py-4 px-6 rounded-xl bg-emergency-600 hover:bg-emergency-700 text-white font-black text-base shadow-lg transition transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 cursor-pointer uppercase tracking-wider"
+      class="w-full py-4 px-6 rounded-xl bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-black text-base shadow-lg shadow-red-600/20 hover:shadow-xl hover:shadow-red-600/30 transition transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 cursor-pointer uppercase tracking-wider"
     >
-      <Icon name="bolt" class="w-5 h-5 text-white" />
-      <span>REQUEST CONTRACTOR CALLBACK</span>
+      <Icon name="phone" class="w-5 h-5 text-white" />
+      <span>REQUEST A PLUMBER CALL BACK</span>
     </button>
 
-    <p class="text-[10px] text-slate-500 text-center leading-relaxed px-2">
-      By clicking above, you agree to our <a href="/terms-and-conditions/" class="underline text-slate-700 hover:text-black">Terms &amp; Conditions</a> and <a href="/privacy-policy/" class="underline text-slate-700 hover:text-black">Privacy Policy</a>, and authorize independent local plumbing contractors to contact you via phone or SMS regarding your request.
-    </p>
-
-    <div class="flex items-center justify-center gap-3 text-xs text-slate-500 pt-2 border-t border-slate-100">
+    <div class="flex items-center justify-center gap-3 text-xs text-slate-500 pt-1">
       <span class="flex items-center gap-1">
-        <Icon name="lock" class="w-3 h-3 text-slate-400" />
-        <span>100% Privacy</span>
+        <Icon name="lock" class="w-3.5 h-3.5 text-slate-400" />
+        <span>Privacy</span>
       </span>
       <span>•</span>
       <span class="flex items-center gap-1">
-        <Icon name="shield-check" class="w-3 h-3 text-emerald-500" />
+        <Icon name="shield-check" class="w-3.5 h-3.5 text-emerald-600" />
         <span>No Spam</span>
       </span>
       <span>•</span>
       <span class="flex items-center gap-1">
-        <Icon name="wrench" class="w-3 h-3 text-slate-400" />
-        <span>Free Estimates</span>
+        <Icon name="bolt" class="w-3.5 h-3.5 text-amber-500" />
+        <span>Fast Response</span>
       </span>
     </div>
+
+    <p class="text-[10px] text-slate-400 text-center leading-relaxed pt-2 border-t border-slate-100">
+      By clicking above, you agree to our <a href="/terms-and-conditions/" class="underline text-slate-600 hover:text-black">Terms &amp; Conditions</a> and <a href="/privacy-policy/" class="underline text-slate-600 hover:text-black">Privacy Policy</a>, and authorize local plumbing professionals to contact you regarding your request.
+    </p>
   </form>
 </div>
