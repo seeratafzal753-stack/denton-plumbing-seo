@@ -1,9 +1,9 @@
 export const siteConfig = {
-  // Core Business Identity (Lead Generation & Homeowner Referral Service)
+  // Core Business Identity (Lead Generation & Homeowner Referral Platform)
   name: "Denton Plumbing Pros",
   legalName: "Denton Plumbing Pros Referral Network",
   domain: "https://dentonplumbingpros.com",
-  tagline: "Connecting Denton Homeowners with Top Local Plumbing Contractors 24/7",
+  tagline: "Connecting Denton County Homeowners with Local Plumbing Professionals",
   isLeadGen: true,
   
   // Primary Contact Points
@@ -11,58 +11,36 @@ export const siteConfig = {
   phoneRaw: "+19403104499",
   email: "dispatch@dentonplumbingpros.com",
 
-  // Location / Primary Service Area Details
-  address: "Denton, TX",
-  addressLocality: "Denton",
-  addressRegion: "TX",
-  addressCountry: "US",
+  // Service Area Details (Service-Area Platform)
   city: "Denton",
   state: "TX",
   stateFull: "Texas",
-  postalCode: "76201",
   county: "Denton County",
+  addressLocality: "Denton",
+  addressRegion: "TX",
+  addressCountry: "US",
   priceRange: "$$",
 
-  // NAP Object for components
-  nap: {
-    name: "Denton Plumbing Pros Referral Network",
-    address: "Denton, TX",
-    city: "Denton",
-    state: "TX",
-    zip: "76201",
-    phone: "(940) 310-4499",
-  },
-  
-  // Geo Coordinates (Denton County Central Hub)
-  coordinates: {
-    lat: "33.2148",
-    lng: "-97.1331",
-  },
-  geo: {
-    latitude: "33.2148",
-    longitude: "-97.1331",
-  },
-
-  // Service Hours
-  hours: "24/7 Referral & Emergency Dispatch Connection",
-  openingHoursSchema: "Mo-Su 00:00-23:59",
-
-  // Top Denton ZIP Codes Served
-  zipCodes: [
-    "76201", // Historic Downtown, Square, TWU
-    "76205", // Southridge, Teasley, Ryan High Area
-    "76207", // Rayzor Ranch, University West, Robson Ranch
-    "76208", // Forrestridge, Loop 288, Cooper Creek
-    "76209", // Idiots Hill, Sherman Dr, North Denton
-    "76210", // Corinth border, South Denton, Guyer area
-    "76226", // Argyle border, Robson Ranch south
-    "76249", // Krum border, Northwest Denton
+  // Service Area Coverage - Denton Proper ZIPs
+  dentonZipCodes: [
+    "76201", // Downtown, TWU, Central
+    "76205", // Southridge, Teasley
+    "76207", // Rayzor Ranch, University West
+    "76208", // Loop 288, Cooper Creek
+    "76209", // Idiots Hill, North Denton
+    "76210", // South Denton / Corinth border
   ],
 
-  // Service Area Municipalities
+  // Combined Denton-Area & Neighboring ZIPs
+  zipCodes: [
+    "76201", "76205", "76207", "76208", "76209", "76210", "76226", "76249"
+  ],
+
+  // Surrounding Service Communities
   serviceAreas: [
     { name: "Corinth", zip: "76210" },
     { name: "Argyle", zip: "76226" },
+    { name: "Krum", zip: "76249" },
     { name: "Lake Dallas", zip: "75065" },
     { name: "Little Elm", zip: "75068" },
     { name: "Sanger", zip: "76266" },
@@ -70,7 +48,7 @@ export const siteConfig = {
     { name: "Highland Village", zip: "75077" },
   ],
 
-  // Neighborhoods & Subdivisions
+  // Denton Neighborhoods & Subdivisions
   neighborhoods: [
     "Downtown Denton Square",
     "Idiots Hill",
@@ -82,15 +60,14 @@ export const siteConfig = {
     "Mack Park Area",
     "Oakmont",
     "Vintage Township",
-    "Woodrow",
     "North Lakes",
   ],
 
-  // Trust Points for Lead Gen
+  // Authentic Value Points for Homeowners
   trustPoints: [
-    "Pre-Screened Local Plumbing Contractors",
-    "Fast Same-Day Connection & Estimates",
-    "No-Obligation Upfront Pricing",
-    "24/7 Emergency Referral Matching",
+    "Connect with Local Independent Plumbers",
+    "Fast Response for Denton County Homeowners",
+    "Clear, Upfront Contractor Estimates",
+    "100% Free Referral Service",
   ],
 };
