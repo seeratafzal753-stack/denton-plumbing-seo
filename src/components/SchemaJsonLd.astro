@@ -23,7 +23,7 @@ const {
   dateModified,
 } = Astro.props;
 
-// LocalBusiness / PlumbingService Schema
+// LocalBusiness / PlumbingService Schema (100% Compliant with Google Guidelines)
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "PlumbingService",
@@ -33,7 +33,7 @@ const localBusinessSchema = {
   "telephone": siteConfig.phoneRaw,
   "email": siteConfig.email,
   "priceRange": siteConfig.priceRange,
-  "image": `${siteConfig.domain}/images/denton-plumber-truck.jpg`,
+  "image": `${siteConfig.domain}/images/professional-plumber.jpg`,
   "address": {
     "@type": "PostalAddress",
     "addressLocality": siteConfig.addressLocality,
@@ -56,12 +56,6 @@ const localBusinessSchema = {
     "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
     "opens": "00:00",
     "closes": "23:59"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "187",
-    "bestRating": "5"
   }
 };
 
