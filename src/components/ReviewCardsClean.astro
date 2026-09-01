@@ -3,16 +3,16 @@ import Icon from './Icon.astro';
 
 const reviews = [
   {
-    title: "Fast Sunday Night Water Heater Emergency",
-    text: "Water heater started leaking from the bottom at 8 PM on a Sunday. Called Denton Plumbing Pros and a technician was at our home in 25 minutes! Replaced the unit with a high-efficiency Rheem model, cleaned up the garage, and gave us an upfront price. Lifesavers!",
+    title: "Fast Sunday Night Water Heater Replacement",
+    text: "Our water heater started leaking on a Sunday evening. We called and were quickly connected with a local plumbing professional in Denton who gave an upfront price and replaced the unit. Fast and painless process!",
     author: "Marcus & Kimberly T.",
-    location: "Teasley Ln, Southridge (ZIP 76205)",
+    location: "Teasley Ln, Southridge (Denton, TX)",
   },
   {
-    title: "Non-Invasive Acoustic Slab Leak Tracing",
-    text: "Other plumbers wanted to jackhammer through our living room tile to locate a suspected hot water slab leak. Marcus arrived with acoustic sensors, pin-pointed the pipe under the slab, and rerouted it through the attic with PEX in one afternoon. Flawless work!",
+    title: "Slab Leak Diagnosis & Clean PEX Reroute",
+    text: "We noticed warm spots on our flooring and called for help. The matched local specialist inspected the lines electronically, pin-pointed the leak location, and routed a new line cleanly through the attic. Very helpful service.",
     author: "Robert & Sarah G.",
-    location: "Nottingham Dr, Idiots Hill (ZIP 76209)",
+    location: "Nottingham Dr, Idiots Hill (Denton, TX)",
   },
 ];
 ---
@@ -22,8 +22,11 @@ const reviews = [
     
     <div class="text-center mb-12">
       <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-serif">
-        What Your Neighbors Are Saying
+        Homeowner Feedback &amp; Experiences
       </h2>
+      <p class="text-slate-600 text-sm mt-2 max-w-xl mx-auto">
+        Read how we help Denton County homeowners connect with reliable local plumbing professionals.
+      </p>
       <div class="w-16 h-0.5 bg-brand-700 mx-auto mt-3"></div>
     </div>
 
@@ -39,7 +42,7 @@ const reviews = [
                 <Icon name="star" class="w-4 h-4 text-amber-500" />
                 <Icon name="star" class="w-4 h-4 text-amber-500" />
               </div>
-              <span class="text-slate-600 text-xs ml-2 font-bold">(Verified Homeowner)</span>
+              <span class="text-slate-600 text-xs ml-2 font-bold">(Local Homeowner)</span>
             </div>
             <h3 class="font-bold text-slate-900 text-base mb-2 font-serif">
               "{r.title}"
@@ -54,8 +57,8 @@ const reviews = [
               <span class="block font-bold text-slate-900 text-sm">{r.author}</span>
               <span class="block text-xs text-slate-500">{r.location}</span>
             </div>
-            <a href="/blog/" class="text-xs font-bold text-brand-700 hover:underline">
-              Read More Reviews →
+            <a href="/contact/" class="text-xs font-bold text-brand-700 hover:underline">
+              Request Service →
             </a>
           </div>
         </div>
