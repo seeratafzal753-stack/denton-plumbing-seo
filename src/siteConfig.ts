@@ -20,6 +20,10 @@ export const siteConfig = {
   addressRegion: "TX",
   addressCountry: "US",
   priceRange: "$$",
+  geo: {
+    latitude: "33.2148",
+    longitude: "-97.1331",
+  },
 
   // Service Area Coverage - Denton Proper ZIPs
   dentonZipCodes: [
