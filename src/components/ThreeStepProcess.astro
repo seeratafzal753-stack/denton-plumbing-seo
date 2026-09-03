@@ -18,7 +18,7 @@ const steps = [
 ];
 ---
 
-<section class="py-16 bg-slate-50 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
+<section class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
   <div class="max-w-6xl mx-auto">
     
     <div class="text-center mb-12">
@@ -28,16 +28,16 @@ const steps = [
       <p class="text-slate-600 text-sm mt-2 max-w-xl mx-auto">
         A fast, seamless, and free way to connect with top local Denton plumbing professionals.
       </p>
-      <div class="w-16 h-0.5 bg-brand-700 mx-auto mt-3"></div>
+      <div class="w-16 h-1 bg-[#c8102e] mx-auto mt-3 rounded-full"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {steps.map((s) => (
-        <div class="bg-white border border-slate-200 rounded-2xl p-8 text-center shadow-sm hover:border-brand-600 hover:shadow-md transition">
-          <span class="inline-block px-4 py-1.5 rounded-full bg-slate-100 text-slate-900 font-extrabold text-xs uppercase tracking-wider mb-4">
+        <div class="bg-slate-50 hover:bg-white border border-slate-200 rounded-2xl p-8 text-center shadow-sm hover:border-[#c8102e] hover:shadow-lg hover:shadow-red-600/5 transition duration-200 group">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-red-50 text-[#c8102e] border border-red-200 group-hover:bg-[#c8102e] group-hover:text-white font-extrabold text-xs uppercase tracking-wider mb-4 transition-colors">
             {s.step}
           </span>
-          <h3 class="text-lg font-bold text-slate-900 mb-3 font-serif">
+          <h3 class="text-lg font-bold text-slate-900 mb-3 font-serif group-hover:text-[#c8102e] transition-colors">
             {s.title}
           </h3>
           <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">

@@ -5,7 +5,7 @@ import DentonLiveTicker from '../components/DentonLiveTicker.astro';
 import RecentDispatches from '../components/RecentDispatches.astro';
 import LocalWaterSoilWidget from '../components/LocalWaterSoilWidget.astro';
 import LeadForm from '../components/LeadForm.astro';
-import TrustBadges from '../components/TrustBadges.astro';
+import HeroTrustBar from '../components/HeroTrustBar.astro';
 import FaqAccordion from '../components/FaqAccordion.astro';
 import CallToAction from '../components/CallToAction.astro';
 import Icon from '../components/Icon.astro';
@@ -51,43 +51,43 @@ const crumbs = [
   <DentonLiveTicker />
   <Breadcrumbs crumbs={crumbs} />
 
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-b from-slate-900 via-brand-950 to-slate-900 text-white py-12 lg:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+  <!-- Hero Section (Texas Red & White Theme) -->
+  <section class="bg-gradient-to-r from-[#1c0303] via-[#450a0a] to-[#180202] text-white py-12 lg:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-[#5c0d0d] shadow-inner">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
       
-      <div class="lg:col-span-7">
-        <div class="inline-flex items-center gap-2 bg-emergency-600/90 text-white text-xs uppercase font-black tracking-widest px-3.5 py-1.5 rounded-full mb-4">
-          <span class="w-2 h-2 rounded-full bg-white animate-pulse-live"></span>
+      <div class="lg:col-span-7 space-y-4">
+        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-red-200 border border-red-400/30 text-xs uppercase font-extrabold tracking-widest px-3.5 py-1.5 rounded-full mb-2">
+          <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
           <span>{urgencyLevel} Plumbing Referral in {cityName}</span>
         </div>
 
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 text-white">
-          {title} <span class="text-brand-400">in {cityName}</span>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-white uppercase font-sans">
+          {title} <span class="text-red-400 block mt-1">in {cityName}</span>
         </h1>
 
-        <p class="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed">
+        <p class="text-base sm:text-lg text-slate-200 leading-relaxed font-normal">
           {shortDescription}
         </p>
 
         <!-- Direct Action Buttons -->
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8">
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
           <a
             href={`tel:${siteConfig.phoneRaw}`}
-            class="flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-emergency-600 hover:bg-emergency-500 text-white font-black text-lg shadow-xl transition transform hover:-translate-y-0.5"
+            class="flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#c8102e] hover:bg-[#a60c24] text-white font-black text-base uppercase tracking-wider shadow-2xl transition transform hover:-translate-y-0.5 border border-red-400/30 cursor-pointer"
           >
-            <Icon name="phone" class="w-6 h-6 text-white" />
+            <Icon name="phone" class="w-5 h-5 text-white" />
             <span>Call {siteConfig.phone}</span>
           </a>
 
           <a
             href="#estimate-form"
-            class="flex items-center justify-center px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-base backdrop-blur-sm border border-white/20 transition"
+            class="flex items-center justify-center px-8 py-4 rounded-full bg-[#1a2b4c] hover:bg-[#121e35] text-white font-black text-base uppercase tracking-wider shadow-xl transition transform hover:-translate-y-0.5 border border-sky-400/20 cursor-pointer"
           >
-            <span>Get Free Estimate ↓</span>
+            <span>Request a Local Pro</span>
           </a>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-300">
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-300 pt-3">
           <div class="flex items-center gap-1.5">
             <Icon name="check" class="w-3.5 h-3.5 text-emerald-400 font-bold" />
             <span>Fast Local Dispatch</span>
@@ -98,7 +98,7 @@ const crumbs = [
           </div>
           <div class="flex items-center gap-1.5">
             <Icon name="check" class="w-3.5 h-3.5 text-emerald-400 font-bold" />
-            <span>Local Independent Pros</span>
+            <span>100% Free Referral</span>
           </div>
         </div>
       </div>
@@ -111,25 +111,25 @@ const crumbs = [
     </div>
   </section>
 
-  <TrustBadges />
+  <HeroTrustBar />
 
   <!-- Problems Solved & Features Section -->
-  <section class="py-14 bg-slate-50 px-4 sm:px-6 lg:px-8">
+  <section class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
       
       <!-- Problems Solved -->
-      <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
-        <div class="inline-flex items-center gap-2 p-2.5 bg-rose-50 text-rose-600 rounded-xl mb-4 font-bold text-sm">
-          <Icon name="alert" class="w-4 h-4 text-rose-500" />
+      <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm hover:border-[#c8102e] transition">
+        <div class="inline-flex items-center gap-2 p-2.5 bg-red-50 text-[#c8102e] border border-red-200 rounded-xl mb-4 font-bold text-xs uppercase tracking-wider">
+          <Icon name="alert" class="w-4 h-4 text-[#c8102e]" />
           <span>Common Plumbing Issues in Denton</span>
         </div>
-        <h2 class="text-2xl font-black text-slate-900 mb-4">
+        <h2 class="text-2xl font-black text-slate-900 mb-4 font-serif">
           Signs You Need {title}
         </h2>
-        <ul class="space-y-3">
+        <ul class="space-y-3 text-sm sm:text-base">
           {problemsSolved.map((prob) => (
             <li class="flex items-start gap-3 text-slate-700">
-              <span class="text-rose-500 font-bold shrink-0 mt-0.5">✕</span>
+              <span class="text-[#c8102e] font-black shrink-0 mt-0.5">✕</span>
               <span>{prob}</span>
             </li>
           ))}
@@ -137,15 +137,15 @@ const crumbs = [
       </div>
 
       <!-- Professional Solutions & Features -->
-      <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
-        <div class="inline-flex items-center gap-2 p-2.5 bg-emerald-50 text-emerald-600 rounded-xl mb-4 font-bold text-sm">
-          <Icon name="wrench" class="w-4 h-4 text-emerald-600" />
+      <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm hover:border-[#c8102e] transition">
+        <div class="inline-flex items-center gap-2 p-2.5 bg-red-50 text-[#c8102e] border border-red-200 rounded-xl mb-4 font-bold text-xs uppercase tracking-wider">
+          <Icon name="wrench" class="w-4 h-4 text-[#c8102e]" />
           <span>Professional Service Solutions</span>
         </div>
-        <h2 class="text-2xl font-black text-slate-900 mb-4">
+        <h2 class="text-2xl font-black text-slate-900 mb-4 font-serif">
           What’s Included in Professional Service
         </h2>
-        <ul class="space-y-3">
+        <ul class="space-y-3 text-sm sm:text-base">
           {features.map((feat) => (
             <li class="flex items-start gap-3 text-slate-700">
               <Icon name="check" class="w-4 h-4 text-emerald-600 font-bold shrink-0 mt-0.5" />
@@ -159,7 +159,7 @@ const crumbs = [
   </section>
 
   <!-- Markdown Slot for In-Depth Guides -->
-  <section class="py-12 bg-white px-4 sm:px-6 lg:px-8">
+  <section class="py-14 bg-white px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto prose prose-slate prose-lg max-w-none">
       <slot />
     </div>
@@ -172,18 +172,18 @@ const crumbs = [
   <RecentDispatches />
 
   <!-- Local Denton Coverage Silo Box -->
-  <section class="py-10 bg-slate-100 px-4 sm:px-6 border-y border-slate-200">
+  <section class="py-12 bg-white px-4 sm:px-6 border-y border-slate-200">
     <div class="max-w-5xl mx-auto text-center">
-      <h3 class="text-xl font-bold text-slate-900 mb-2">
+      <h3 class="text-2xl font-extrabold text-slate-900 mb-2 font-serif">
         Connecting Homeowners for {title} Across Denton County
       </h3>
-      <p class="text-sm text-slate-600 mb-4">
+      <p class="text-sm text-slate-600 mb-6">
         Local independent contractors are available near I-35E, I-35W, and Loop 288 for rapid referral in:
       </p>
       <div class="flex flex-wrap justify-center gap-2 text-xs">
         {siteConfig.neighborhoods.map((n) => (
-          <span class="bg-white border border-slate-300 text-slate-700 px-3 py-1 rounded-full font-medium shadow-sm flex items-center gap-1.5">
-            <Icon name="map-pin" class="w-3 h-3 text-slate-400" />
+          <span class="bg-slate-50 border border-slate-200 hover:border-[#c8102e] text-slate-800 px-3.5 py-1.5 rounded-full font-bold shadow-sm flex items-center gap-1.5 transition-colors">
+            <Icon name="map-pin" class="w-3.5 h-3.5 text-[#c8102e]" />
             <span>{n}</span>
           </span>
         ))}

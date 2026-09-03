@@ -6,90 +6,91 @@ const zones = [
   {
     name: "Downtown Square & Historic Denton",
     zip: "76201",
-    eta: "15–25 Mins",
+    eta: "Fast Match",
     landmarks: "Denton County Courthouse-on-the-Square, Industrial St, E Hickory",
     commonIssue: "Aging cast iron sewer lines & galvanized pipe retrofits",
   },
   {
     name: "Idiots Hill & Mack Park",
     zip: "76209",
-    eta: "20–30 Mins",
+    eta: "Fast Match",
     landmarks: "Locust St Corridor, Mack Park, Sherman Dr",
-    commonIssue: "Tree root invasions in clay sewer pipes & water heater age",
+    commonIssue: "Tree root clogs in sewer pipes & water heater replacement",
   },
   {
     name: "Southridge & Teasley Area",
     zip: "76205",
-    eta: "20–35 Mins",
+    eta: "Fast Match",
     landmarks: "Teasley Ln, Ryan High School area, Lillian Miller Pkwy",
-    commonIssue: "Expansive clay soil sub-slab pinhole leaks & hard water scale",
+    commonIssue: "Expansive clay soil sub-slab pipe shifts & hard water scale",
   },
   {
     name: "Rayzor Ranch & West University",
     zip: "76207",
-    eta: "15–25 Mins",
+    eta: "Fast Match",
     landmarks: "Rayzor Ranch Marketplace, Bonnie Brae St, US-380 corridor",
     commonIssue: "High water main pressure & tankless water heater maintenance",
   },
   {
     name: "Robson Ranch & Cross Timbers",
     zip: "76207",
-    eta: "25–40 Mins",
+    eta: "Fast Match",
     landmarks: "Robson Ranch Clubhouse, Ed Robson Blvd, Denton West boundary",
-    commonIssue: "Whole-home water softener descaling & recirculating pump service",
+    commonIssue: "Water filtration, softener descaling & recirculating pump service",
   },
   {
     name: "Forrestridge, Cooper Creek & Loop 288",
     zip: "76208",
-    eta: "20–30 Mins",
+    eta: "Fast Match",
     landmarks: "Loop 288 Commercial Corridor, Cooper Creek Rd, Mingo Rd",
-    commonIssue: "Slab foundation plumbing shifts & hydro jetting commercial/residential drains",
+    commonIssue: "Slab foundation plumbing shifts & hydro jetting residential drains",
   },
   {
     name: "Corinth & Lake Dallas Border Zone",
     zip: "76210",
-    eta: "20–30 Mins",
+    eta: "Fast Match",
     landmarks: "Oakmont Country Club, Swisher Rd, FM 2181",
-    commonIssue: "Lake-area water table pressure & thermal expansion tank replacements",
+    commonIssue: "Lake-area water pressure & thermal expansion tank replacements",
   },
   {
     name: "Argyle Corridor & Northlake",
     zip: "76226",
-    eta: "25–35 Mins",
+    eta: "Fast Match",
     landmarks: "US-377, Country Lakes, Crawford Rd",
     commonIssue: "High-capacity tankless loops & filtration for large custom residences",
   },
 ];
 ---
 
-<section class="py-16 bg-slate-100 px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+<section class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-t border-slate-200">
   <div class="max-w-7xl mx-auto">
     
     <div class="text-center max-w-3xl mx-auto mb-12">
-      <span class="text-xs font-bold uppercase tracking-widest text-brand-600">Hyper-Local Coverage Grid</span>
-      <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-1">
-        Find Your Denton Neighborhood & Instant ETA
+      <span class="text-xs font-black uppercase tracking-widest text-[#c8102e] block mb-1">Hyper-Local Coverage Grid</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-serif tracking-tight">
+        Denton Neighborhoods &amp; Service Areas
       </h2>
       <p class="text-sm sm:text-base text-slate-600 mt-2">
-        Our mobile emergency units are positioned across key Denton County transit splits (I-35E, I-35W, and Loop 288) for rapid local arrival.
+        Connecting homeowners across key Denton County neighborhoods with trusted local plumbing specialists.
       </p>
+      <div class="w-16 h-1 bg-[#c8102e] mx-auto mt-3 rounded-full"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {zones.map((zone) => (
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:border-brand-500 hover:shadow-md transition flex flex-col justify-between group">
+        <div class="bg-slate-50 hover:bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:border-[#c8102e] hover:shadow-lg hover:shadow-red-600/5 transition duration-200 flex flex-col justify-between group">
           <div>
             <div class="flex items-center justify-between mb-3">
-              <span class="text-xs font-bold px-2.5 py-1 rounded bg-slate-900 text-white">
+              <span class="text-xs font-black px-2.5 py-1 rounded-md bg-[#c8102e] text-white">
                 ZIP {zone.zip}
               </span>
-              <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full flex items-center gap-1">
-                <Icon name="bolt" class="w-3 h-3 text-emerald-600" />
-                <span>ETA: {zone.eta}</span>
+              <span class="text-xs font-bold text-slate-700 bg-white border border-slate-200 px-2 py-0.5 rounded-full flex items-center gap-1">
+                <Icon name="bolt" class="w-3 h-3 text-[#c8102e]" />
+                <span>{zone.eta}</span>
               </span>
             </div>
 
-            <h3 class="font-black text-slate-900 text-base group-hover:text-brand-600 transition mb-2">
+            <h3 class="font-bold text-slate-900 text-base group-hover:text-[#c8102e] transition mb-2 font-serif">
               {zone.name}
             </h3>
 
@@ -97,20 +98,20 @@ const zones = [
               <strong class="text-slate-700">Landmarks:</strong> {zone.landmarks}
             </p>
 
-            <div class="p-2.5 rounded-lg bg-amber-50/70 border border-amber-100 text-xs text-amber-900 mb-4">
-              <strong>Frequent Repair:</strong> {zone.commonIssue}
+            <div class="p-2.5 rounded-lg bg-red-50/60 border border-red-100 text-xs text-slate-800 mb-4">
+              <strong class="text-[#c8102e]">Frequent Need:</strong> {zone.commonIssue}
             </div>
           </div>
 
-          <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+          <div class="pt-3 border-t border-slate-200 flex items-center justify-between">
             <a
               href={`tel:${siteConfig.phoneRaw}`}
-              class="text-xs font-black text-emergency-600 hover:underline flex items-center gap-1.5"
+              class="text-xs font-black text-[#c8102e] hover:underline flex items-center gap-1.5"
             >
-              <Icon name="phone" class="w-3.5 h-3.5 text-red-600" />
-              <span>Dispatch to {zone.zip}</span>
+              <Icon name="phone" class="w-3.5 h-3.5 text-[#c8102e]" />
+              <span>Connect in {zone.zip}</span>
             </a>
-            <span class="text-slate-400 text-xs font-semibold">24/7 Live</span>
+            <span class="text-slate-400 text-xs font-semibold">24/7 Match</span>
           </div>
         </div>
       ))}

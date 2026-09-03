@@ -2,7 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import LeadForm from '../components/LeadForm.astro';
-import TrustBadges from '../components/TrustBadges.astro';
+import HeroTrustBar from '../components/HeroTrustBar.astro';
 import FaqAccordion from '../components/FaqAccordion.astro';
 import CallToAction from '../components/CallToAction.astro';
 import Icon from '../components/Icon.astro';
@@ -49,38 +49,38 @@ const crumbs = [
 >
   <Breadcrumbs crumbs={crumbs} />
 
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-b from-slate-900 via-brand-950 to-slate-900 text-white py-12 lg:py-16 px-4 sm:px-6 lg:px-8 relative">
+  <!-- Hero Section (Texas Red & White Theme) -->
+  <section class="bg-gradient-to-r from-[#1c0303] via-[#450a0a] to-[#180202] text-white py-12 lg:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden border-b border-[#5c0d0d] shadow-inner">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
       
-      <div class="lg:col-span-7">
-        <div class="inline-flex items-center gap-2 bg-brand-600/80 text-white text-xs uppercase font-bold tracking-widest px-3.5 py-1.5 rounded-full mb-4">
-          <Icon name="map-pin" class="w-3.5 h-3.5 text-white" />
+      <div class="lg:col-span-7 space-y-4">
+        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-red-200 border border-red-400/30 text-xs uppercase font-extrabold tracking-widest px-3.5 py-1.5 rounded-full mb-2">
+          <Icon name="map-pin" class="w-3.5 h-3.5 text-red-400" />
           <span>Local Plumber Connection in {cityName}, {state} ({county})</span>
         </div>
 
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight mb-4 text-white">
-          Find Plumbers &amp; Emergency Drain Services in <span class="text-brand-400">{cityName}, {state}</span>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-white uppercase font-sans">
+          Plumber Connection in <span class="text-red-400">{cityName}, {state}</span>
         </h1>
 
-        <p class="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed">
-          Fast, affordable 24/7 plumbing referral, water heater replacement, and drain cleaning connections throughout {cityName} and ZIP codes {postalCodes.join(', ')}.
+        <p class="text-base sm:text-lg text-slate-200 leading-relaxed font-normal">
+          Fast 24/7 plumbing referral, water heater replacement, and drain cleaning connections throughout {cityName} and ZIP codes {postalCodes.join(', ')}.
         </p>
 
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8">
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
           <a
             href={`tel:${siteConfig.phoneRaw}`}
-            class="flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-emergency-600 hover:bg-emergency-500 text-white font-black text-lg shadow-xl transition transform hover:-translate-y-0.5"
+            class="flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#c8102e] hover:bg-[#a60c24] text-white font-black text-base uppercase tracking-wider shadow-2xl transition transform hover:-translate-y-0.5 border border-red-400/30 cursor-pointer"
           >
-            <Icon name="phone" class="w-6 h-6 text-white" />
-            <span>Call Referral Line: {siteConfig.phone}</span>
+            <Icon name="phone" class="w-5 h-5 text-white" />
+            <span>Call Referral Desk: {siteConfig.phone}</span>
           </a>
 
           <a
             href="#estimate-form"
-            class="flex items-center justify-center px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-base backdrop-blur-sm border border-white/20 transition"
+            class="flex items-center justify-center px-8 py-4 rounded-full bg-[#1a2b4c] hover:bg-[#121e35] text-white font-black text-base uppercase tracking-wider shadow-xl transition transform hover:-translate-y-0.5 border border-sky-400/20 cursor-pointer"
           >
-            <span>Get {cityName} Estimate</span>
+            <span>Request a Local Pro</span>
           </a>
         </div>
       </div>
@@ -93,45 +93,45 @@ const crumbs = [
     </div>
   </section>
 
-  <TrustBadges />
+  <HeroTrustBar />
 
   <!-- Local Nuances & Soil/Water Conditions -->
-  <section class="py-14 bg-white px-4 sm:px-6 lg:px-8">
+  <section class="py-16 bg-white px-4 sm:px-6 lg:px-8 border-b border-slate-200">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
       
-      <div class="p-8 rounded-2xl bg-amber-50/60 border border-amber-200">
-        <h2 class="text-xl font-bold text-amber-950 mb-4 flex items-center gap-2">
-          <Icon name="alert" class="w-5 h-5 text-amber-700" />
+      <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#c8102e] transition shadow-sm">
+        <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2 font-serif">
+          <Icon name="alert" class="w-5 h-5 text-[#c8102e]" />
           <span>Common Plumbing Challenges in {cityName}, TX</span>
         </h2>
-        <ul class="space-y-3 text-slate-800 text-sm">
+        <ul class="space-y-3 text-slate-700 text-sm sm:text-base">
           {localPlumbingChallenges.map((c) => (
-            <li class="flex items-start gap-2">
-              <span class="text-amber-700 font-bold">•</span>
+            <li class="flex items-start gap-2.5">
+              <span class="text-[#c8102e] font-black">•</span>
               <span>{c}</span>
             </li>
           ))}
         </ul>
       </div>
 
-      <div class="p-8 rounded-2xl bg-brand-50/60 border border-brand-200">
-        <h2 class="text-xl font-bold text-brand-950 mb-4 flex items-center gap-2">
-          <Icon name="map-pin" class="w-5 h-5 text-brand-700" />
+      <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#c8102e] transition shadow-sm">
+        <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2 font-serif">
+          <Icon name="map-pin" class="w-5 h-5 text-[#c8102e]" />
           <span>Neighborhoods &amp; Landmarks in {cityName}</span>
         </h2>
         <div class="mb-4">
-          <h3 class="text-xs uppercase font-bold tracking-wider text-slate-600 mb-2">Key Neighborhoods:</h3>
+          <h3 class="text-xs uppercase font-extrabold tracking-wider text-slate-600 mb-2">Key Neighborhoods:</h3>
           <div class="flex flex-wrap gap-1.5">
             {neighborhoods.map((n) => (
-              <span class="bg-white border border-brand-200 text-slate-700 text-xs px-2.5 py-1 rounded">
+              <span class="bg-white border border-slate-200 text-slate-800 text-xs px-3 py-1 rounded-full font-semibold">
                 {n}
               </span>
             ))}
           </div>
         </div>
         <div>
-          <h3 class="text-xs uppercase font-bold tracking-wider text-slate-600 mb-2">Nearby Landmarks:</h3>
-          <p class="text-xs text-slate-600">
+          <h3 class="text-xs uppercase font-extrabold tracking-wider text-slate-600 mb-2">Nearby Landmarks:</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
             {localLandmarks.join(' • ')}
           </p>
         </div>
@@ -141,7 +141,7 @@ const crumbs = [
   </section>
 
   <!-- Markdown Slot for Deep City Content -->
-  <section class="py-12 bg-slate-50 px-4 sm:px-6 lg:px-8">
+  <section class="py-14 bg-white px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto prose prose-slate prose-lg max-w-none">
       <slot />
     </div>

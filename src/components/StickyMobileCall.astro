@@ -3,28 +3,28 @@ import { siteConfig } from '../siteConfig';
 import Icon from './Icon.astro';
 ---
 
-<!-- Fixed Mobile Bottom CTA Bar (Split CALL NOW | BOOK SERVICE) -->
-<div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-slate-950/95 backdrop-blur-md px-3 py-2 border-t border-slate-800 shadow-2xl safe-area-inset-bottom">
+<!-- Fixed Mobile Bottom CTA Bar (Clean White & Texas Red Theme) -->
+<div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md px-3 py-2 border-t border-slate-200 shadow-2xl safe-area-inset-bottom">
   <div class="max-w-lg mx-auto grid grid-cols-2 gap-2.5">
     
     <!-- Red Call Now Action -->
     <a
       href={`tel:${siteConfig.phoneRaw}`}
-      class="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-red-600 active:bg-red-700 text-white font-black text-xs sm:text-sm shadow-md transition transform active:scale-95 text-center min-h-[48px]"
-      aria-label="Call Denton Plumbing Pros"
+      class="flex items-center justify-center gap-2 py-3 px-3 rounded-full bg-[#c8102e] active:bg-[#a60c24] text-white font-black text-xs sm:text-sm shadow-md transition transform active:scale-95 text-center min-h-[48px]"
+      aria-label="Call Denton Plumbing Referral Desk"
     >
       <Icon name="phone" class="w-4 h-4 text-white" />
       <span>CALL NOW</span>
     </a>
 
-    <!-- Navy Book Service Action -->
+    <!-- Navy Request Pro Action -->
     <a
       href="#estimate-form"
-      class="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 active:bg-slate-900 text-white font-black text-xs sm:text-sm border border-slate-700 shadow-md transition transform active:scale-95 text-center min-h-[48px]"
-      aria-label="Book Denton Plumbing Service"
+      class="flex items-center justify-center gap-2 py-3 px-3 rounded-full bg-[#1a2b4c] hover:bg-[#121e35] active:bg-[#0f172a] text-white font-black text-xs sm:text-sm shadow-md transition transform active:scale-95 text-center min-h-[48px]"
+      aria-label="Request a Local Plumbing Pro"
     >
-      <Icon name="calendar" class="w-4 h-4 text-slate-300" />
-      <span>BOOK SERVICE</span>
+      <Icon name="calendar" class="w-4 h-4 text-sky-400" />
+      <span>REQUEST PRO</span>
     </a>
 
   </div>

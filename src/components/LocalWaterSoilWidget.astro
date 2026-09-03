@@ -2,91 +2,88 @@
 import Icon from './Icon.astro';
 ---
 
-<section class="py-14 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 text-white px-4 sm:px-6 lg:px-8 border-y border-slate-800">
+<section class="py-16 bg-slate-50 text-slate-900 px-4 sm:px-6 lg:px-8 border-y border-slate-200">
   <div class="max-w-7xl mx-auto">
     
-    <div class="text-center max-w-3xl mx-auto mb-10">
-      <div class="inline-flex items-center gap-2 bg-brand-500/20 text-brand-300 border border-brand-500/30 text-xs uppercase font-bold tracking-widest px-3 py-1 rounded-full mb-3">
-        <Icon name="flask" class="w-3.5 h-3.5 text-brand-300" />
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 bg-red-50 text-[#c8102e] border border-red-200 text-xs uppercase font-extrabold tracking-widest px-3.5 py-1.5 rounded-full mb-3 shadow-sm">
+        <Icon name="flask" class="w-3.5 h-3.5 text-[#c8102e]" />
         <span>Local Environmental &amp; Soil Context</span>
       </div>
-      <h2 class="text-2xl sm:text-4xl font-black tracking-tight text-white font-serif">
+      <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 font-serif">
         Common Plumbing Challenges in Denton County
       </h2>
-      <p class="text-slate-400 text-sm sm:text-base mt-2">
+      <p class="text-slate-600 text-sm sm:text-base mt-2">
         Local plumbing professionals understand the specific mineral content and shifting soil conditions common in North Texas.
       </p>
+      <div class="w-16 h-1 bg-[#c8102e] mx-auto mt-3 rounded-full"></div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       
       <!-- Hazard 1: Hard Water Scale -->
-      <div class="bg-slate-900/90 border border-slate-800 p-7 rounded-2xl shadow-xl relative overflow-hidden flex flex-col justify-between">
-        <div class="absolute -right-10 -top-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        
+      <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm hover:border-[#c8102e] hover:shadow-md transition flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center border border-cyan-500/30">
+              <div class="w-11 h-11 rounded-xl bg-red-50 text-[#c8102e] flex items-center justify-center border border-red-100 shadow-sm">
                 <Icon name="droplet" class="w-5 h-5" />
               </div>
               <div>
-                <h3 class="text-lg font-bold text-white leading-tight">Mineral Hardness in Water</h3>
-                <span class="text-xs text-slate-400">Scale buildup in water heaters &amp; fixtures</span>
+                <h3 class="text-lg font-bold text-slate-900 leading-tight">Mineral Hardness in Water</h3>
+                <span class="text-xs text-slate-500">Scale buildup in water heaters &amp; fixtures</span>
               </div>
             </div>
-            <span class="bg-cyan-500/20 border border-cyan-500/30 text-cyan-300 text-xs font-bold px-2.5 py-1 rounded-full uppercase">
+            <span class="bg-red-50 border border-red-200 text-[#c8102e] text-xs font-bold px-2.5 py-1 rounded-full uppercase">
               Common Concern
             </span>
           </div>
 
-          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
             Denton-area municipal water typically contains dissolved calcium and magnesium minerals. Over time, these minerals can settle at the bottom of water heaters, creating sediment layers that reduce heating efficiency and accelerate tank wear if not flushed periodically.
           </p>
         </div>
 
-        <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
-          <span class="text-brand-400 font-semibold flex items-center gap-1.5">
-            <Icon name="check" class="w-3.5 h-3.5 text-brand-400" />
+        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+          <span class="text-slate-700 font-semibold flex items-center gap-1.5">
+            <Icon name="check" class="w-3.5 h-3.5 text-[#c8102e]" />
             <span>Regular Maintenance &amp; Descaling</span>
           </span>
-          <a href="/denton-tx/water-heater-repair/" class="text-white hover:text-brand-300 underline font-bold">
+          <a href="/denton-tx/water-heater-repair/" class="text-[#c8102e] hover:text-[#991b1b] underline font-bold">
             Water Heater Options →
           </a>
         </div>
       </div>
 
       <!-- Hazard 2: Expansive Clay Soil -->
-      <div class="bg-slate-900/90 border border-slate-800 p-7 rounded-2xl shadow-xl relative overflow-hidden flex flex-col justify-between">
-        <div class="absolute -right-10 -top-10 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
+      <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm hover:border-[#c8102e] hover:shadow-md transition flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center border border-amber-500/30">
+              <div class="w-11 h-11 rounded-xl bg-red-50 text-[#c8102e] flex items-center justify-center border border-red-100 shadow-sm">
                 <Icon name="globe" class="w-5 h-5" />
               </div>
               <div>
-                <h3 class="text-lg font-bold text-white leading-tight">North Texas Clay Soil Movement</h3>
-                <span class="text-xs text-slate-400">Foundation soil expansion &amp; contraction</span>
+                <h3 class="text-lg font-bold text-slate-900 leading-tight">North Texas Clay Soil Movement</h3>
+                <span class="text-xs text-slate-500">Foundation soil expansion &amp; contraction</span>
               </div>
             </div>
-            <span class="bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-bold px-2.5 py-1 rounded-full uppercase">
+            <span class="bg-red-50 border border-red-200 text-[#c8102e] text-xs font-bold px-2.5 py-1 rounded-full uppercase">
               Soil Activity
             </span>
           </div>
 
-          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
             Expansive clay soils across North Texas expand when moisture levels rise and contract during hot, dry summer periods. This natural soil movement can put mechanical stress on foundation slabs and underground supply lines over time.
           </p>
         </div>
 
-        <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
-          <span class="text-amber-400 font-semibold flex items-center gap-1.5">
-            <Icon name="check" class="w-3.5 h-3.5 text-amber-400" />
+        <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+          <span class="text-slate-700 font-semibold flex items-center gap-1.5">
+            <Icon name="check" class="w-3.5 h-3.5 text-[#c8102e]" />
             <span>Electronic Leak Tracing</span>
           </span>
-          <a href="/denton-tx/slab-leak-repair/" class="text-white hover:text-amber-300 underline font-bold">
+          <a href="/denton-tx/slab-leak-repair/" class="text-[#c8102e] hover:text-[#991b1b] underline font-bold">
             Slab Leak Information →
           </a>
         </div>

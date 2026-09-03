@@ -17,22 +17,23 @@ const {
 } = Astro.props;
 ---
 
-<section class="py-12 bg-white">
+<section class="py-16 bg-white border-t border-slate-200">
   <div class="max-w-4xl mx-auto px-4 sm:px-6">
     <div class="text-center mb-10">
-      <span class="text-xs font-bold uppercase tracking-widest text-brand-600">Local Knowledge</span>
-      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">{title}</h2>
+      <span class="text-xs font-black uppercase tracking-widest text-[#c8102e] block mb-1">Local Knowledge</span>
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 font-serif tracking-tight">{title}</h2>
       <p class="text-sm sm:text-base text-slate-600 mt-2">{subtitle}</p>
+      <div class="w-16 h-1 bg-[#c8102e] mx-auto mt-3 rounded-full"></div>
     </div>
 
     <div class="space-y-4">
-      {faqs.map((faq, index) => (
-        <details class="group border border-slate-200 rounded-xl bg-slate-50 p-5 open:bg-white open:ring-1 open:ring-brand-500 transition">
-          <summary class="flex justify-between items-center font-bold text-slate-900 cursor-pointer list-none text-base sm:text-lg">
+      {faqs.map((faq) => (
+        <details class="group border border-slate-200 rounded-2xl bg-slate-50 p-5 sm:p-6 open:bg-white open:ring-1 open:ring-[#c8102e] open:border-[#c8102e] shadow-sm hover:border-[#c8102e] transition duration-200">
+          <summary class="flex justify-between items-center font-bold text-slate-900 cursor-pointer list-none text-base sm:text-lg group-open:text-[#c8102e] transition-colors">
             <span>{faq.question}</span>
-            <span class="ml-4 shrink-0 text-brand-600 transition group-open:rotate-180">
+            <span class="ml-4 shrink-0 text-[#c8102e] transition-transform duration-200 group-open:rotate-180">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
               </svg>
             </span>
           </summary>

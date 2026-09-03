@@ -13,16 +13,16 @@ const {
 } = Astro.props;
 ---
 
-<div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-8">
+<div class="bg-white rounded-3xl shadow-2xl border border-slate-200 p-6 sm:p-8">
   <div class="mb-6 text-center sm:text-left">
-    <div class="inline-flex items-center gap-1.5 bg-red-50 text-red-700 text-xs font-bold px-2.5 py-1 rounded-full mb-2 border border-red-100">
-      <Icon name="bolt" class="w-3.5 h-3.5 text-red-600" />
+    <div class="inline-flex items-center gap-1.5 bg-red-50 text-[#c8102e] text-xs font-black px-3 py-1 rounded-full mb-2 border border-red-100 uppercase tracking-wider">
+      <Icon name="bolt" class="w-3.5 h-3.5 text-[#c8102e]" />
       <span>Fast Local Response</span>
     </div>
     <h3 class="text-xl sm:text-2xl font-black text-slate-900 font-serif">{formTitle}</h3>
     <p class="text-xs sm:text-sm text-slate-600 mt-1">
       Tell us what you need and we'll help connect you with a local plumbing professional, or call directly: 
-      <a href={`tel:${siteConfig.phoneRaw}`} class="font-bold text-red-600 underline">
+      <a href={`tel:${siteConfig.phoneRaw}`} class="font-black text-[#c8102e] underline">
         {siteConfig.phone}
       </a>
     </p>
@@ -30,37 +30,37 @@ const {
 
   <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Your request has been received. A local Denton plumbing professional will call you back shortly.');">
     <div>
-      <label for="name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Your Full Name</label>
+      <label for="name" class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-1">Your Full Name</label>
       <input
         type="text"
         id="name"
         name="name"
         required
         placeholder="e.g. John Miller"
-        class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm outline-none transition"
+        class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#c8102e] focus:border-[#c8102e] text-sm outline-none transition"
       />
     </div>
 
     <div>
-      <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Phone Number</label>
+      <label for="phone" class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-1">Phone Number</label>
       <input
         type="tel"
         id="phone"
         name="phone"
         required
         placeholder="(940) 555-0199"
-        class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm outline-none transition"
+        class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#c8102e] focus:border-[#c8102e] text-sm outline-none transition"
       />
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <div>
-        <label for="service" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Service Needed</label>
+        <label for="service" class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-1">Service Needed</label>
         <select
           id="service"
           name="service"
           required
-          class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm outline-none transition bg-white text-slate-800"
+          class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#c8102e] focus:border-[#c8102e] text-sm outline-none transition bg-white text-slate-800 font-medium"
         >
           <option value="" disabled selected={!servicePreselect}>Select a service</option>
           <option value="Emergency Plumbing" selected={servicePreselect === "Emergency Plumbing"}>Emergency Plumbing</option>
@@ -74,31 +74,31 @@ const {
       </div>
 
       <div>
-        <label for="zip" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Denton Area ZIP Code</label>
+        <label for="zip" class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-1">Denton Area ZIP Code</label>
         <input
           type="text"
           id="zip"
           name="zip"
           placeholder="e.g. 76201"
-          class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm outline-none transition"
+          class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#c8102e] focus:border-[#c8102e] text-sm outline-none transition"
         />
       </div>
     </div>
 
     <div>
-      <label for="details" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Brief Description of Problem</label>
+      <label for="details" class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-1">Brief Description of Problem</label>
       <textarea
         id="details"
         name="details"
         rows="2"
         placeholder="e.g. Water leaking from base of water heater, toilet clogged..."
-        class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 text-sm outline-none transition"
+        class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#c8102e] focus:border-[#c8102e] text-sm outline-none transition"
       ></textarea>
     </div>
 
     <button
       type="submit"
-      class="w-full py-4 px-6 rounded-xl bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-black text-base shadow-lg shadow-red-600/20 hover:shadow-xl hover:shadow-red-600/30 transition transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 cursor-pointer uppercase tracking-wider"
+      class="w-full py-4 px-6 rounded-full bg-[#c8102e] hover:bg-[#a60c24] active:bg-[#85081b] text-white font-black text-base shadow-xl shadow-red-600/20 hover:shadow-2xl hover:shadow-red-600/30 transition transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 cursor-pointer uppercase tracking-wider border border-red-400/30"
     >
       <Icon name="phone" class="w-5 h-5 text-white" />
       <span>REQUEST A PLUMBER CALL BACK</span>
@@ -116,7 +116,7 @@ const {
       </span>
       <span>•</span>
       <span class="flex items-center gap-1">
-        <Icon name="bolt" class="w-3.5 h-3.5 text-amber-500" />
+        <Icon name="bolt" class="w-3.5 h-3.5 text-[#c8102e]" />
         <span>Fast Response</span>
       </span>
     </div>
