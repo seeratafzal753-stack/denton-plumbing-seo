@@ -18,265 +18,173 @@ const servicesList: Array<{ name: string; href: string; tag: string; icon: 'aler
 ];
 ---
 
-<header class="w-full bg-white sticky top-0 z-50 shadow-md">
+<header class="w-full sticky top-0 z-50 shadow-lg font-sans">
   
-  <!-- 1. TOP ANNOUNCEMENT BAR (Lead Gen Connection & Hotline) -->
-  <div class="bg-slate-950 text-white py-2 px-4 sm:px-6 lg:px-8 border-b border-slate-800">
-    <div class="max-w-7xl mx-auto flex items-center justify-center sm:justify-between text-xs sm:text-sm font-medium">
+  <!-- 1. TOP WHITE BAR: LOGO + 3 HIGH-IMPACT ACTION BUTTONS -->
+  <div class="bg-white border-b border-slate-200 py-2.5 sm:py-3 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
       
-      <!-- Clean Single Emergency Line -->
-      <div class="flex items-center gap-2">
-        <span class="relative flex h-2 w-2 shrink-0">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-90"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
-        </span>
-        <span class="font-extrabold text-slate-100 uppercase tracking-wide text-xs">
-          24/7 Emergency Referral Line:
-        </span>
+      <!-- LOGO: Texas Style Bold Branding -->
+      <a href="/" class="flex items-center gap-2.5 sm:gap-3 group shrink-0" aria-label="Denton Plumbing Pros Homepage">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#c8102e] flex items-center justify-center shadow-md text-white p-1.5 group-hover:scale-105 transition transform shrink-0">
+          <Icon name="wrench" class="w-6 h-6 text-white" />
+        </div>
+        <div>
+          <span class="block font-black text-xl sm:text-2xl tracking-tighter uppercase text-slate-900 leading-none">
+            DENTON <span class="text-[#c8102e]">PLUMBING</span>
+          </span>
+          <span class="block text-[9px] sm:text-[10px] font-extrabold uppercase tracking-widest text-slate-500 mt-0.5">
+            PROS REFERRAL NETWORK • DENTON, TX
+          </span>
+        </div>
+      </a>
+
+      <!-- RIGHT 3 ACTION BUTTONS (Desktop) -->
+      <div class="hidden md:flex items-center gap-2.5 lg:gap-3">
+        
+        <!-- Button 1: Navy Blue Phone Button -->
         <a
           href={`tel:${siteConfig.phoneRaw}`}
-          class="font-black text-red-400 hover:text-white transition tracking-tight flex items-center gap-1.5 underline underline-offset-2"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-md bg-[#1a2b4c] hover:bg-[#121e35] text-white font-extrabold text-xs lg:text-sm shadow transition transform hover:-translate-y-0.5"
+          aria-label={`Call ${siteConfig.phone}`}
         >
-          <Icon name="phone" class="w-3.5 h-3.5 text-red-400" />
+          <Icon name="phone" class="w-4 h-4 text-sky-400" />
           <span>{siteConfig.phone}</span>
         </a>
-      </div>
 
-      <!-- Right: Service Location Tag (Desktop Only) -->
-      <div class="hidden sm:flex items-center gap-2 text-slate-400 text-xs font-semibold">
-        <span class="flex items-center gap-1">
-          <Icon name="bolt" class="w-3.5 h-3.5 text-amber-400" />
-          <span>Fast Local Matching</span>
-        </span>
-        <span>•</span>
-        <span>Denton County, TX</span>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- 2. MAIN NAVBAR -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex justify-between items-center bg-white">
-    
-    <!-- LEFT: Logo & Branding -->
-    <a href="/" class="flex items-center gap-3 group shrink-0" aria-label="Denton Plumbing Pros Homepage">
-      <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-slate-950 via-slate-900 to-brand-900 flex items-center justify-center shadow-md border border-slate-800 text-white p-2 group-hover:scale-105 transition transform">
-        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C8.5 6.5 5 11 5 15C5 18.866 8.134 22 12 22C15.866 22 19 18.866 19 15C19 11 15.5 6.5 12 2Z" fill="#0284c7" fill-opacity="0.25" stroke="#38bdf8" stroke-width="1.5"/>
-          <path d="M17.5 7.5L14 11L12.5 9.5L16 6C16.8 5.2 18.1 5.2 18.9 6C19.7 6.8 19.7 8.1 18.9 8.9L17.5 7.5Z" fill="#ef4444"/>
-          <path d="M8 17L12.5 12.5L11 11L6.5 15.5C5.8 16.2 5.8 17.3 6.5 18C7.2 18.7 8.3 18.7 9 18L8 17Z" fill="#ffffff"/>
-        </svg>
-      </div>
-      <div>
-        <span class="block font-black text-xl sm:text-2xl text-slate-900 leading-none tracking-tight">
-          Denton<span class="text-brand-800">Plumbing</span><span class="text-red-600">Pros</span>
-        </span>
-        <span class="block text-[10px] uppercase font-bold text-slate-500 tracking-wider mt-1">
-          Local Plumbing Connection • Denton, TX
-        </span>
-      </div>
-    </a>
-
-    <!-- CENTER: Desktop Navigation Menu -->
-    <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 text-sm font-semibold text-slate-700">
-      
-      <!-- Services Dropdown (Opens on Hover) -->
-      <div class="relative group">
-        <button
-          type="button"
-          class={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg transition-colors hover:text-red-600 hover:bg-slate-50 font-bold ${
-            currentPath.includes('/services') || currentPath.includes('/denton-tx/') ? 'text-red-600' : 'text-slate-700'
-          }`}
-          aria-expanded="false"
-          aria-haspopup="true"
+        <!-- Button 2: Texas Red Schedule / Request Button -->
+        <a
+          href="#estimate-form"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-md bg-[#c8102e] hover:bg-[#a60c24] text-white font-extrabold text-xs lg:text-sm uppercase tracking-wide shadow-md transition transform hover:-translate-y-0.5"
         >
-          <span>Services</span>
-          <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180 text-slate-400 group-hover:text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          <Icon name="calendar" class="w-4 h-4 text-white" />
+          <span>Schedule Service</span>
+        </a>
+
+        <!-- Button 3: Dark Charcoal 24/7 Match Button -->
+        <a
+          href="#estimate-form"
+          class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-md bg-[#27323f] hover:bg-[#1a222c] text-white font-extrabold text-xs lg:text-sm uppercase tracking-wide shadow transition transform hover:-translate-y-0.5"
+        >
+          <span class="text-amber-400 font-black">$</span>
+          <span>Free Quotes</span>
+        </a>
+
+      </div>
+
+      <!-- Mobile Call & Menu Button -->
+      <div class="flex md:hidden items-center gap-2">
+        <a
+          href={`tel:${siteConfig.phoneRaw}`}
+          class="inline-flex items-center gap-1.5 px-3 py-2 rounded-md bg-[#c8102e] text-white font-black text-xs uppercase shadow"
+        >
+          <Icon name="phone" class="w-3.5 h-3.5 text-white" />
+          <span>Call</span>
+        </a>
+
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          class="p-2 rounded-md bg-slate-100 text-slate-800 hover:bg-slate-200 focus:outline-none"
+          aria-label="Toggle Navigation Menu"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-
-        <!-- Dropdown Menu Panel -->
-        <div class="absolute top-full left-0 w-72 bg-white rounded-2xl shadow-2xl border border-slate-200 py-2 hidden group-hover:block transition-all duration-150 z-50 mt-1">
-          <div class="px-4 py-2 text-[11px] font-black uppercase text-slate-400 tracking-wider border-b border-slate-100 flex items-center justify-between">
-            <span>Find Local Plumbers</span>
-            <span class="text-[10px] text-red-600 font-bold">24/7 Match</span>
-          </div>
-          <div class="p-1 space-y-0.5">
-            {servicesList.map((service) => (
-              <a
-                href={service.href}
-                class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 hover:text-red-600 transition-colors group/item"
-              >
-                <div class="flex items-center gap-2.5">
-                  <div class="w-5 h-5 rounded-md bg-slate-100 group-hover/item:bg-red-50 text-slate-700 group-hover/item:text-red-600 flex items-center justify-center">
-                    <Icon name={service.icon} class="w-3.5 h-3.5" />
-                  </div>
-                  <span>{service.name}</span>
-                </div>
-                <span class="text-[10px] font-semibold text-slate-400 group-hover/item:text-red-600 bg-slate-100 group-hover/item:bg-red-50 px-2 py-0.5 rounded-md">
-                  {service.tag}
-                </span>
-              </a>
-            ))}
-          </div>
-        </div>
       </div>
 
-      <!-- Service Areas (Standalone Link) -->
-      <a
-        href="/service-areas/"
-        class={`px-3.5 py-2 rounded-lg transition-colors hover:text-red-600 hover:bg-slate-50 font-bold ${
-          currentPath.includes('/service-areas') ? 'text-red-600' : 'text-slate-700'
-        }`}
-      >
-        Service Areas
-      </a>
-
-      <!-- Blog (Standalone Link) -->
-      <a
-        href="/blog/"
-        class={`px-3.5 py-2 rounded-lg transition-colors hover:text-red-600 hover:bg-slate-50 font-bold ${
-          currentPath.includes('/blog') ? 'text-red-600' : 'text-slate-700'
-        }`}
-      >
-        Blog
-      </a>
-
-      <!-- Contact (Standalone Link) -->
-      <a
-        href="/contact/"
-        class={`px-3.5 py-2 rounded-lg transition-colors hover:text-red-600 hover:bg-slate-50 font-bold ${
-          currentPath.includes('/contact') ? 'text-red-600' : 'text-slate-700'
-        }`}
-      >
-        Contact
-      </a>
-
-    </nav>
-
-    <!-- RIGHT: Phone Call & BOOK SERVICE CTA -->
-    <div class="flex items-center gap-3 sm:gap-4 shrink-0">
-      
-      <!-- Phone Link -->
-      <a
-        href={`tel:${siteConfig.phoneRaw}`}
-        class="hidden sm:flex flex-col items-end text-right group"
-        aria-label={`Call us at ${siteConfig.phone}`}
-      >
-        <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400">24/7 Match Line</span>
-        <span class="text-sm md:text-base lg:text-lg font-black text-slate-900 group-hover:text-red-600 transition tracking-tight flex items-center gap-1.5">
-          <Icon name="phone" class="w-4 h-4 text-red-600" />
-          {siteConfig.phone}
-        </span>
-      </a>
-
-      <!-- Primary CTA Button: GET AN ESTIMATE -->
-      <a
-        href="#estimate-form"
-        class="inline-flex items-center justify-center px-4 sm:px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 text-center min-h-[44px]"
-      >
-        <span>REQUEST A LOCAL PRO</span>
-      </a>
-
-      <!-- Mobile Hamburger Button -->
-      <button
-        id="mobile-menu-btn"
-        aria-label="Toggle navigation menu"
-        aria-expanded="false"
-        class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none min-h-[44px] min-w-[44px] flex items-center justify-center"
-      >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-
     </div>
-
   </div>
 
-  <!-- Subtle Bottom Border Accent -->
-  <div class="h-0.5 w-full bg-slate-100"></div>
-
-  <!-- Mobile Drawer Menu -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 py-4 space-y-2 shadow-2xl max-h-[85vh] overflow-y-auto">
-    
-    <!-- Mobile Services Accordion (Tap to Toggle) -->
-    <div class="border-b border-slate-100 pb-2">
-      <button
-        id="mobile-services-btn"
-        type="button"
-        class="flex items-center justify-between w-full py-2.5 px-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-slate-50 transition"
-        aria-expanded="false"
-      >
-        <span>Services</span>
-        <svg id="mobile-services-chevron" class="w-4 h-4 transition-transform duration-200 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-
-      <div id="mobile-services-menu" class="hidden pl-3 pr-1 py-1 space-y-1">
-        {servicesList.map((service) => (
-          <a
-            href={service.href}
-            class="flex items-center justify-between py-2.5 px-3 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-50 hover:text-red-600 transition"
+  <!-- 2. BOTTOM MAROON/CRIMSON NAVIGATION BAR (Exact Match to Screenshot) -->
+  <div class="bg-gradient-to-r from-[#2c0505] via-[#4d0b0b] to-[#200404] border-b border-[#631010] px-4 sm:px-6 lg:px-8 py-2">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      
+      <!-- DESKTOP NAV -->
+      <nav class="hidden md:flex items-center space-x-5 lg:space-x-8 text-xs lg:text-sm font-black uppercase tracking-wider text-white">
+        
+        <!-- Residential / Services Dropdown -->
+        <div class="relative group">
+          <button
+            type="button"
+            class="flex items-center gap-1.5 py-1 text-white hover:text-red-300 font-black uppercase tracking-wider transition-colors"
           >
-            <span class="flex items-center gap-2">
-              <Icon name={service.icon} class="w-4 h-4 text-slate-500" />
-              <span>{service.name}</span>
-            </span>
-            <span class="text-[10px] font-medium text-slate-400">{service.tag}</span>
-          </a>
-        ))}
+            <span>Residential</span>
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          <!-- Dropdown Panel -->
+          <div class="absolute top-full left-0 w-72 bg-slate-900 rounded-xl shadow-2xl border border-slate-700 py-2 hidden group-hover:block transition-all duration-150 z-50 mt-1">
+            <div class="px-4 py-2 text-[10px] font-black uppercase text-slate-400 tracking-wider border-b border-slate-800 flex items-center justify-between">
+              <span>Denton Services</span>
+              <span class="text-red-400 font-bold">24/7 Match</span>
+            </div>
+            <div class="p-1 space-y-0.5">
+              {servicesList.map((service) => (
+                <a
+                  href={service.href}
+                  class="flex items-center justify-between px-3.5 py-2.5 rounded-lg text-xs font-bold text-slate-200 hover:bg-[#c8102e] hover:text-white transition-colors"
+                >
+                  <div class="flex items-center gap-2.5">
+                    <Icon name={service.icon} class="w-3.5 h-3.5 text-red-400" />
+                    <span>{service.name}</span>
+                  </div>
+                  <span class="text-[10px] font-semibold text-slate-400 bg-slate-800 px-2 py-0.5 rounded">
+                    {service.tag}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <a href="/denton-tx/water-heater-repair/" class="hover:text-red-300 transition-colors">Water Heaters</a>
+        <a href="/denton-tx/slab-leak-repair/" class="hover:text-red-300 transition-colors">Slab Leaks</a>
+        <a href="/denton-tx/drain-cleaning/" class="hover:text-red-300 transition-colors">Drain Cleaning</a>
+        <a href="/service-areas/" class="hover:text-red-300 transition-colors">Service Areas</a>
+        <a href="/blog/" class="hover:text-red-300 transition-colors">Blog</a>
+        <a href="/contact/" class="hover:text-red-300 transition-colors">Contact</a>
+
+      </nav>
+
+      <!-- Right Promo Tag in Nav Bar -->
+      <div class="hidden lg:flex items-center gap-2 text-white/90 text-xs font-extrabold uppercase tracking-wider">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>24/7 Live Dispatch: (940) 310-4499</span>
       </div>
+
+    </div>
+  </div>
+
+  <!-- MOBILE MENU ACCORDION -->
+  <div id="mobile-menu" class="hidden md:hidden bg-slate-950 text-white border-b border-slate-800 px-4 py-4 space-y-3 font-sans">
+    <div class="space-y-1 text-sm font-bold">
+      <a href="/" class="block py-2 px-3 rounded-lg hover:bg-slate-800 text-red-400">Home</a>
+      <a href="/denton-tx/emergency-plumbing/" class="block py-2 px-3 rounded-lg hover:bg-slate-800">Emergency Plumbing</a>
+      <a href="/denton-tx/water-heater-repair/" class="block py-2 px-3 rounded-lg hover:bg-slate-800">Water Heater Repair</a>
+      <a href="/denton-tx/slab-leak-repair/" class="block py-2 px-3 rounded-lg hover:bg-slate-800">Slab Leak Detection</a>
+      <a href="/denton-tx/drain-cleaning/" class="block py-2 px-3 rounded-lg hover:bg-slate-800">Drain Cleaning</a>
+      <a href="/service-areas/" class="block py-2 px-3 rounded-lg hover:bg-slate-800">Service Areas</a>
+      <a href="/blog/" class="block py-2 px-3 rounded-lg hover:bg-slate-800">Plumbing Guides</a>
+      <a href="/contact/" class="block py-2 px-3 rounded-lg hover:bg-slate-800">Contact Us</a>
     </div>
 
-    <!-- Mobile Standalone Links -->
-    <a
-      href="/service-areas/"
-      class="block py-2.5 px-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-slate-50 hover:text-red-600 transition"
-    >
-      Service Areas
-    </a>
-    <a
-      href="/blog/"
-      class="block py-2.5 px-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-slate-50 hover:text-red-600 transition"
-    >
-      Blog
-    </a>
-    <a
-      href="/contact/"
-      class="block py-2.5 px-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-slate-50 hover:text-red-600 transition"
-    >
-      Contact
-    </a>
-    <a
-      href="/privacy-policy/"
-      class="block py-2 px-3 rounded-xl text-xs text-slate-500 hover:bg-slate-50 hover:text-red-600 transition"
-    >
-      Privacy Policy
-    </a>
-    <a
-      href="/terms-and-conditions/"
-      class="block py-2 px-3 rounded-xl text-xs text-slate-500 hover:bg-slate-50 hover:text-red-600 transition"
-    >
-      Terms &amp; Conditions
-    </a>
-
-    <!-- Mobile Action Buttons -->
-    <div class="pt-3 border-t border-slate-200 space-y-2.5">
+    <div class="pt-3 border-t border-slate-800 space-y-2">
       <a
         href={`tel:${siteConfig.phoneRaw}`}
-        class="block w-full text-center py-3.5 rounded-xl bg-slate-900 hover:bg-black text-white font-black text-sm shadow flex items-center justify-center gap-2 min-h-[48px]"
+        class="block w-full text-center py-3 rounded-lg bg-[#1a2b4c] text-white font-black text-sm shadow flex items-center justify-center gap-2"
       >
-        <Icon name="phone" class="w-4 h-4 text-red-500" />
+        <Icon name="phone" class="w-4 h-4 text-sky-400" />
         <span>Call {siteConfig.phone}</span>
       </a>
       <a
         href="#estimate-form"
-        class="block w-full text-center py-3.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-black text-sm uppercase tracking-wider shadow min-h-[48px]"
+        class="block w-full text-center py-3 rounded-lg bg-[#c8102e] text-white font-black text-sm uppercase tracking-wider shadow"
       >
-        REQUEST A LOCAL PRO
+        Schedule Service
       </a>
     </div>
   </div>
@@ -288,27 +196,7 @@ const servicesList: Array<{ name: string; href: string; tag: string; icon: 'aler
   const menu = document.getElementById('mobile-menu');
   if (btn && menu) {
     btn.addEventListener('click', () => {
-      const isHidden = menu.classList.toggle('hidden');
-      btn.setAttribute('aria-expanded', String(!isHidden));
-    });
-    
-    menu.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        menu.classList.add('hidden');
-        btn.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-
-  const servicesBtn = document.getElementById('mobile-services-btn');
-  const servicesMenu = document.getElementById('mobile-services-menu');
-  const servicesChevron = document.getElementById('mobile-services-chevron');
-  if (servicesBtn && servicesMenu && servicesChevron) {
-    servicesBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isHidden = servicesMenu.classList.toggle('hidden');
-      servicesBtn.setAttribute('aria-expanded', String(!isHidden));
-      servicesChevron.classList.toggle('rotate-180', !isHidden);
+      menu.classList.toggle('hidden');
     });
   }
 </script>

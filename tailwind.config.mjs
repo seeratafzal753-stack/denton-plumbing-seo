@@ -5,21 +5,28 @@ export default {
     extend: {
       colors: {
         brand: {
-          50: '#f0f7ff',
-          100: '#e0effe',
-          500: '#0284c7', // Primary Trust Blue
-          600: '#0369a1',
-          700: '#075985',
-          800: '#0c4a6e',
-          900: '#082f49',
+          50: '#fef2f2',
+          100: '#fee2e2',
+          500: '#c8102e', // Texas Crimson Red
+          600: '#b91c1c',
+          700: '#991b1b',
+          800: '#7f1d1d',
+          900: '#450a0a',
+        },
+        texas: {
+          red: '#c8102e',
+          darkred: '#580b0b',
+          maroon: '#360505',
+          navy: '#1a2b4c',
+          charcoal: '#27323f',
         },
         emergency: {
-          500: '#dc2626', // High-converting Emergency Red
+          500: '#dc2626',
           600: '#b91c1c',
           700: '#991b1b',
         },
         accent: {
-          500: '#f59e0b', // Rating / Star Amber
+          500: '#f59e0b',
           600: '#d97706',
         }
       },
