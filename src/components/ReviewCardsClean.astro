@@ -27,20 +27,20 @@ const reviews = [
       <p class="text-slate-600 text-sm mt-2 max-w-xl mx-auto">
         Read how we help Denton County homeowners connect with reliable local plumbing professionals.
       </p>
-      <div class="w-16 h-0.5 bg-brand-700 mx-auto mt-3"></div>
+      <div class="w-16 h-1 bg-[#c8102e] mx-auto mt-3 rounded-full"></div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {reviews.map((r) => (
-        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 flex flex-col justify-between shadow-sm hover:border-brand-500 hover:shadow-md transition">
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 flex flex-col justify-between shadow-sm hover:border-[#c8102e] hover:shadow-lg hover:shadow-red-600/5 transition duration-200">
           <div>
             <div class="flex items-center gap-1 text-amber-500 mb-3">
               <div class="flex items-center gap-0.5">
-                <Icon name="star" class="w-4 h-4 text-amber-500" />
-                <Icon name="star" class="w-4 h-4 text-amber-500" />
-                <Icon name="star" class="w-4 h-4 text-amber-500" />
-                <Icon name="star" class="w-4 h-4 text-amber-500" />
-                <Icon name="star" class="w-4 h-4 text-amber-500" />
+                <Icon name="star" class="w-4 h-4 text-amber-500 fill-amber-500" />
+                <Icon name="star" class="w-4 h-4 text-amber-500 fill-amber-500" />
+                <Icon name="star" class="w-4 h-4 text-amber-500 fill-amber-500" />
+                <Icon name="star" class="w-4 h-4 text-amber-500 fill-amber-500" />
+                <Icon name="star" class="w-4 h-4 text-amber-500 fill-amber-500" />
               </div>
               <span class="text-slate-600 text-xs ml-2 font-bold">(Local Homeowner)</span>
             </div>
@@ -57,8 +57,9 @@ const reviews = [
               <span class="block font-bold text-slate-900 text-sm">{r.author}</span>
               <span class="block text-xs text-slate-500">{r.location}</span>
             </div>
-            <a href="/contact/" class="text-xs font-bold text-brand-700 hover:underline">
-              Request Service →
+            <a href="/contact/" class="text-xs font-bold text-[#c8102e] hover:text-[#991b1b] hover:underline flex items-center gap-1">
+              <span>Request Service</span>
+              <span>→</span>
             </a>
           </div>
         </div>

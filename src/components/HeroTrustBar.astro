@@ -5,61 +5,49 @@ const trustItems: Array<{
   icon: 'shield-check' | 'bolt' | 'dollar' | 'wrench' | 'lock';
   title: string;
   subtitle: string;
-  iconColor: string;
-  bgColor: string;
 }> = [
   {
     icon: 'shield-check',
     title: 'Verified Local Network',
     subtitle: 'Independent Denton Specialists',
-    iconColor: 'text-slate-800',
-    bgColor: 'bg-slate-100',
   },
   {
     icon: 'bolt',
     title: 'Rapid Dispatch Match',
     subtitle: 'Priority Denton County Wide',
-    iconColor: 'text-red-600',
-    bgColor: 'bg-red-50',
   },
   {
     icon: 'dollar',
     title: 'Upfront Quotes',
     subtitle: 'Clear Pricing Before Work',
-    iconColor: 'text-emerald-700',
-    bgColor: 'bg-emerald-50',
   },
   {
     icon: 'wrench',
     title: 'Full Service Range',
     subtitle: 'Heaters, Drains & Slabs',
-    iconColor: 'text-amber-600',
-    bgColor: 'bg-amber-50',
   },
   {
     icon: 'lock',
     title: '100% Free Referral',
     subtitle: 'No-Obligation Matching',
-    iconColor: 'text-sky-700',
-    bgColor: 'bg-sky-50',
   },
 ];
 ---
 
-<!-- DEDICATED FULL-WIDTH TRUST BAR (Directly Below Hero Section) -->
-<section class="bg-white border-b border-slate-200 py-6 px-4 sm:px-6 lg:px-8 shadow-sm">
+<!-- DEDICATED FULL-WIDTH TRUST BAR (Texas Red Accent Styling) -->
+<section class="bg-slate-50 border-b border-slate-200 py-6 px-4 sm:px-6 lg:px-8 shadow-inner">
   <div class="max-w-7xl mx-auto">
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
       {trustItems.map((item) => (
-        <div class="bg-slate-50/80 hover:bg-white border border-slate-200/90 hover:border-brand-500 rounded-2xl p-3.5 sm:p-4 flex items-center gap-3 transition-all duration-200 shadow-sm hover:shadow group">
-          <div class={`w-10 h-10 rounded-xl ${item.bgColor} ${item.iconColor} flex items-center justify-center shrink-0 border border-slate-200/50 group-hover:scale-105 transition-transform`}>
-            <Icon name={item.icon} class="w-5 h-5" />
+        <div class="bg-white hover:bg-red-50/40 border border-slate-200 hover:border-[#c8102e] rounded-2xl p-3.5 sm:p-4 flex items-center gap-3 transition-all duration-200 shadow-sm hover:shadow-md hover:shadow-red-500/10 group">
+          <div class="w-10 h-10 rounded-xl bg-red-50 text-[#c8102e] group-hover:bg-[#c8102e] group-hover:text-white flex items-center justify-center shrink-0 border border-red-200/80 group-hover:border-[#c8102e] group-hover:scale-105 transition-all duration-200 shadow-sm">
+            <Icon name={item.icon} class="w-5 h-5 transition-colors" />
           </div>
           <div class="min-w-0">
-            <span class="block text-xs sm:text-sm font-extrabold text-slate-900 leading-tight truncate">
+            <span class="block text-xs sm:text-sm font-extrabold text-slate-900 group-hover:text-[#c8102e] transition-colors leading-tight truncate">
               {item.title}
             </span>
-            <span class="block text-[11px] text-slate-500 font-semibold mt-0.5 truncate">
+            <span class="block text-[11px] text-slate-500 font-medium mt-0.5 truncate">
               {item.subtitle}
             </span>
           </div>
