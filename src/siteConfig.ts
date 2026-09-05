@@ -31,7 +31,7 @@ export const siteConfig = {
     "76205", // Southridge, Teasley
     "76207", // Rayzor Ranch, University West
     "76208", // Loop 288, Cooper Creek
-    "76209", // Idiots Hill, North Denton
+    "76209", // Idiot's Hill, North Denton
     "76210", // South Denton / Corinth border
   ],
 
@@ -55,7 +55,7 @@ export const siteConfig = {
   // Denton Neighborhoods & Subdivisions
   neighborhoods: [
     "Downtown Denton Square",
-    "Idiots Hill",
+    "Idiot's Hill",
     "Southridge",
     "Rayzor Ranch",
     "Robson Ranch",
